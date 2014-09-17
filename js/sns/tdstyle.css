@@ -1,0 +1,67 @@
+/*@td-stencil: 'Allerta Stencil', sans-serif;*/.productcode {
+  /*background-color: #EEE;*/
+
+  float: right;
+  background-color: #CC;
+  color: #FFF;
+  padding: 0px 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.productcode a {
+  color: #F00;
+}
+.item-des {
+  /*background-color: #FFF;*/
+
+  text-align: left;
+  font-size: .9em;
+}
+.item-content {
+  padding-left: 4px;
+}
+.product-sku {
+  background-color: #ffffd4;
+  padding: 2px 4px;
+  margin-bottom: 20px;
+  /*display: inline;*/
+
+}
+.item-title {
+  text-align: left;
+  padding-left: 4px;
+}
+.item-title a {
+  color: #0495d7;
+  font-size: 1.2em;
+}
+.products-grid .item .item-inner .btn-cart {
+  background: #f0ad4e !important;
+}
+.products-grid .item .item-inner .link-compare {
+  background: #0495d7 !important;
+}
+.products-grid .item .item-inner .link-wishlist {
+  background: #ec1c24 !important;
+}
+.banner:hover:before {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+#sns_wrapper {
+  background-image: url(skin/frontend/default/sns_i8style/images/blueprint-grid.png) !important;
+  background-repeat: repeat;
+}
+#sns_menu {
+  background-image: none;
+  background-color: white;
+  background-image: url(/skin/frontend/default/sns_i8style/images/blueprint-grid.png) !important;
+}
+#sns_header_top {
+  background-color: #025073;
+}
+.item-inner {
+  background-color: white;
+}
+.block_border {
+  background-color: white;
+}

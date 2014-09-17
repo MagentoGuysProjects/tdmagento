@@ -60,8 +60,8 @@ $class_res .= ((int)$options->devices_mobileportrait > 0)?' mobileportrait-'.$op
 				data-loadnum="<?php echo $options->number_per_display;?>">
 					<div class="btn-loadmore<?php echo $classloaded?>">
 						<span class="loadmore button" 
-						data-label="<?php echo ($classloaded)?$this->__('All ready'):$this->__('View more item');?>" 
-						data-label-load="<?php echo ($classloaded)?$this->__('All ready'):$this->__('Loading ...');?>"></span>
+						data-label="<?php echo ($classloaded)?$this->__('Loaded'):$this->__('View more items');?>" 
+						data-label-load="<?php echo ($classloaded)?$this->__('Loaded'):$this->__('Loading ...');?>"></span>
 					<?php if( $options->show_number_loadmore ):?>
 						<span class="load-number" <?php if( $items->count >$options->number_per_display ){?> data-more="<?php if( $items->count - $options->number_per_display <= $options->number_per_display ){ echo ($items->count - $options->number_per_display);}else{ echo $options->number_per_display; }?>"
 						data-total="<?php  echo $items->count - $options->number_per_display;?>"<?php }?>><?php if( $items->count > $options->number_per_display ){ echo "/"; } ?></span>
