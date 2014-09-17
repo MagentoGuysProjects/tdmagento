@@ -1,0 +1,101 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+$themeconfig = Mage::helper('i8style/data');
+?>
+<div id="google_map" style="height: 400px"></div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+<script>
+	jQuery(document).ready(function($){
+		var geocoder;
+		var map;
+		var mapZoom = <?php echo $themeconfig->getField('storelocation_map_zoom'); ?>;
+		var companyName = "<?php echo $themeconfig->getField('storelocation_store_name'); ?>";
+		var companyPhone = "<?php echo $themeconfig->getField('storelocation_store_phone'); ?>";
+		var companyEmail = "<?php echo $themeconfig->getField('storelocation_store_email'); ?>";
+		var address = "<?php echo $themeconfig->getField('storelocation_store_address'); ?>";
+		var companyInfo = "<?php echo $themeconfig->getField('storelocation_store_info'); ?>";
+
+		var contentString = '<div style="min-width: 240px; min-height: 130px;">';
+		contentString += '<h3>'+companyName+'</h3>';
+		contentString += '<p>'+companyInfo+'</p>';
+		contentString += '<ul class="fa-ul">';
+		contentString += '<li><i class="fa-li fa fa-map-marker"></i>'+address+'</li>';
+		contentString += '<li><i class="fa-li fa fa-mobile-phone"></i>'+companyPhone+'</li>';
+		contentString += '<li><i class="fa-li fa fa-envelope"></i><a href="mailto:'+companyEmail+'">'+companyEmail+'</a></li>';
+		contentString += '</ul>';
+		contentString += '</div>';
+
+		function initialize() {
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					map.setCenter(results[0].geometry.location);
+					var marker = new google.maps.Marker({
+						map: map,
+						position: results[0].geometry.location,
+						title: companyName
+					});
+					infowindow = new google.maps.InfoWindow({ content:contentString });
+					//infowindow.open(map,marker);
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
+				} else {
+					alert('Geocode was not successful for the following reason: ' + status);
+				}
+			});
+			var mapOptions = {
+				zoom: mapZoom,
+			}
+			map = new google.maps.Map(document.getElementById('google_map'), mapOptions);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+		google.maps.event.addDomListener(window, "resize", function() {
+			var center = map.getCenter();
+			google.maps.event.trigger(map, "resize");
+			map.setCenter(center); 
+		});
+		<?php if($themeconfig->getField('storelocation_status')) : ?>
+		$('.btn_gmap').on('click', function(e){
+			e.preventDefault();
+			if($(this).hasClass('active')){
+				$(this).removeClass('active');
+				$('#google_map').stop(true, true).animate({'height' : '0px'}, 300);
+			} else {
+				$(this).addClass('active');
+				$('#google_map').animate({'height' : '375px'}, 300, function(){
+					var center = map.getCenter();
+					google.maps.event.trigger(map, "resize");
+					map.setCenter(center);
+					// $('#sns_footer_map').offset().top
+				});
+			}
+		})
+		<?php endif; ?>
+	});
+</script>
+<!-- end google map -->

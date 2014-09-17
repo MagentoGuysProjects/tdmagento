@@ -1,0 +1,13 @@
+	<?php
+//check the user is loggedon or not
+if (! Mage::getSingleton('customer/session')->isLoggedIn()){
+echo Mage::helper('customer')->getLoginUrl();
+}
+else{
+//if user is not logged on yet show the login link - add this code within anchor tag
+echo Mage::helper('customer')->getLogoutUrl();
+}
+echo Mage::helper('customer')->getRegisterUrl();
+?>
+	<?php //echo $this->getChildHtml('toplink_form_minilogin') ?>
+	<?php //echo $this->getChildHtml('toplink_form_register') ?>

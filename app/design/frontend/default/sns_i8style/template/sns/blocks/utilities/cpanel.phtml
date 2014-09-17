@@ -1,0 +1,186 @@
+<?php
+	$config	= Mage::helper('i8style/data');
+?>
+<?php if($config->getField('advance_showCpanel')) : ?>
+<div id="sns_cpanel" style="direction:ltr">
+    <div class="cpanel-head">CPanel</div>
+    <div class="cpanel-set">
+		<div class="accordion-group" id="sns_cpanel_accor">
+			<div class="accordion-heading">
+				<a data-toggle="collapse" data-parent="#sns_cpanel_accor" href="#sns_cpanel_body">Body</a>
+			</div>
+			<div id="sns_cpanel_body" class="collapse in">
+				<div class="accordion-inner">
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">Theme Color</label>
+							<div class="col-xs-8">
+								<input type="text" name="sns_cfg_advance_themeColor" value="<?php echo $config->getField('advance_themeColor'); ?>" class="form-control minicolors">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="form-group">
+								<label>Font Size</label>
+								<input type="text" class="form-control" name="sns_cfg_general_fontSize" value="<?php echo $config->getField('general_fontSize'); ?>" />
+							</div>
+						</div>
+						<div class="col-xs-8">
+							<div class="form-group">
+								<label>Layout</label>
+								<select class="form-control" name="sns_cfg_general_layoutType">
+								<?php 
+									$layOuts = Mage::getModel('i8style/system_config_source_listLayout')->toOptionArray();
+									foreach($layOuts as $layOut){
+										$selected = '';
+										if($layOut['value'] == $config->getField('general_layoutType')) $selected=' selected';
+										echo '<option value="'.$layOut['value'].'"'.$selected.'>'.$layOut['label'].'</option>';
+									}
+								?>
+								</select>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<p><strong>Background only applies for Boxed Layout</strong></p>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-xs-4 control-label">Bg Color</label>
+									<div class="col-xs-8">
+										<input type="text" class="form-control minicolors" name="sns_cfg_general_bodyBgColor" value="<?php echo $config->getField('general_bodyBgColor'); ?>">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-xs-4 control-label">Bg image</label>
+									<div class="bg-pattern col-xs-8">
+										<?php 
+											$patterns = Mage::getModel('i8style/system_config_source_listPattern')->toOptionArray();
+											foreach($patterns as $pattern){
+												$checked = '';
+												$active = '';
+												if($pattern['value'] == $config->getField('general_bodyBgImage')){
+													$active=' active';
+													$checked=' checked';
+												}
+												echo '<label data-toggle="tooltip" data-original-title="'.$pattern['label'].'" class="radio-inline '.$active.'" 
+												style="background-image: url('.$this->getSkinUrl('images/pattern/'.$pattern['value'].'.png').')" >';
+
+												echo '<input type="radio" name="sns_cfg_general_bodyBgImage" value="'.$pattern['value'].'"'.$checked.' />';
+											//	echo $pattern['label'];
+												
+												echo '</label>';
+											}
+										?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+											
+				</div>
+			</div>
+			<div class="accordion-heading">
+				<a data-toggle="collapse" data-parent="#sns_cpanel_accor" href="#sns_cpanel_menu">Menu</a>
+			</div>
+			<div id="sns_cpanel_menu" class="collapse">
+				<div class="accordion-inner">
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">Use sticky</label>
+							<div class="col-xs-8">
+								<select class="form-control" name="sns_cfg_menu_keepMenu">
+								<?php 
+									$stickys = Mage::getModel('adminhtml/system_config_source_yesno')->toOptionArray();
+									foreach($stickys as $sticky){
+										$selected = '';
+										if($sticky['value'] == $config->getField('menu_keepMenu')) $selected=' selected';
+										echo '<option value="'.$sticky['value'].'"'.$selected.'>'.$sticky['label'].'</option>';
+									}
+								?>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">Responsive</label>
+							<div class="col-xs-8">
+								<select class="form-control" name="sns_cfg_menu_resMenu">
+								<?php 
+									$resMenus = Mage::getModel('i8style/system_config_source_listResMenu')->toOptionArray();
+									foreach($resMenus as $resMenu){
+										$selected = '';
+										if($resMenu['value'] == $config->getField('menu_resMenu')) $selected=' selected';
+										echo '<option value="'.$resMenu['value'].'"'.$selected.'>'.$resMenu['label'].'</option>';
+									}
+								?>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div class="button-action">
+		<a  class="btn btn-default" href="#" onclick="javascript: cPReset();">Default</a>
+		<a  class="btn btn-success" href="#" onclick="javascript: cPApply();">Apply</a>
+	</div>
+    <div id="sns_config_btn">
+        <i class="fa fa-cog fa-spin "></i>
+    </div>
+</div>
+<script type="text/javascript">
+// <![CDATA[
+jQuery(document).ready(function($){
+	<?php if(!is_null(Mage::app()->getRequest()->getParam('sns_clearcookie'))) : ?>
+		var href = location.href.replace('&sns_clearcookie', '');
+		history.pushState({}, '', href);
+	<?php endif; ?>
+	$('input.minicolors').minicolors({
+		position: 'top right',
+		changeDelay: 200,
+		//letterCase: 'uppercase',
+		theme: 'bootstrap'
+	});
+		
+		
+	// layout type
+	$('[name="sns_cfg_general_layoutType"]').on('change', function (){
+		if($(this).val() == 2) $('body').addClass('boxed-layout');
+		else $('body').removeClass('boxed-layout');
+	})
+	// bg color
+	$('[name="sns_cfg_general_bodyBgColor"]').on('change', function (){
+		$('body').css({
+			'background-color' : $(this).val()
+		});
+	})
+	// bg image
+	$('.bg-pattern label').on('click', function(){
+		$('.bg-pattern label').removeClass('active');
+		$(this).addClass('active');
+		var bgimg = '<?php echo $this->getSkinUrl('images/pattern/'); ?>' +  $(this).find('input').val() + '.png';
+		$('body').css('background-image', 'url("' + bgimg + '")');
+	});
+});
+// ]]>
+</script>
+<?php endif; ?>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

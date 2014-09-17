@@ -1,0 +1,108 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+
+ $themeCfg = Mage::helper('i8style/data');
+?>
+<!DOCTYPE html>
+<html xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<?php
+$bclass = '';
+if( $themeCfg->getField('general_layoutType')==2 ){
+    $bclass .= ' boxed-layout';
+    if($themeCfg->getField('general_bodyBgImage')!=''){
+        $bclass .= ' '.$themeCfg->getField('general_bodyBgImage');
+    }
+}
+if(!$this->getChildHtml('breadcrumbs')){
+    $bclass .= ' no-breadcrumbs';
+}
+$bclass .= ' '.Mage::helper('i8style/data')->getBrowser();
+$bclass .= ' '.Mage::getSingleton('core/design_package')->getTheme('frontend');
+$bclass .= ($this->getUrl('') == $this->getUrl('*/*/*', array('_current'=>true, '_use_rewrite'=>true))) ? ' homepage' : '';
+$bclass .= (Mage::registry('current_category')) ? ' catpage' : '';
+$bclass .= (Mage::registry('current_product')) ? ' detailpage' : '';
+$bclass .= (Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') ? ' cmspage' : '';
+?>
+<body id="bd" class="<?php echo $this->getBodyClass();?><?php echo $bclass; ?>">
+    <div id="sns_wrapper">
+        <?php echo $this->getChildHtml('after_body_start') ?>
+        <?php echo $this->getChildHtml('header') ?>
+        <!-- BEGIN: Top Spotlight -->
+        <?php if ($this->getChildHtml('topsl')) : ?>
+        <div id="sns_topsl" class="wrap">
+            <div class="container">
+                <div class="row">
+                    <?php echo $this->getChildHtml('topsl') ?>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <!-- END: Top Spotlight -->
+        <?php if($this->getChildHtml('breadcrumbs')): ?>
+        <!-- BEGIN: breadcrumbs -->
+        <div id="sns_breadcrumbs" class="wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="sns_titlepage"></div>
+                        <?php echo $this->getChildHtml('breadcrumbs') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: breadcrumbs -->
+        <?php endif; ?>
+        <!-- BEGIN: Main Content -->
+        <div id="sns_content" class="wrap layout-m">
+           <div class="container">
+                <div class="row">
+                    <div id="sns_main" class="col-md-12 col-main">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                        <?php if( $this->getChildHtml('content') ): ?>
+                        <div id="sns_mainmidle">
+                            <?php echo $this->getChildHtml('content') ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Main Content -->
+        <?php echo $this->getChildHtml('before_footer'); ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getAbsoluteFooter(); ?>
+        <?php echo $this->getChildHtml('before_body_end'); ?>
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<?php
+/*------------------------------------------------------------------------
+ # SNS Slider - Version 2.0
+ * Copyright (C) 2013 The SNS Theme. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: SNS Theme
+ * Websites: http://www.snstheme.com
+-------------------------------------------------------------------------*/
+$themeConfig =   Mage::helper('i8style/data')->get();
+$_productCollection = $this->getLoadedProductCollection();
+$_helper = $this->helper('catalog/output');
+$imgWidth = $this->product_image_width;
+$imgHeight = $this->product_image_height;
+if ($imgWidth <= 0 || $imgHeight <= 0){
+	$this->product_image_disp = false;
+}
+$uniqued = rand().time();
+?>
+<?php if(!$_productCollection->count()): ?>
+	<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div id="sns_lider<?php echo $uniqued; ?>" class="sns-slider default-2<?php echo($this->effects)?' effect-'.$this->effects:'';?>"><div class="slider-inner">
+    <?php if($this->title!=""){?>
+    <div class="title-slider clearfix"><span><?php echo $this->title;?></span>
+        <?php if($this->pretext): ?>
+        <div class="pretext"><div><?php echo $this->pretext; ?></div></div>
+        <?php endif; ?>
+    </div>
+    <?php 
+    } ?>
+    <div class="container-slider">
+    <div class="products-grid">
+    <?php foreach($_productCollection as $_product){?>
+        <?php
+        $now = date("Y-m-d");
+        $newsFrom= substr($_product->getData('news_from_date'),0,10);
+        $newsTo=  substr($_product->getData('news_to_date'),0,10);
+        $price = $_product->getPrice();
+        $finalPrice = $_product->getFinalPrice();
+        $class = '';
+        if($now>=$newsFrom && $now<=$newsTo) $class .= ' have-iconew';
+        if( isset($price) && isset($finalPrice) && $finalPrice < $price) $class .= ' have-icosale';
+        ?>
+        <div class="item">
+            <div class="item-inner clearfix">
+                <div class="item-img<?php echo $class; ?><?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?>">
+                    <?php
+                    if ($now>=$newsFrom && $now<=$newsTo && $themeConfig['useTagNew']==1)
+                        echo "<span class='ico-product ico-new'>New</span>";
+                    if (isset($price) && isset($finalPrice) && $finalPrice < $price && $themeConfig['useTagSale']==1)
+                        echo "<span class='ico-product ico-sale'><strong>".floor(100-($finalPrice/$price)*100)." %</strong> off</span>";
+                    ?>
+                    <div class="item-img-info">
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+                            <span class="img-main">
+                                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($imgWidth, $imgHeight); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
+                            </span>
+                        </a>
+                        <?php 
+                        if(class_exists('Sns_Quickview_Helper_Data') && Mage::getStoreConfigFlag('quickview/general/enable') == 1){ ?>
+                            <div class="quickview-wrap">
+                                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" style="display:none"></a>
+                            </div>
+                        <?php
+                        } ?>
+                    </div>
+                </div>
+                <div class="item-info">
+                    <div class="info-inner">
+                        <?php if( $this->product_title_disp == 1 ){?>
+                        <div class="item-title">
+                            <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                            <?php
+                                if ( $this->product_title_max_length > 0){
+                                    $_productNameTruncated = Mage::helper('core/string')->truncate($_productNameStripped, $this->product_title_max_length);
+                                }
+                            ?>
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo isset($_productNameTruncated) ? $_productNameTruncated : $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a>
+                        </div>
+                        <?php }?>
+                        <div class="item-content clearfix">
+                            <?php if( $this->product_description_disp == 1 ){?>
+                            <div class="item-des">
+                                <?php
+                                $product_description_src = in_array($this->product_description_src, array('short_description', 'description')) ? $this->product_description_src : 'short_description';
+                                $product_description = $_helper->productAttribute($_product, $_product->$product_description_src, $product_description_src);
+                                if ( $this->product_description_strip_tags ){
+                                    $allow_tags = $this->product_description_keep_tags ? $this->product_description_keep_tags : null;
+                                    $product_description = $this->stripTags( $product_description,  $allow_tags, true);
+                                }
+                                if ( $this->product_description_max_length > 0){
+                                    $product_description = Mage::helper('core/string')->truncate($product_description, (int)$this->product_description_max_length);
+                                }
+                                echo $product_description;
+                                ?>
+                            </div>
+                            <?php }
+                            if( $this->product_price_disp ){ ?>
+                            <div class="item-price">
+                                <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+                            </div>
+                            <?php }?>
+                            <?php
+                            if( $this->product_rating_summary == 1 ){ ?>
+                            <div class="rating">
+                            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+                            </div>
+                            <?php } ?>
+                            <?php
+                            $number_buttom = 0;
+                            if($this->product_addtowishlist) $number_buttom = $number_buttom +1;
+                            if($this->product_addtocompare) $number_buttom = $number_buttom +1;
+                            if($number_buttom > 0 || $this->product_cart_or_status){ ?>
+                            <div class="actions<?php echo ($number_buttom > 0)?' more-buttons':''?>">
+                            <?php if ($this->product_cart_or_status): ?>
+                            <?php if($_product->isSaleable()): ?>
+                                <button title="<?php echo $this->__('Add to Cart') ?>" class="btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><?php echo $this->__('Add to Cart') ?></button>
+                            <?php else: ?>
+                                <span class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></span>
+                            <?php endif; ?>
+                            <?php endif; ?>
+                            <?php if($number_buttom > 0){?>
+                                <ul class="add-to-links">
+                                    <?php if ($this->helper('wishlist')->isAllow() && $this->product_addtowishlist ) : ?>
+                                        <li><a title="<?php echo $this->__('Add to Wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist" data-toggle="tooltip" data-original-title="<?php echo $this->__('Add to Wishlist') ?>"><?php //echo $this->__('Add to Wishlist') ?></a></li>
+                                    <?php endif; ?>
+                                    <?php if($this->getAddToCompareUrl($_product) && $this->product_addtocompare): ?>
+                                        <li><a title="<?php echo $this->__('Add to Compare') ?>" href="<?php echo $this->getAddToCompareUrl($_product) ?>" class="link-compare" data-toggle="tooltip" data-original-title="<?php echo $this->__('Add to Compare') ?>"><?php //echo $this->__('Add to Compare') ?></a></li>
+                                    <?php endif; ?>
+                                </ul>
+                            <?php } ?>
+                            </div>
+                            <?php
+                            }?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php }?>
+    </div>
+    </div>
+    <?php if($this->posttext): ?>
+    <div class="posttext"><div><?php echo $this->posttext; ?></div></div>
+    <?php endif; ?>
+</div></div>
+
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(document).ready(function($) {
+        $('#sns_lider<?php echo $uniqued; ?> div.products-grid').owlCarousel({
+            itemsCustom: [ [320, 1], [360, 1], [480, <?php echo $this->devices_mobileportrait?>], [640, <?php echo $this->devices_mobilelandscape?>], [768, <?php echo $this->devices_tabletportrait?>], [980, <?php echo $this->devices_tabletlandscape?>], [1170, <?php echo $this->devices_normal?>] ],
+            <?php if($this->navigation){ ?>
+            navigation : true,
+            <?php } ?>
+            <?php if($this->auto){ ?>
+            autoPlay: true,
+            stopOnHover: true,
+            <?php } ?>
+            <?php if($this->duration){ ?>
+            slideSpeed: <?php echo $this->duration; ?>,
+            <?php } ?>
+            pagination: false,
+            autoHeight: true,
+            addClassActive: true
+            //scrollPerPage: true,
+        });
+    });
+//]]>
+</script>
+<?php endif; ?>

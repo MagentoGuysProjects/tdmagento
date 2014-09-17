@@ -1,0 +1,105 @@
+.block-twitter {
+    position: relative;
+    a.follow-link {
+        position: absolute;
+        top:0px;
+        right: 0px;
+        padding: 3px 10px;
+        border: 1px solid #e8e8e8;
+    }
+}
+#sns_twitter {
+	.post {
+		margin: 1px;
+	}
+    .tweet {
+        border: 1px solid #ddd;
+        padding: 15px 15px 25px;
+        border-radius: 8px;
+        position: relative;
+        margin: 0 0 15px;
+        &:before {
+        	content: '';
+        	display: block;
+        	.border-arrow-bottom (20px, 10px, #ddd);
+        	position: absolute;
+        	bottom: -10px;
+        	left: 10%;
+        }
+        &:after {
+        	content: '';
+        	display: block;
+        	.border-arrow-bottom (20px, 10px, #fff);
+        	position: absolute;
+        	bottom: -9px;
+        	left: 10%;
+        }
+        a {
+            color: #73939E;
+        }
+    }
+    .bottom {
+    	position: relative;
+    	padding-left: 30px;
+    	.fa {
+    		position: absolute;
+    		top: 5px;
+    		left: 10px;
+    		color: #4da3c3;
+    		font-size: 15px;
+    	}
+    	span[data-scribe] {
+    		color: #666;
+    	}
+    }
+    .timePosted {
+        color: #ccc;
+        margin: 0 0;
+        font-size: 92%;
+        line-height: 1;
+    }
+    .interact {
+        margin: 0 0;
+        clear: left;
+        a {
+            display: inline-block;
+            background: url("../images/icon.png") no-repeat left -2px;
+            margin: 0 0 0 22px;
+            padding: 0 0 0 18px;
+        }
+        a.twitter_reply_icon {
+            margin: 0 0;
+        }
+        a.twitter_retweet_icon {
+            padding: 0 0 0 25px;
+            background-position: 0 -21px;
+        }
+        a.twitter_fav_icon {
+            background-position: 0 -41px;
+        }
+    }
+}
+#sns_twitter.no-avartar {
+    .user {
+        img {
+            display: none;
+        }
+    }
+}
+#sns_twitter.no-followlink {
+    a.follow-link {
+        display: none;
+    }
+}
+#sns_twitter.no-date {
+    .timePosted {
+        display: none;
+    }
+}
+#sns_twitter.no-interactlink {
+    .interact {
+        a {
+            display: none;
+        }
+    }
+}

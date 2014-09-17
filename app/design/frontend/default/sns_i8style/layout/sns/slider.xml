@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+	<default>
+        <reference name="head">
+        	<action method="addItem"><type>js_css</type><name>sns/owl-carousel/owl.carousel.css</name></action>
+        	<action method="addItem"><type>js_css</type><name>sns/owl-carousel/owl.transitions.css</name></action>
+            <action method="addJs"><script>sns/jquery/jquery.js</script></action>
+            <action method="addJs"><script>sns/jquery/jquery-noconflict.js</script></action>
+			<action method="addJs"><script>sns/owl-carousel/owl.carousel.min.js</script></action>
+        </reference>
+    </default>
+	<slider_index_index>
+		<reference name="content">
+			<block type="slider/list" name="slider.list.default"></block>
+		</reference>
+	</slider_index_index>
+</layout>

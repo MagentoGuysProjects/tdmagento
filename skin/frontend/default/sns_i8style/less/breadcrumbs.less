@@ -1,0 +1,29 @@
+#sns_breadcrumbs {
+	min-height: 20px;
+	body.homepage & {display: none;}
+
+}
+#sns_pathway {
+	.clearfix();
+	padding: 15px 0;
+	span[class^="icon-"]{
+		.ulclear();
+	}
+	.breadcrumbs{
+		.ulclear();
+		.inline-block();
+		li{
+			display: inline-block;
+			&:before {
+				content: "I";
+				margin: 0;
+				color: #ccc;
+			}
+			> * {
+				padding: 1px 3px;
+			}
+			&:first-child:before {display: none;}
+			&.last span {color: @color1;}
+		}
+	}
+}

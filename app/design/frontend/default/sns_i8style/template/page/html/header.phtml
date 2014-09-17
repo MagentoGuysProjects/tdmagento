@@ -1,0 +1,117 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+$themeCfg = Mage::helper('i8style/data');
+
+$headerStyle = '';
+$bgColor = $themeCfg->getField('header_bg_color');
+$bgImg = Mage::helper('cms')->getBlockTemplateProcessor()->filter($themeCfg->getField('header_bg_img'));
+
+if (preg_match('/^wysiwyg/i', $bgImg)) {
+	$bgImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$bgImg;
+	$headerStyle .= 'background-image: url(\''.$bgImg.'\');';
+}
+
+$headerStyle .= ($bgColor) ? 'background-color: '.$bgColor.';' : '';
+?>
+
+<?php if( $themeCfg->getField('promotionbar_enable')==1 && Mage::getModel('cms/block')->load($themeCfg->getField('promotionbar_staticblockid'))->getIsActive() ){?>
+<div class="stickynote-top wrap">
+    <div class="container">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($themeCfg->getField('promotionbar_staticblockid'))->toHtml();?>
+    <div class="btn-close">Close</div>
+    </div>
+</div>
+<?php } ?>
+<div id="sns_wraper_header" class="wrap" style="<?php echo $headerStyle; ?>">
+	<!-- BEGIN: Header -->
+	<div id="sns_header_top">
+		<div class="container gfont">
+			<?php
+				$mess = '';
+				if (!Mage::getSingleton('customer/session')->isLoggedIn()){
+					$mess = '<p class="welcome-msg">';
+					$mess .= '<span class="msg">' . $this->getChildHtml('welcome') . ' ' . $this->getAdditionalHtml() . '</span>';
+					$mess .= '<a href="' . Mage::helper('customer')->getLoginUrl() . '">' . $this->__('Login') . '</a>';
+					$mess .= ' or <a href="' . Mage::helper('customer')->getRegisterUrl() . '">' . $this->__('Signup') . '</a>';
+					$mess .= '</p>';
+				}
+				else{
+					$mess = '<p class="welcome-msg">';
+					$mess .= $this->getChildHtml('welcome') . ' ' . $this->getAdditionalHtml();
+					$mess .= '<a href="' . Mage::helper('customer')->getLogoutUrl() . '">' . $this->__('Logout') . '</a>';
+					$mess .= '</p>';
+				}
+			?>
+			<div class="col_left">
+				<?php echo $mess; ?>
+			</div>
+			<div class="col_right">
+				<?php echo $this->getChildHtml('store_language') ?>
+				<?php echo $this->getChildHtml('currency') ?>
+				<div class="myaccount">
+					<div class="tongle"><?php echo $this->__('My Account'); ?></div>
+					<?php echo $this->getChildHtml('topLinks') ?>
+				</div>
+				<?php echo $this->getChildHtml('mini-cart') ?>
+			</div>
+		</div>
+	</div>
+	<!-- END: Header -->
+	<!-- BEGIN: Menu -->
+	<div id="sns_menu">
+	    <div class="container">
+	    	<div class="inner">
+		       	<!-- BEGIN: Logo -->
+				<div class="header-left">
+					<h1 id="logo">
+						<a title="<?php echo $this->getLogoAlt() ?>" href="<?php echo $this->getUrl('') ?>">
+							<?php
+							if(Mage::getStoreConfig('design/header/logo_src')!=''){ ?>
+								<img src="<?php echo $this->getLogoSrc(); ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+							<?php
+							} ?>
+							<span><?php //echo $this->getWelcome(); ?></span>
+						</a>
+					</h1>
+				</div>
+				<!-- END: Logo -->
+				<div class="header-right">
+	                <div id="sns_mainnav">
+	                	<?php echo $this->getChildHtml('mainmenu'); ?>
+	                </div>
+	                <div class="block_topsearch">
+	                	<?php echo $this->getChildHtml('topSearch') ?>
+	                </div>
+				</div>
+	        </div>
+	    </div>
+	</div>
+	<!-- END: Menu -->
+	<div id="sns_slideshow">
+		<?php echo $this->getChildHtml('slideshow') ?>
+	</div>
+</div>

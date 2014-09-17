@@ -1,4 +1,5 @@
 .DS_Store
+.gitignore
 .project
 *.sublime-project
 *.sublime-workspace
@@ -11,8 +12,11 @@
 /lib/Zend/
 /lib/Varien/
 /LICENSE*
-/media/
+/media/import/
+/media/catalog/
 /php.ini.sample
 /pkginfo/
 /RELEASE_NOTES.txt
 /var/
+var/cache*
+var/session*

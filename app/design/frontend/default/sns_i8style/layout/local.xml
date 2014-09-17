@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    	<reference name="root">
+            <block type="core/text_list" name="before_footer" translate="label">
+                <label>before_footer</label>
+            </block>
+        </reference>
+    	<reference name="head">
+    		<!-- Theme css -->
+    		<action method="addItem"><type>js_css</type><name>sns/fancybox2/jquery.fancybox.css</name></action>
+    		<action method="addItem"><type>js_css</type><name>sns/fancybox2/helpers/jquery.fancybox-buttons.css</name></action>
+    		<action method="addItem"><type>js_css</type><name>sns/fancybox2/helpers/jquery.fancybox-thumbs.css</name></action>
+
+        	<action method="addItem"><type>js_css</type><name>sns/owl-carousel/owl.carousel.css</name></action>
+        	<action method="addItem"><type>js_css</type><name>sns/owl-carousel/owl.transitions.css</name></action>
+        	
+        	<action method="addItem"><type>js_css</type><name>sns/jqtransform/css/jqtransform.css</name></action>
+			
+            <action method="addItem"><type>skin_css</type><name helper="i8style/data/getThemeCSS"/><params/></action>
+            
+            <!-- End Theme css -->
+            
+            <!-- Theme js -->
+            
+            <action method="addJs"><script>sns/tabdrop/bootstrap-tabdrop.js</script></action>
+            <action method="addJs"><script>sns/owl-carousel/owl.carousel.min.js</script></action>
+            <action method="addJs"><script>sns/jqtransform/js/jquery.jqtransform.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/jquery.fancybox.pack.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-buttons.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-media.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-thumbs.js</script></action>
+			
+			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.accordion_snyderplace.js</name></action> -->
+			<action method="addItem"><type>skin_js</type><name>js/jquery.sticky-kit.min.js</name></action>
+			
+            <action method="addJs" ifconfig="sns_i8style_cfg/advance/showCpanel"><script>sns/minicolors/jquery.miniColors.min.js</script></action>
+            <action method="addCss" ifconfig="sns_i8style_cfg/advance/showCpanel"><stylesheet>css/sns-cpanel.css</stylesheet></action>
+            <action method="addItem" ifconfig="sns_i8style_cfg/advance/showCpanel"><type>js_css</type><name>sns/minicolors/jquery.miniColors.css</name></action>
+            <action method="addItem" ifconfig="sns_i8style_cfg/advance/showCpanel"><type>skin_js</type><name>js/sns-cpanel.js</name></action>
+			
+			<action method="addItem"><type>skin_js</type><name>js/sns-extend.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sns-script.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/ie8-responsive-file-warning.js</name><params/><if>lte IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lte IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lte IE 8</if></action>
+    		<!-- End Theme js -->
+    	</reference>
+    	<reference name="header">
+    		<block type="i8style/mainmenu" name="mainmenu.top" as="mainmenu" />
+        </reference>
+    	<reference name="before_body_end">
+    		<block type="core/template" template="sns/blocks/utilities/cpanel.phtml" />
+    		<block type="core/template" template="sns/blocks/utilities/scrolltotop.phtml" />
+    		<!-- <block type="core/template" template="sns/blocks/utilities/testlist.phtml" /> -->
+        </reference>
+        <reference name="right">
+            <block type="productlist/list" template="sns/productlist/default.phtml" name="right.productlist" after="catalog.compare.sidebar" >
+                <action method="setConfig">
+                </action>
+            </block>
+		    <block type="cms/block" name="right.banner" as="banner_right" before="catalog.compare.sidebar">
+		        <action method="setBlockId"><block_id>i8style_banner_right</block_id></action>
+		    </block>
+        </reference>
+        <remove name="wishlist_sidebar" />
+        <remove name="right.poll" />
+    </default>
+    <cms_index_index>
+
+    </cms_index_index>
+	<!-- 
+	<catalog_category_default>
+        <reference name="right">
+		    <block type="cms/block" name="right.banner" as="banner_right" before="catalog.compare.sidebar">
+		        <action method="setBlockId"><block_id>i8style_banner_right</block_id></action>
+		    </block>
+        </reference>
+	</catalog_category_default>
+	 -->
+	<catalog_product_view>
+        <reference name="right">
+        	<block type="core/template" name="right.bannerslide" before="-" template="sns/blocks/bannerslide.phtml" />
+        </reference>
+	</catalog_product_view>
+
+    
+    
+    
+    
+    
+    
+    
+</layout> 

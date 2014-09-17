@@ -1,0 +1,263 @@
+
+<root>
+  <blocks>
+    <cms_block>
+      <title>Payment methods</title>
+      <identifier>i8style_payment</identifier>
+      <content><![CDATA[<ul class="payment">
+<li><a class="visa" title="Visa" href="#" data-original-title="Visa" data-toggle="tooltip">Visa</a></li>
+<li><a class="mastercard" title="Master Card" href="#" data-original-title="Master Card" data-toggle="tooltip">Master Card</a></li>
+<li><a class="paypal" title="Paypal" href="#" data-original-title="Paypal" data-toggle="tooltip">Paypal</a></li>
+<li><a class="discover" title="Discover" href="#" data-original-title="Discover" data-toggle="tooltip">Discover</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner right</title>
+      <identifier>i8style_banner_right</identifier>
+      <content><![CDATA[<div class="block"><a href="#" class="banner"><img src="{{media url="wysiwyg/i8style/banner_right.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>i8style_slide_html</title>
+      <identifier>i8style_slide_html</identifier>
+      <content><![CDATA[<ul>
+	<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+		<div style="z-index:2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1000" data-speed="1000" data-endspeed="500" data-end="8500" data-y="55" data-x="448" class="tp-caption  sfl "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/slide12.png"}}"></div>
+		<div style="z-index:3;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1000" data-speed="1000" data-endspeed="500" data-end="8500" data-y="51" data-x="835" class="tp-caption  sfr "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/slide13.png"}}"></div>
+		<div style="z-index:4;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="885" data-speed="1000" data-endspeed="500" data-end="8500" data-voffset="33" data-y="bottom" data-hoffset="222" data-x="center" class="tp-caption  sfb "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/slide11.png"}}"></div>
+		<div style="z-index:5;max-width:auto;max-height:auto;white-space:pre;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1500" data-speed="500" data-endeasing="Power1.easeIn" data-endspeed="500" data-end="8500" data-voffset="-100" data-y="center" data-x="80" class="tp-caption i8heading-white fs50 randomrotate  randomrotateout  ">NEW STYLE 2014</div>
+		<div style="z-index:6;max-width:400px;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2500" data-speed="500" data-endspeed="500" data-end="8500" data-y="200" data-x="80" class="tp-caption i8text sfb  randomrotateout  ">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</div>
+		<div style="z-index:7;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="3000" data-speed="500" data-endspeed="500" data-end="9000" data-y="273" data-x="80" class="tp-caption randomrotate  i8button  randomrotateout  "><a href="#">View Now</a></div>
+	</li>
+	<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+		<div style="z-index:2;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1200" data-speed="500" data-endspeed="500" data-end="7890" data-y="128" data-x="0" class="tp-caption i8heading-white fs50 i8thin skewfromright  randomrotateout  ">Shopping day</div>
+		<div style="z-index:3;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1500" data-speed="500" data-endspeed="500" data-end="8470" data-y="207" data-x="6" class="tp-caption modern_medium_fat_white tp-fade  ">Sale off </div>
+		<div style="z-index:4;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2000" data-speed="500" data-endspeed="500" data-end="8511" data-y="227" data-x="-1" class="tp-caption large_bold_white tp-fade  ">30%</div>
+		<div style="z-index:5;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="3000" data-speed="500" data-endspeed="500" data-end="8828" data-y="311" data-x="0" class="tp-caption randomrotate  i8button  randomrotateout  "><a href="#">View Now</a></div>
+		<div style="z-index:6;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1000" data-speed="500" data-endspeed="500" data-end="9000" data-y="71" data-x="313" class="tp-caption  sfl "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl21.png"}}"></div>
+		<div style="z-index:7;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1000" data-speed="500" data-endspeed="500" data-end="9000" data-y="67" data-x="610" class="tp-caption  sfr "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl22.png"}}"></div>
+	</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Header banner</title>
+      <identifier>i8style_header_banner</identifier>
+      <content><![CDATA[<div class="hotline">0123 356 998</div>
+<div class="support"><span class="line2">Support</span><span class="line1"><span>Online</span><span class="highlight">24/7</span></span></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner 1</title>
+      <identifier>i8style_banner1</identifier>
+      <content><![CDATA[<div class="row">
+<div class="col-md-6"><img src="{{media url="wysiwyg/i8style/banner1.png"}}" alt="" /></div>
+<div class="col-md-6"><img src="{{media url="wysiwyg/i8style/banner2.png"}}" alt="" />
+<p>&nbsp;</p>
+<img src="{{media url="wysiwyg/i8style/banner3.png"}}" alt="" /></div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Our Offers</title>
+      <identifier>i8style_footer_top1</identifier>
+      <content><![CDATA[<h3>Our Offers</h3>
+<ul>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Service</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">Manufacturers</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Shipping Info</title>
+      <identifier>i8style_footer_top2</identifier>
+      <content><![CDATA[<h3>Shipping Info</h3>
+<ul>
+<li><a href="#">New products</a></li>
+<li><a href="#">Top sellers</a></li>
+<li><a href="#">Manufactirers</a></li>
+<li><a href="#">Suppliers</a></li>
+<li><a href="#">Specials</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Our Account</title>
+      <identifier>i8style_footer_top3</identifier>
+      <content><![CDATA[<h3>Our Account</h3>
+<ul>
+<li><a href="#">Your Account</a></li>
+<li><a href="#">Information</a></li>
+<li><a href="#">Addresses</a></li>
+<li><a href="#">Orders history</a></li>
+<li><a href="#">Search Terms</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Informations</title>
+      <identifier>i8style_footer_top4</identifier>
+      <content><![CDATA[<h3>Informations</h3>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Jobs</a></li>
+<li><a href="#">Affiliates</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Newsletter</a></li>
+<li><a href="#">Blog</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Banner in detail page</title>
+      <identifier>i8style_detail_banner</identifier>
+      <content><![CDATA[<div class="row">
+<div class="col-xs-6">
+<div class="banner"><img src="{{media url="wysiwyg/i8style/detail-banner1.png"}}" alt="" /></div>
+</div>
+<div class="col-xs-6">
+<div class="banner"><img src="{{media url="wysiwyg/i8style/detail-banner2.png"}}" alt="" /></div>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Right inner custom</title>
+      <identifier>i8style_right_inner_custom</identifier>
+      <content><![CDATA[<p><a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/custom_block.jpg"}}" alt="" /></a></p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>About us</title>
+      <identifier>i8style_footer_top5</identifier>
+      <content><![CDATA[<h3>About us</h3>
+<ul class="about-us">
+	<li class="icon-direction">123 Suspendis mattis, Sollicitudin District, Accums Fringilla</li>
+	<li class="icon-screen-smartphone">(012) 345 678 910 <br/>(012) 345 678 920</li>
+	<li class="icon-envelope-open">
+		<a href="mailto:Support@snstheme.com">Support@snstheme.com</a><br/>
+		<a href="mailto:info@snstheme.com">info@snstheme.com</a>
+	</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>i8style_slide_html2</title>
+      <identifier>i8style_slide_html2</identifier>
+      <content><![CDATA[<ul>
+<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+<div class="tp-caption  sfl  str " style="z-index: 2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="500" data-speed="500" data-endspeed="500" data-end="8800" data-voffset="-3" data-y="center" data-x="3"><img src="{{media url="wysiwyg/i8style/slideshow/sl211.png"}}" alt="" /></div>
+<div class="tp-caption  tp-fade  randomrotateout " style="z-index: 3;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="800" data-speed="500" data-endspeed="500" data-end="8900" data-voffset="-2" data-y="center" data-hoffset="-160" data-x="center"><img src="{{media url="wysiwyg/i8style/slideshow/sl212.png"}}" alt="" /></div>
+<div class="tp-caption  randomrotate  randomrotateout " style="z-index: 4;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1100" data-speed="500" data-endspeed="500" data-end="8500" data-y="322" data-x="239"><img src="{{media url="wysiwyg/i8style/slideshow/sl213.png"}}" alt="" /></div>
+<div class="tp-caption  randomrotate  randomrotateout " style="z-index: 5;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1400" data-speed="500" data-endspeed="500" data-end="8500" data-y="316" data-x="383"><img src="{{media url="wysiwyg/i8style/slideshow/sl214.png"}}" alt="" /></div>
+<div class="tp-caption  randomrotate  randomrotateout " style="z-index: 6;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1700" data-speed="500" data-endspeed="500" data-end="8500" data-y="318" data-x="500"><img src="{{media url="wysiwyg/i8style/slideshow/sl215.png"}}" alt="" /></div>
+<div class="tp-caption  i8heading-white fs50 tp-fade  " style="z-index: 7; max-width: auto; max-height: auto; white-space: normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2000" data-speed="500" data-endspeed="500" data-end="8500" data-voffset="-78" data-y="center" data-hoffset="-10" data-x="right">NEW Style 2014</div>
+<div class="tp-caption i8text tp-fade text-right " style="z-index: 8; max-width: 400px; max-height: auto; white-space: normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2300" data-speed="500" data-endspeed="500" data-end="8500" data-voffset="-19" data-y="center" data-hoffset="-10" data-x="right">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</div>
+<div class="tp-caption randomrotate  i8button  randomrotateout  " style="z-index: 9; max-width: auto; max-height: auto; white-space: normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2600" data-speed="500" data-endspeed="500" data-end="8500" data-voffset="40" data-y="center" data-hoffset="-10" data-x="right"><a href="#">View Now</a></div>
+</li>
+<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+<div class="tp-caption  sfl  str " style="z-index: 2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="500" data-speed="500" data-endspeed="500" data-end="8700" data-y="128" data-x="1"><img src="{{media url="wysiwyg/i8style/slideshow/sl221.png"}}" alt="" /></div>
+<div class="tp-caption  tp-fade " style="z-index: 3;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="800" data-speed="500" data-endspeed="500" data-end="8900" data-y="55" data-x="56"><img src="{{media url="wysiwyg/i8style/slideshow/sl222.png"}}" alt="" /></div>
+<div class="tp-caption i8bgblack fs30 tp-fade  randomrotateout  " style="z-index: 4; max-width: auto; max-height: auto; white-space: normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1100" data-speed="500" data-endspeed="500" data-end="8500" data-voffset="-90" data-y="center" data-hoffset="0" data-x="right">Your ride is wating.</div>
+<div class="tp-caption i8bgblack fs30 tp-fade  randomrotateout  " style="z-index: 5; max-width: auto; max-height: auto; white-space: normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1400" data-speed="500" data-endspeed="500" data-end="8400" data-voffset="-35" data-y="center" data-hoffset="0" data-x="right">Racer fashion</div>
+<div class="tp-caption i8bgorange fs30 tp-fade  randomrotateout  " style="z-index: 6; max-width: auto; max-height: auto; white-space: normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1700" data-speed="500" data-endspeed="500" data-end="8400" data-voffset="30" data-y="center" data-hoffset="0" data-x="right">King shop</div>
+</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>i8style_slide_html3</title>
+      <identifier>i8style_slide_html3</identifier>
+      <content><![CDATA[<ul>
+	<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+		<div style="z-index:2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1100" data-speed="500" data-endspeed="500" data-end="9000" data-y="57" data-hoffset="-18" data-x="right" class="tp-caption  sfr "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl313.png"}}"></div>
+		<div style="z-index:3;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="800" data-speed="500" data-endspeed="500" data-end="8700" data-y="49" data-hoffset="229" data-x="center" class="tp-caption  sfr "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl312.png"}}"></div>
+		<div style="z-index:4;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="500" data-speed="500" data-endspeed="500" data-end="8400" data-y="42" data-x="466" class="tp-caption  sfr "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl311.png"}}"></div>
+		<div style="z-index:5;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1400" data-end="8500" data-speed="500" data-endspeed="500" data-y="160" data-x="40" class="tp-caption i8white i8bold fs40 tp-fade  ">Let the music play</div>
+		<div style="z-index:6;max-width:450px;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1700" data-end="8500" data-speed="500" data-endspeed="500" data-y="212" data-x="20" class="tp-caption i8text text-center tp-fade  ">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</div>
+		<div style="z-index:7;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2000" data-end="8500" data-speed="500" data-endspeed="500" data-y="272" data-x="200" class="tp-caption randomrotate  i8button  randomrotateout  "><a href="#">View Now</a></div>
+	</li>
+	<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+		<div style="z-index:2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="500" data-speed="500" data-endspeed="500" data-y="56" data-x="546" class="tp-caption  tp-fade "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl321.png"}}"></div>
+		<div style="z-index:3;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="800" data-speed="500" data-endspeed="500" data-y="113" data-x="41" class="tp-caption i8white i8bold fs40 tp-fade  ">New technology </div>
+		<div style="z-index:4;max-width:400px;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1100" data-speed="500" data-endspeed="500" data-y="174" data-x="43" class="tp-caption i8text tp-fade  ">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</div>
+		<div style="z-index:5;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1400" data-speed="500" data-endspeed="500" data-y="250" data-x="41" class="tp-caption randomrotate  i8button  randomrotateout  "><a href="#">View Now</a></div>
+	</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>i8style_slide_html4</title>
+      <identifier>i8style_slide_html4</identifier>
+      <content><![CDATA[<ul>
+	<li data-masterspeed="700" data-slotamount="7" data-transition="random">
+		<div style="z-index:2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="500" data-speed="500" data-endspeed="500" data-y="10" data-x="477" class="tp-caption  tp-fade "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl411.png"}}"></div>
+		<div style="z-index:3;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="800" data-speed="500" data-endspeed="500" data-y="-1" data-x="684" class="tp-caption  tp-fade "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl412.png"}}"></div>
+		<div style="z-index:4;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1100" data-speed="500" data-endspeed="500" data-y="6" data-x="886" class="tp-caption  tp-fade "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl413.png"}}"></div>
+		<div style="z-index:5;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1400" data-speed="500" data-endspeed="500" data-end="8100" data-y="133" data-x="0" class="tp-caption fs40 i8bold i8white sfl  randomrotateout  ">zero to Sexy lingerie</div>
+		<div style="z-index:6;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1700" data-speed="500" data-endspeed="500" data-end="8400" data-y="172" data-x="0" class="tp-caption fs40 i8bold i8white sfl  randomrotateout  ">Up to 35% of</div>
+		<div style="z-index:7;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2000" data-speed="500" data-endspeed="500" data-end="8500" data-y="230" data-x="0" class="tp-caption fs30 i8thin i8white sfb  ">Free shipping</div>
+		<div style="z-index:8;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2300" data-speed="500" data-endspeed="500" data-end="8500" data-y="265" data-x="0" class="tp-caption fs30 i8thin i8white sfb  ">on oder over $500</div>
+		<div style="z-index:9;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="2600" data-speed="500" data-endspeed="500" data-end="8500" data-y="327" data-x="0" class="tp-caption randomrotate  i8button  randomrotateout  "><a href="#">View Now</a></div>
+	</li>
+	<li data-masterspeed="500" data-slotamount="7" data-transition="random">
+		<div style="z-index:2;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="500" data-speed="500" data-endspeed="500" data-y="50" data-x="528" class="tp-caption  sfr "><img alt="" src="{{media url="wysiwyg/i8style/slideshow/sl421.png"}}"></div>
+		<div style="z-index:3;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="800" data-speed="500" data-endspeed="500" data-end="8700" data-y="115" data-x="0" class="tp-caption fs40 i8bold i8white  randomrotate  randomrotateout  ">Lingerie colection</div>
+		<div style="z-index:4;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1100" data-speed="500" data-endspeed="500" data-end="8700" data-y="158" data-x="0" class="tp-caption fs40 i8bold i8white  randomrotate  randomrotateout  ">All dress in white</div>
+		<div style="z-index:5;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1400" data-speed="500" data-endspeed="500" data-end="8700" data-y="211" data-x="0" class="tp-caption fs40 i8thin i8white  sfb  ">calvin klein</div>
+		<div style="z-index:6;max-width:auto;max-height:auto;white-space:normal;" data-endelementdelay="0.1" data-elementdelay="0.1" data-easing="Linear.easeNone" data-start="1700" data-speed="500" data-endspeed="500" data-end="8700" data-y="288" data-x="0" class="tp-caption randomrotate  i8button  randomrotateout  "><a href="#">View Now</a></div>
+	</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+  </blocks>
+</root>

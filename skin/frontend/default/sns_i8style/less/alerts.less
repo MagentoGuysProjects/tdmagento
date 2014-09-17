@@ -1,0 +1,83 @@
+@import "../assets/bootstrap/less/alerts.less";
+
+.validation-advice {
+	display: none;
+}
+.success {
+    color: @state-success-text;
+}
+.error {
+    color: @state-danger-text;
+}
+.notice {
+    color: @state-info-text;
+}
+
+.messages {
+    padding: 0;
+    list-style: none;
+    clear: both;
+	& > li {
+	    margin-bottom: 10px;
+	}
+}
+.error-msg,
+.success-msg,
+.note-msg,
+.notice-msg {
+    .alert();
+    background: #000;
+}
+
+.error-msg {
+    .alert-danger();
+}
+
+.success-msg {
+    .alert-success();
+}
+
+.note-msg,
+.notice-msg {
+    .alert-info();
+}
+.icon-msg (@ico) {
+	&:before{
+		font-family: FontAwesome;
+		content: "\@{ico}";
+		font-size: 22px;
+		position: absolute;
+		left: 0px;
+		top: 50%;
+		margin-top: -11px;
+		line-height: 22px;
+	}
+}
+li.notice-msg{
+    ul{position: relative; padding: 0 0 0 30px;
+    	list-style: none;
+    	.icon-msg (f06a);
+    }
+}
+
+li.error-msg{
+    ul{position: relative; padding: 0 0 0 30px;
+    	list-style: none;
+    	.icon-msg (f06a);
+    }
+}
+li.success-msg {
+    ul{position: relative; padding: 0 0 0 30px;
+    	list-style: none;
+    	.icon-msg (f058);
+    }
+ }
+// Global notices
+.global-site-notice {
+    .alert();
+    .alert-warning();
+
+    p {
+        margin: 0;
+    }
+}

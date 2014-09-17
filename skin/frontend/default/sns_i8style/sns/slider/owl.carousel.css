@@ -1,0 +1,131 @@
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.2
+ */
+
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+/* display none until init */
+.owl-carousel{
+	display: none;
+	position: relative;
+	width: 100%;
+	-ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out;
+}
+	
+.owl-carousel .owl-item{
+	float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+	cursor: pointer;
+}
+.owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+/* Begin Our custom */
+.sns-slider .container-slider{margin: 0 -15px !important;}
+.sns-slider .products-grid .item{
+	margin: 0 15px; float: none; padding: 10px 0;
+}
+/* Effect */
+.effect-zoomOut .owl-item.active{
+	-webkit-animation: zoomOut 600ms ease both;
+    -moz-animation: zoomOut 600ms ease both;
+    -o-animation: zoomOut 600ms ease both;
+    animation: zoomOut 600ms ease both;
+}
+.effect-zoomIn .owl-item.active{
+	-webkit-animation: zoomIn 600ms ease both;
+    -moz-animation: zoomIn 600ms ease both;
+    -o-animation: zoomIn 600ms ease both;
+    animation: zoomIn 600ms ease both;
+}
+.effect-slideBottom .owl-item.active{
+	-webkit-animation: slideBottom 600ms ease both;
+    -moz-animation: slideBottom 600ms ease both;
+    -o-animation: slideBottom 600ms ease both;
+    animation: slideBottom 600ms ease both;
+}
+.effect-bounceIn .owl-item.active{
+	-webkit-animation: bounceIn 600ms ease both;
+    -moz-animation: bounceIn 600ms ease both;
+    -o-animation: bounceIn 600ms ease both;
+    animation: bounceIn 600ms ease both;
+}
+.effect-bounceInRight .owl-item.active{
+	-webkit-animation: bounceInRight 600ms ease both;
+    -moz-animation: bounceInRight 600ms ease both;
+    -o-animation: bounceInRight 600ms ease both;
+    animation: bounceInRight 600ms ease both;
+}
+.effect-pageTop .owl-item.active{
+	-webkit-animation: pageTop 600ms ease both;
+    -moz-animation: pageTop 600ms ease both;
+    -o-animation: pageTop 600ms ease both;
+    animation: pageTop 600ms ease both;
+}
+.effect-pageBottom .owl-item.active{
+	-webkit-animation: pageBottom 600ms ease both;
+    -moz-animation: pageBottom 600ms ease both;
+    -o-animation: pageBottom 600ms ease both;
+    animation: pageBottom 600ms ease both;
+}
+.effect-starwars .owl-item.active{
+	-webkit-animation: starwars 600ms ease both;
+    -moz-animation: starwars 600ms ease both;
+    -o-animation: starwars 600ms ease both;
+    animation: starwars 600ms ease both;
+}
+@media (max-width: 981px) {
+	.sns-slider .container-slider{margin: 0 -10px !important;}
+	.sns-slider .products-grid .item{
+		margin: 0 10px;
+	}
+	.sns-slider .container-slider .owl-controls{right: 10px;}
+}

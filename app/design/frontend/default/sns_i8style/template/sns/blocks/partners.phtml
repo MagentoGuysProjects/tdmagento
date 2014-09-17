@@ -1,0 +1,93 @@
+<?php
+	$themeCfg = Mage::helper('i8style/data');
+
+	$enabled = $themeCfg->getField('ourpartners_enabled');
+	if($enabled == 1) :
+		$partners = $themeCfg->getField('ourpartners_partners');
+		$array_partners = unserialize($partners);
+		$id = 1;
+		$collect_partners = array();
+		foreach($array_partners as $key=>$partner){
+			$partner['id'] = $id;
+			$partner['image'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($partner['image']);
+			if (preg_match('/^wysiwyg/i', $partner['image'])) {
+				$partner['image'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$partner['image'];
+			}
+			$partner['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($partner['link']);
+			$haveHttp =  strpos(trim($partner['link']), "http://"); 
+			if(!$haveHttp && ($haveHttp!==0)){
+				//$partner['link'] = "http://" . trim($partner['link']);  
+			}else {
+				//$partner['link'] = trim($partner['link']);
+			}
+			
+			
+			$partner['title'] = $partner['title'];
+			$collect_partners[] = $partner;
+			$id++;
+		}
+if($collect_partners) :
+	$blockId ='sns_partner_'.rand().time();
+?>
+<div class="sns_partner" id="<?php echo $blockId; ?>">
+	<div class="block_head_center">
+		<h3><?php echo $themeCfg->getField('ourpartners_title'); ?></h3>
+	</div>
+	<div class="partners_slider slider-wrap">
+		<div class="navslider">
+			<a class="prev" href="#"><i class="icon-arrow-left"></i></a>
+			<a class="next" href="#"><i class="icon-arrow-right"></i></a>
+		</div>
+		<div class="partners_slider_in">
+			<div class="our_partners" style="display: none;">
+				<?php foreach($collect_partners as $partner) : ?>
+					<div class="wrap">
+						<div class="wrap_in">
+							<a target="_blank" href="<?php echo $partner['link']; ?>">
+								<img alt="" src="<?php echo $partner['image']; ?>" />
+							</a>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+	<script>
+		jQuery(document).ready(function($) {
+			$(window).load(function(){
+				$('#<?php echo $blockId; ?> .our_partners').owlCarousel({
+					items: 6,
+					itemsCustom: [
+						[0, 2],
+						[480, 3],
+						[768, 4],
+						[992, 5],
+						[1200, 6]
+					],
+					pagination: false,
+					itemsScaleUp : true,
+					slideSpeed : 800,
+					autoPlay: 8000,
+					addClassActive: true,
+					afterAction: function (e) {
+					    if(this.$owlItems.length > this.options.items){
+					        $('#<?php echo $blockId; ?> .navslider').show();
+					    }else{
+					        $('#<?php echo $blockId; ?> .navslider').hide();
+					    }
+					}
+				});
+				$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .our_partners').trigger('owl.prev');
+				});
+				$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .our_partners').trigger('owl.next');
+				});
+			});
+		});
+	</script>
+</div>
+<?php endif; ?>
+<?php endif; ?>

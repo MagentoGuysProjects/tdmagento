@@ -1,0 +1,273 @@
+
+<root>
+  <pages>
+    <cms_block>
+      <title>I8style Home page</title>
+      <identifier>i8style_home_page</identifier>
+      <content><![CDATA[<div class="row index_block">
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner1.png"}}" alt="" /></a>
+	</div>
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner2.png"}}" alt="" /></a>
+	</div>
+	<div class="col-xs-6">
+		<hr class="h20 visible-phone" />
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner3.png"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="index_block product_slider">{{block type="slider/list" title="Popular Products" product_order_dir="desc" product_order_by="top_rating" pretext="" devices_wide="5" devices_normal="5" devices_tabletlandscape="4" template="sns/slider/nav_middle.phtml"}}</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		{{block type="core/template" template="sns/blocks/testimonial.phtml"}}
+	</div>
+	<div class="col-md-6">
+		{{block type="newsletter/subscribe" template="newsletter/subscribe.phtml"}}
+	</div>
+</div>
+
+<div class="product_tab index_block">{{block type="producttabs/list"}}</div>
+
+<div class="row index_block">
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner4.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner5.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner6.png"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Best sale" product_order_dir="desc" product_order_by="top_rating" pretext=""}}</div>
+	</div>
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Promotional " product_order_dir="asc" product_order_by="price" pretext=""}}</div>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-9">
+		{{block type="blog/blog" template="aw_blog/custom-bloglatest.phtml"}}
+	</div>
+	<div class="col-md-3">{{block type="twitter/list"}}</div>
+</div>
+
+<div class="our_partners index_block">{{block type="core/template" template="sns/blocks/partners.phtml"}}</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+      <root_template>one_column</root_template>
+      <layout_update_xml><![CDATA[]]></layout_update_xml>
+    </cms_block>
+    <cms_block>
+      <title>I8style Home page 2</title>
+      <identifier>i8style_home_page2</identifier>
+      <content><![CDATA[<div class="row index_block">
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/23.jpg"}}" alt="" /></a>
+	</div>
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/22.jpg"}}" alt="" /></a>
+	</div>
+	<div class="col-xs-6">
+		<hr class="h20 visible-phone" />
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/21.jpg"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="index_block product_slider">{{block type="slider/list" title="Popular Products" product_order_dir="desc" product_order_by="top_rating" pretext="" devices_wide="5" devices_normal="5" devices_tabletlandscape="4" template="sns/slider/nav_middle.phtml"}}</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		{{block type="core/template" template="sns/blocks/testimonial.phtml"}}
+	</div>
+	<div class="col-md-6">
+		{{block type="newsletter/subscribe" template="newsletter/subscribe.phtml"}}
+	</div>
+</div>
+
+<div class="product_tab index_block">{{block type="producttabs/list"}}</div>
+
+<div class="row index_block">
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner4.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner5.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner6.png"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Best sale" product_order_dir="desc" product_order_by="top_rating" pretext=""}}</div>
+	</div>
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Promotional " product_order_dir="asc" product_order_by="price" pretext=""}}</div>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-9">
+		{{block type="blog/blog" template="aw_blog/custom-bloglatest.phtml"}}
+	</div>
+	<div class="col-md-3">{{block type="twitter/list"}}</div>
+</div>
+
+<div class="our_partners index_block">{{block type="core/template" template="sns/blocks/partners.phtml"}}</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+      <root_template>one_column</root_template>
+      <layout_update_xml><![CDATA[]]></layout_update_xml>
+    </cms_block>
+    <cms_block>
+      <title>I8style Home Page 3</title>
+      <identifier>i8style_home_page3</identifier>
+      <content><![CDATA[<div class="row index_block">
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/33.jpg"}}" alt="" /></a>
+	</div>
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/32.jpg"}}" alt="" /></a>
+	</div>
+	<div class="col-xs-6">
+		<hr class="h20 visible-phone" />
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/31.jpg"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="index_block product_slider">{{block type="slider/list" title="Popular Products" product_order_dir="desc" product_order_by="top_rating" pretext="" devices_wide="5" devices_normal="5" devices_tabletlandscape="4" template="sns/slider/nav_middle.phtml"}}</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		{{block type="core/template" template="sns/blocks/testimonial.phtml"}}
+	</div>
+	<div class="col-md-6">
+		{{block type="newsletter/subscribe" template="newsletter/subscribe.phtml"}}
+	</div>
+</div>
+
+<div class="product_tab index_block">{{block type="producttabs/list"}}</div>
+
+<div class="row index_block">
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner4.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner5.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner6.png"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Best sale" product_order_dir="desc" product_order_by="top_rating" pretext=""}}</div>
+	</div>
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Promotional " product_order_dir="asc" product_order_by="price" pretext=""}}</div>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-9">
+		{{block type="blog/blog" template="aw_blog/custom-bloglatest.phtml"}}
+	</div>
+	<div class="col-md-3">{{block type="twitter/list"}}</div>
+</div>
+
+<div class="our_partners index_block">{{block type="core/template" template="sns/blocks/partners.phtml"}}</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+      <root_template>one_column</root_template>
+      <layout_update_xml><![CDATA[]]></layout_update_xml>
+    </cms_block>
+    <cms_block>
+      <title>I8style Home Page 4</title>
+      <identifier>i8style_home_page4</identifier>
+      <content><![CDATA[<div class="row index_block">
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/43.jpg"}}" alt="" /></a>
+	</div>
+	<div class="col-phone-6 col-xs-3">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/42.jpg"}}" alt="" /></a>
+	</div>
+	<div class="col-xs-6">
+		<hr class="h20 visible-phone" />
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/41.jpg"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="index_block product_slider">{{block type="slider/list" title="Popular Products" product_order_dir="desc" product_order_by="top_rating" pretext="" devices_wide="5" devices_normal="5" devices_tabletlandscape="4" template="sns/slider/nav_middle.phtml"}}</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		{{block type="core/template" template="sns/blocks/testimonial.phtml"}}
+	</div>
+	<div class="col-md-6">
+		{{block type="newsletter/subscribe" template="newsletter/subscribe.phtml"}}
+	</div>
+</div>
+
+<div class="product_tab index_block">{{block type="producttabs/list"}}</div>
+
+<div class="row index_block">
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner4.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner5.png"}}" alt="" /></a>
+		<hr class="h20 visible-phone" />
+	</div>
+	<div class="col-xs-4">
+		<a class="banner" href="#"><img src="{{media url="wysiwyg/i8style/banner6.png"}}" alt="" /></a>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Best sale" product_order_dir="desc" product_order_by="top_rating" pretext=""}}</div>
+	</div>
+	<div class="col-md-6">
+		<div class="product_slider">{{block type="slider/list" title="Promotional " product_order_dir="asc" product_order_by="price" pretext=""}}</div>
+	</div>
+</div>
+
+<div class="row index_block">
+	<div class="col-md-9">
+		{{block type="blog/blog" template="aw_blog/custom-bloglatest.phtml"}}
+	</div>
+	<div class="col-md-3">{{block type="twitter/list"}}</div>
+</div>
+
+<div class="our_partners index_block">{{block type="core/template" template="sns/blocks/partners.phtml"}}</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+      <root_template>one_column</root_template>
+      <layout_update_xml><![CDATA[]]></layout_update_xml>
+    </cms_block>
+  </pages>
+</root>

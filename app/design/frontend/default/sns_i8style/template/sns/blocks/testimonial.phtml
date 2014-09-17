@@ -1,0 +1,81 @@
+<?php
+	$themeCfg = Mage::helper('i8style/data');
+
+	$enabled = $themeCfg->getField('testimonial_enabled');
+	if($enabled == 1) :
+		$testimonials = $themeCfg->getField('testimonial_items');
+		$array_testimonials = unserialize($testimonials);
+		$collect_testimonials = array();
+		foreach($array_testimonials as $key=>$testimonial){
+			//	name	position
+			$testimonial['avatar'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($testimonial['avatar']);
+			if (preg_match('/^wysiwyg/i', $testimonial['avatar'])) {
+				$testimonial['avatar'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$testimonial['avatar'];
+			}
+			$testimonial['description'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($testimonial['description']);
+			$collect_testimonials[] = $testimonial;
+		}
+if($collect_testimonials) :
+	$blockId ='sns_testimonial_'.rand().time();
+?>
+<div class="block_border sns_testimonial" id="<?php echo $blockId; ?>">
+	<div class="block_head">
+		<h3><?php echo $themeCfg->getField('testimonial_title'); ?></h3>
+	</div>
+	<div class="block_content testimonials_slider">
+		<div class="navslider">
+			<a class="prev" href="#"><i class="icon-arrow-left"></i></a>
+			<a class="next" href="#"><i class="icon-arrow-right"></i></a>
+		</div>
+		<div class="testimonials_slider_in">
+			<div class="our_testimonials" style="display: none;">
+				<?php foreach($collect_testimonials as $testimonial) : ?>
+					<div class="wrap">
+						<div class="avatar">
+							<img src="<?php echo $testimonial['avatar']; ?>" alt="" />
+						</div>
+						<div class="info">
+							<p><?php echo $testimonial['description']; ?></p>
+							<div class="tes-info">
+								<strong class="gfont"><?php echo $testimonial['name']; ?></strong>
+								<span><?php echo ' - '.$testimonial['position']; ?></span>
+							</div>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+	<script>
+		jQuery(document).ready(function($) {
+			$(window).load(function(){
+				$('#<?php echo $blockId; ?> .our_testimonials').owlCarousel({
+					singleItem: true,
+					pagination: false,
+					itemsScaleUp : true,
+					slideSpeed : 800,
+					autoPlay: false,
+					transitionStyle: 'fade',
+					addClassActive: true,
+					afterAction: function (e) {
+					    if(this.$owlItems.length > this.options.items){
+					        $('#<?php echo $blockId; ?> .navslider').show();
+					    }else{
+					        $('#<?php echo $blockId; ?> .navslider').hide();
+					    }
+					}
+				});
+				$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .our_testimonials').trigger('owl.prev');
+				});
+				$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .our_testimonials').trigger('owl.next');
+				});
+			});
+		});
+	</script>
+</div>
+<?php endif; ?>
+<?php endif; ?>
