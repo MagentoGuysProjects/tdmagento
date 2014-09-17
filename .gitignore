@@ -1,4 +1,5 @@
 .DS_Store
+.gitignore
 .project
 *.sublime-project
 *.sublime-workspace
@@ -12,6 +13,8 @@
 /lib/Varien/
 /LICENSE*
 /media/
+/media/import/
+/media/catalog/
 /php.ini.sample
 /pkginfo/
 /RELEASE_NOTES.txt
