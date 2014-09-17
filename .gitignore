@@ -18,5 +18,5 @@
 /pkginfo/
 /RELEASE_NOTES.txt
 /var/
-var/cache
-var/session
+var/cache*
+var/session*
