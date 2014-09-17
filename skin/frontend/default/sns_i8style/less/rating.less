@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------------
+ * Copyright (C) 2013 The SNS Group. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: SNS Group
+ * Websites: http://www.snstheme.com
+-------------------------------------------------------------------------*/
+.ratings, .no-rating {
+	margin: 0 0 5px; 
+}
+/*--- rating ---*/
+.rating-box{
+    position: relative;
+    .inline-block();
+    margin: 0;
+    &:before {
+		content: '\f006\f006\f006\f006\f006';
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		letter-spacing: 2px;
+		color: #ccc;
+    }
+    
+	.rating {
+		left: 0;
+		position: absolute;
+		top: 0;
+		height: 100%;
+		overflow: hidden;
+		&:before {
+			content: '\f006\f006\f006\f006\f006';
+			display: inline-block;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-align: center;
+			letter-spacing: 2px;
+			color: #fad507;
+		}
+	}
+}
+.no-rating a{
+	color: @color;
+	&:hover{color: @activeColor;}
+}
+.rating-links {
+	.inline-block();
+	margin: 0;
+	a {
+		margin: 0 1px; color: @color;
+		&:hover{color: @activeColor;}
+	}
+}

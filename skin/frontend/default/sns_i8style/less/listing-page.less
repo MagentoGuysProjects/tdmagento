@@ -1,0 +1,242 @@
+/*--- category product ---*/
+.category-products{
+	/* products-grid */
+	
+}
+
+/*--- products-grid ---*/
+.products-grid{
+	.item {
+		margin-top: 30px;
+		.item-inner {
+			.product-block-grid ();
+		}
+	}
+}
+
+/*--- product-list ---*/
+.products-list{
+	.ulclear();
+	margin: 30px 0 0;
+	> li.item {
+		margin-top: 30px;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		&:first-child {margin-top: 0;}
+		.transition(all 1s ease);
+		&:hover {
+			border-color: @color1;
+			.transition(all 0.3s ease);
+		}
+	}
+	.item-img {
+		position: relative;
+		.quickview-wrap {
+			a.product-image {
+				display: none;
+			}
+		} 
+		.sns-btn-quickview {
+			.btn-ios(e087);
+			span {
+				display: none;
+			}
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -20px 0 0 -20px;
+			.opacity(0);
+			.scale(0.5);
+			.transition(all 0.25s linear);
+		}
+		a.product-image {
+			position: relative;
+			display: block;
+			border-radius: 8px;
+			overflow: hidden;
+			margin: 15px 0;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				.square(100%);
+				.transition(all 0.25s linear);
+				top: 0;
+				left: 0;
+			}
+		}
+		&:hover {
+			.sns-btn-quickview {
+				.opacity(1);
+				.scale(1);
+			}
+			a.product-image:before {
+				.bgfadeOut(#ffa200, 80%);
+			}
+		}
+	}
+	.col2 {
+		padding-top: 15px;
+	}
+	.col3 {
+		border-left: 1px solid #ddd;
+	}
+	/*--- price-box ---*/
+	.price-box{
+		padding: 25px 0 20px;
+		.old-price{
+			margin: 0; 
+			padding: 0 6px; 
+			display: inline-block; 
+			position: relative;
+			.price{
+				text-decoration: line-through; 
+				color: #ccc; 
+				position: relative; 
+				line-height: normal;
+				font-size: 92%;
+			}
+		}
+		.special-price{
+			.price {
+				color: @color1; 
+			}
+		}
+		.price{
+			color: @color1; 
+			line-height: 24px;
+			font-size: 150%;
+		}
+			
+		.minimal-price-link .price{font-size: 100%}
+		.price-label{display: none;}
+		.price-from{
+			padding: 0 10px 0 0;
+			.price-label{display: inline-block;}
+			.price{font-size: 100%}
+		}
+		.price-to {
+			padding: 0 0;
+			.price{font-size: 120%}
+			.price-label{display: inline-block;}
+		}
+	}
+	.actions {
+		border-top: 1px solid #ddd;
+		padding: 15px 0 20px;
+	}
+	.add-to-links {
+		.ulclear();
+	}
+	.link-wishlist,
+	.link-compare,
+	.btn-cart {
+		border: none;
+		.inline-block();
+		position: relative;
+		padding: 0 0 0 50px;
+		font-size: 100%;
+		text-transform: none;
+		height: 40px;
+		line-height: 40px;
+		margin-top: 10px;
+		span {
+			.inline-block();
+			color: @textGray;
+		}
+		&:after, &:before {
+			font-family: 'Simple-Line-Icons';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			-webkit-font-smoothing: antialiased;
+			.inline-block();
+			text-align: center;
+			.square(40px);
+			font-size: 20px;
+			line-height: 40px;
+			.transition(all 0.3s ease);
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -20px;
+			border-radius: 8px;
+		}
+		&:before {
+			border: 1px solid #ddd;
+			color: #ccc;
+			body:not(.ie8) & {
+				.opacity(1);
+				.scale(1);
+			}
+			body.ie8 & {
+				display: inline-block;
+			}
+		}
+		&:after {
+			.btn-gradient();
+			color: #fff;
+			body:not(.ie8) & {
+				.opacity(0);
+				.scale(0.8);
+			}
+			body.ie8 & {
+				display: none;
+			}
+		}
+		&:hover {
+			&:before {
+				body:not(.ie8) & {
+					.opacity(0);
+					.scale(0);
+				}
+				body.ie8 & {
+					display: none;
+				}
+			}
+			&:after {
+				body:not(.ie8) & {
+					.opacity(1);
+					.scale(1);
+				}
+				body.ie8 & {
+					display: inline-block;
+				}
+			}
+			span {
+				color: @color1;
+			}
+		}
+	}
+	.link-wishlist {
+		&:after, &:before {
+			content: '\e08a';
+		}
+	}
+	.link-compare {
+		&:after, &:before {
+			content: '\e077';
+		}
+	}
+	.btn-cart {
+		&:after, &:before {
+			content: '\e04d';
+		}
+	}
+	@media (max-width: @screen-xs-max) {
+		.item-img a.product-image {
+			text-align: center;
+			margin-bottom: 0;
+		}
+		.col-action {
+			.clearfix();
+			clear: both;
+			padding-top: 10px;
+		}
+		.price-box {
+			border-top: 1px solid #ddd;
+		}
+	}
+}

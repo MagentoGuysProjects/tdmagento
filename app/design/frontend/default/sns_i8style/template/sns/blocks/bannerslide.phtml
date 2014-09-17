@@ -1,0 +1,65 @@
+<?php
+	$themeCfg = Mage::helper('i8style/data');
+
+	$enabled = $themeCfg->getField('bannerslide_status');
+	if($enabled == 1) :
+		$banners = $themeCfg->getField('bannerslide_banners');
+		$array_banners = unserialize($banners);
+		$id = 1;
+		$collect_banners = array();
+		foreach($array_banners as $key=>$banner){
+			$banner['id'] = $id;
+			$banner['image'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($banner['image']);
+			if (preg_match('/^wysiwyg/i', $banner['image'])) {
+				$banner['image'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$banner['image'];
+			}
+			$banner['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($banner['link']);
+			
+			$banner['title'] = $banner['title'];
+			$collect_banners[] = $banner;
+			$id++;
+		}
+		$postText = Mage::helper('cms')->getBlockTemplateProcessor()->filter($themeCfg->getField('bannerslide_post_text'));
+	$blockId ='sns_banner_'.rand().time();
+?>
+<div class="sns_banner" id="<?php echo $blockId; ?>">
+	<?php if($collect_banners) : ?>
+	<div class="banners_slider slider-wrap">
+		<div class="banners_slider_in">
+			<div class="bannerslide" style="display: none;">
+				<?php foreach($collect_banners as $banner) : ?>
+					<div class="wrap">
+						<div class="wrap_in">
+							<a target="_blank" href="<?php echo $banner['link']; ?>">
+								<img alt="" src="<?php echo $banner['image']; ?>" />
+							</a>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<script>
+			jQuery(document).ready(function($) {
+				$(window).load(function(){
+					$('#<?php echo $blockId; ?> .bannerslide').owlCarousel({
+						pagination: true,
+						itemsScaleUp : true,
+						slideSpeed : 800,
+						autoPlay: true,
+						addClassActive: true,
+						singleItem: true,
+						transitionStyle: 'backSlide',
+					});
+				});
+			});
+		</script>
+	</div>
+	<?php endif; ?>
+		
+	<?php if($postText) : ?>
+	<div class="post-text">
+		<?php echo $postText; ?>
+	</div>
+	<?php endif; ?>
+</div>
+<?php endif; ?>

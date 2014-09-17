@@ -1,0 +1,215 @@
+.toolbar { 
+	padding: 0; 
+	margin: 0; 
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+	.category-products > & {
+		text-align: right;
+		.view-mode {
+			float: left;
+		}
+		.sort-by, .limiter {
+			text-align: left;
+			margin-top: 2px;
+		}
+		.pager {
+			display: none;
+		}
+	}
+	.toolbar-bottom & {
+		text-align: center;
+		padding-top: 50px;
+		.view-mode, .sort-by, .limiter {display: none;}
+		.pager {
+			margin: 0;
+			float: none;
+		}
+	}
+	.toolbar-inner {
+		> * {
+			.inline-block();
+			margin: 0;
+		}
+	}
+	.view-mode{
+		label {display: none;}
+		a, strong {
+			.square(40px);
+			display: block;
+			float: left;
+			text-align: center;
+			line-height: 40px;
+			position: relative;
+			margin-right: 10px;
+			border: 1px solid @textGray;
+			border-radius: 8px;
+			&:before {
+				font-size: 20px;
+				line-height: 40px;
+			}
+		}
+		a {
+			&:hover {
+				border-color: @color1;
+				color: @color1;
+			}
+		}
+		strong {
+			background-color: @color1;
+			#gradient .vertical(spin(lighten(@color1, 5%), 20); spin(lighten(@color1, 5%), -20); 0%; 100%);
+			color: @white;
+			border: none;
+		}
+	}
+	.limiter {
+		label{
+			.inline-block();
+			margin: 0 5px 0 0;
+			font-weight: normal;
+		}
+		.select-new{
+			.inline-block();
+			.select-inner{ 
+				cursor: pointer;
+				select{
+					.opacity(0);
+				}
+				.jqTransformSelectWrapper{
+					.transition(all 0.2 ease-in);
+					height: 36px; 
+					border: 1px solid #ddd; 
+					background: none;
+					z-index: 1 !important;
+					border-radius: 8px;
+					&:hover{
+						border-color: @color1;
+					}
+					div{
+						span{ 
+							 line-height: 36px; 
+							 height: 36px; 
+							 padding-left: 10px;
+							 color: @labelColor;
+							 width: auto !important;
+						}
+						a.jqTransformSelectOpen{
+							&:before {
+								.font-awesome (f107, 36px);
+								width: 15px;
+							}
+							right: 5px;
+							position: absolute;
+							height: 100%;
+							width: 15px;
+						}
+					}
+					ul{
+						top: 30px; 
+						width: 85px !important;
+						left: -1px !important;
+						border-color:#aeaeae;
+						a {
+							padding: 2px 6px; 
+							background-position: center 10px;
+							&.selected{background: #aeaeae; color: @labelColor;}
+							&:hover{background: #e5e5e5; color: @labelColor;}
+						}
+					}
+				}
+				select{
+					cursor: pointer;
+					width: 50px; 
+					border: none; 
+					background: none;
+				}
+			}
+		}
+	}
+	.sort-by{
+		.limiter;
+		.select-new{
+			.select-inner{ 
+				.jqTransformSelectWrapper{
+					width: 90px !important; 
+				}
+			}
+		}
+		.set-desc,.set-asc{ 
+			.inline-block();
+			.square(36px);
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			position: relative; 
+			background: none;
+			margin: 0 10px 0 0;
+			.transition(all 0.2s ease-in);
+			text-align: center;
+			&:before{ 
+				.font-awesome (f107, 36px);
+				width: 33px;
+			}
+			&:hover{
+				border-color: @color1;
+				&:before {
+					color: @color1;
+				}
+			}
+		}
+		.set-desc{
+			&:before{
+				.font-awesome (f106, 36px);
+				width: 33px;
+			}
+		}
+	}
+	.pager {
+		//margin: 15px 20px 0 0; 
+		float: right;
+		p.amount { display: none; }
+		.pages {
+			> strong {
+				display: none;
+			}
+			> ol {
+				.inline-block();
+				.ulclear();
+				li {
+					text-align: center;
+					.inline-block();
+					font-size: 125%;
+					margin: 0 2px;
+					&.current {
+						height: 34px;
+						padding: 0 10px;
+						line-height: 34px;
+						border-radius: 8px;
+						min-width: 34px;
+						background-color: @color1;
+						color: @white;
+						#gradient .vertical(spin(lighten(@color1, 5%), 20); spin(lighten(@color1, 5%), -20); 0%; 100%);
+					}
+					a {
+						display: block;
+						height: 34px;
+						padding: 0 10px;
+						line-height: 34px;
+						border: 1px solid #ddd;
+						border-radius: 8px;
+						min-width: 34px;
+						&.previous, &.next {
+							border: none;
+							font-size: 86%;
+						}
+					}
+					&:hover {
+						a {
+							color: @color1;
+							border-color: @color1;
+							background: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,54 @@
+<?php
+/*------------------------------------------------------------------------
+ # SNS RevolutionSlider - Version 1.0
+ * Copyright (C) 2013 The SNS Theme. All Rights Reserved.
+ * @license - GNU/GPL, http://www.gnu.org/licenses/gpl.html
+ * Author: SNS Theme
+ * Websites: http://www.snstheme.com
+-------------------------------------------------------------------------*/
+$config = $this->getConfigObject();
+$uq = rand().time();
+?>
+<script type="text/javascript">
+	// <![CDATA[
+		jQuery(document).ready(function($) {
+		  $('#sns_revolutionslider<?php echo $uq ?>').revolution({
+			 delay:<?php echo ($config['delay']); ?>,
+			 startwidth: 1140,
+			 startheight: 500,
+	 		 onHoverStop: "off",
+	 		 navigationArrows:"<?php echo ($config['navigationArrows']); ?>", // nextto, solo, none
+
+			 navigationType:"<?php echo ($config['navigationType']); ?>", // bullet, thumb, none
+			 navigationStyle:"<?php echo ($config['navigationStyle']); ?>", // round,square,navbar,round-old,square-old,navbar-old
+
+	 		<?php if(!$config['autoplay']){?>
+	 		 stopAtSlide:1,
+	 		 stopAfterLoops:0,
+	 		<?php } ?>			 
+	 
+			 fullScreenOffsetContainer:"#sns_header, #sns_menu"
+		  });
+	   });
+	// ]]>
+</script>
+	<?php if (!empty( $config['pretext'] )): ?>
+		<div class="sns-pretext"><?php echo $config['pretext']; ?></div>
+	<?php endif; ?>
+	<?php 
+	$slides = explode(',', $config['slides_html']);
+	if(count($slides) > 0){
+	?>
+    <div class="sns-revolutionslider" id="sns_revolutionslider<?php echo $uq ?>">
+		<ul>
+    	<?php 
+    	for($i=0;$i<count($slides);$i++) {
+    		echo str_replace('</ul>', '', str_replace('<ul>', '', $this->getLayout()->createBlock('cms/block')->setBlockId(trim($slides[$i]))->toHtml()));
+    	}?>
+		</ul>
+		<div class="tp-bannertimer<?php echo ($config['timerbar']=='bottom')?' tp-bottom':'';?>"></div>
+    </div>
+    <?php } ?>
+    <?php if($config['posttext']): ?>
+    <div class="sns-posttext"><?php echo $config['posttext'];?></div>
+    <?php endif;?>

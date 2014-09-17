@@ -1,0 +1,127 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+$themeCfg = Mage::helper('i8style/data');
+
+$footerStyle = '';
+$bgColor = $themeCfg->getField('footer_bg_color');
+$bgImg = Mage::helper('cms')->getBlockTemplateProcessor()->filter($themeCfg->getField('footer_bg_img'));
+
+if (preg_match('/^wysiwyg/i', $bgImg)) {
+	$bgImg = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$bgImg;
+	$footerStyle .= 'background-image: url(\''.$bgImg.'\');';
+}
+
+$blockCol1 = $themeCfg->getField('footer_staticblock_col1');
+$blockCol2 = $themeCfg->getField('footer_staticblock_col2');
+$blockCol3 = $themeCfg->getField('footer_staticblock_col3');
+$blockCol4 = $themeCfg->getField('footer_staticblock_col4');
+$blockCol5 = $themeCfg->getField('footer_staticblock_col5');
+
+$footerStyle .= ($bgColor) ? 'background-color: '.$bgColor.';' : '';
+?>
+
+<div id="sns_wraper_footer" class="wrap" style="<?php echo $footerStyle; ?>">
+	<div id="sns_footer_top" class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2d4 col-xs-6 col-sm-4 column column1">
+					<?php if($blockCol1) echo $this->getLayout()->createBlock('cms/block')->setBlockId($blockCol1)->toHtml(); ?>
+				</div>
+				<div class="col-md-2d4 col-xs-6 col-sm-4 column column2">
+					<?php if($blockCol2) echo $this->getLayout()->createBlock('cms/block')->setBlockId($blockCol2)->toHtml(); ?>
+				</div>
+				<div class="col-md-2d4 col-xs-6 col-sm-4 column column3">
+					<?php if($blockCol3) echo $this->getLayout()->createBlock('cms/block')->setBlockId($blockCol3)->toHtml(); ?>
+				</div>
+				<div class="col-md-2d4 col-xs-6 col-sm-4 column column4">
+					<?php if($blockCol4) echo $this->getLayout()->createBlock('cms/block')->setBlockId($blockCol4)->toHtml(); ?>
+				</div>
+				<div class="col-md-2d4 col-sm-4 column column5">
+					<?php if($blockCol5) echo $this->getLayout()->createBlock('cms/block')->setBlockId($blockCol5)->toHtml(); ?>
+				</div>
+			</div>
+			<div class="sns-social">
+				<?php
+				if($themeCfg->getField('social_status')) :
+					
+					$items = $themeCfg->getField('social_items');
+					$array_items = unserialize($items);
+					$id = 1;
+					$collect_items = array();
+					foreach($array_items as $key=>$item){
+						$item['id'] = $id;
+						$item['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($item['link']);
+						$item['class'] = ($item['icon']) ? 'fa ' . $item['icon'] : '';
+						$collect_items[] = $item;
+						$id++;
+					}
+				?>
+					<ul>
+					<?php foreach($collect_items as $item) : ?>
+						<li>
+							<a 
+								data-toggle="tooltip" 
+								data-original-title="<?php echo $item['title']; ?>" 
+								href="<?php echo $item['link']; ?>" 
+								target="<?php echo $item['target']; ?>"
+								title="<?php echo $item['title']; ?>" 
+								class="<?php echo $item['class']; ?>">
+									<?php //echo $item['title']; ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<div id="sns_footer_bottom" class="footer">
+		<div class="container">
+			<div class="sns-copyright">
+				<?php echo $this->getCopyright() ?>
+				 <br />Designed by <a href="http://www.snstheme.com/" data-toggle="tooltip" data-original-title="Visit SNSTheme.Com!" title="Visit SNSTheme.Com!">SNSTheme.Com</a>.
+			</div>
+			<div class="payment-method">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('i8style_payment')->toHtml(); ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php if($themeCfg->getField('advance_showTooltip')):?>
+<script type="text/javascript">
+//<![CDATA[
+    jQuery(function($){
+        function snsTooltip(){
+        	$("body#bd *[data-toggle='tooltip']").tooltip({
+        		container: 'body'
+        	});
+        }
+        snsTooltip();
+        setInterval(function(){snsTooltip()},1000);
+    });
+//]]>
+</script>
+<?php endif; ?>

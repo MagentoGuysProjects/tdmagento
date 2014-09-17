@@ -1,0 +1,16 @@
+<?xml version="1.0"?>   
+<layout version="1.0">
+	<default>
+        <reference name="head">
+        	<action method="addCss"><stylesheet>sns/facebook/css/style.css</stylesheet></action>
+        	<!--<action method="addItem"><type>skin_js</type><name helper="facebook/data/getJQquery"/><params/><if/></action>
+			<action method="addItem"><type>skin_js</type><name helper="facebook/data/getJQqueryNoconflict"/><params/><if/></action>-->
+        </reference>
+    </default>
+	<facebook_index_index>
+		<reference name="content">
+			<block type="facebook/list" name="facebook.list.default"></block>
+		</reference>
+	</facebook_index_index>	
+</layout>   
+	

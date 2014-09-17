@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+	<default>
+        <reference name="head">
+<!-- 			<action method="addCss"><stylesheet>sns/producttabs/css/styles.css</stylesheet></action>
+			<action method="addCss"><stylesheet>sns/producttabs/css/effects.css</stylesheet></action> -->
+            <action method="addJs"><script>sns/jquery/jquery.js</script></action>
+            <action method="addJs"><script>sns/jquery/jquery-noconflict.js</script></action>
+        </reference>
+    </default>
+	<producttabs_index_index>
+		<reference name="content">
+			<block type="producttabs/list" name="producttabs">
+				<action method="setConfig">
+				</action>
+			</block>
+		</reference>
+	</producttabs_index_index>
+</layout>

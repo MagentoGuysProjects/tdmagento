@@ -1,0 +1,22 @@
+<?php
+if(1==0){?>
+<!DOCTYPE html>
+<html xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+	<head>
+		<?php echo $this->getChildHtml('head') ?>
+	</head>
+	<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+		<?php echo $this->getChildHtml('after_body_start') ?>
+		<div class="quickview-main row-fluid">
+			<?php echo $this->getChildHtml('content') ?>
+		</div>
+		<?php echo $this->getChildHtml('before_body_end') ?>
+		<?php echo $this->getAbsoluteFooter() ?>
+	</body>
+</html>
+<?php
+} ?>
+<div class="quickview-main">
+	<?php echo $this->getChildHtml('content') ?>
+</div>
+<?php echo $this->getChildHtml('before_body_end') ?>

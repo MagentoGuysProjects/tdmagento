@@ -1,0 +1,136 @@
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function($){
+	;(function(element){
+			var $element = $(element);
+			var itemNav = $('.item-nav',$element);
+			var itemContent = $('.pdt-content',$element);
+			var btn_loadmore = $('.btn-loadmore',$element);
+			var ajax_url="<?php echo Mage::getBaseUrl().'producttabs/index/ajax' ?>";
+			var catids = '<?php echo $options->product_category; ?>';
+			var label_allready =  '<?php echo $this->__('All ready'); ?>';
+
+			function setAnimate(el){
+				$_items = $('.item-animate',el);
+				$('.btn-loadmore',el).fadeOut('fast');
+				$_items.each(function(i){
+					$(this).attr("style", "-webkit-animation-delay:" + i * 300 + "ms;"
+			                + "-moz-animation-delay:" + i * 300 + "ms;"
+			                + "-o-animation-delay:" + i * 300 + "ms;"
+			                + "animation-delay:" + i * 300 + "ms;");
+			        if (i == $_items.size() -1) {
+			            $(".pdt-list", el).addClass("play");
+			            $('.btn-loadmore', el).fadeIn(i*0.3);
+			        }
+				});
+			}
+			setAnimate($('.tab-content-actived',$element));
+
+			itemNav.click(function(){
+				var $this = $(this);
+				if($this.hasClass('tab-nav-actived')) return false;
+				itemNav.removeClass('tab-nav-actived');
+				$this.addClass('tab-nav-actived');
+				var itemActive = '.'+$this.attr('data-href');
+				itemContent.removeClass('tab-content-actived');
+				$(".pdt-list",$(itemActive, $element)).removeClass("play");$(".pdt-list .item",$(itemActive, $element)).removeAttr('style');
+				$('.item',$(itemActive, $element)).addClass('item-animate').removeClass('animated');
+				$(itemActive, $element).addClass('tab-content-actived');
+
+				contentLoading = $('.content-loading',$(itemActive, $element));
+				isLoaded = $(itemActive, $element).hasClass('is-loaded');
+				if(!isLoaded && !$(itemActive, $element).hasClass('is-loading')){
+					$(itemActive, $element).addClass('is-loading');
+					contentLoading.show();
+					pdt_type = $this.attr('data-type');
+					catid = $this.attr('data-catid');
+					orderby = $this.attr('data-orderby');
+					$.ajax({
+						type: 'POST',
+						url: ajax_url,
+						data:{
+							numberstart: 0,
+							catid: catid,
+							orderby: orderby,
+							catids: catids,
+							pdt_type: pdt_type
+						},
+						success: function(result){
+							if(result.listProducts !=''){
+								$('.pdt-list',$(itemActive, $element)).html(result.listProducts);
+								$(itemActive, $element).addClass('is-loaded').removeClass('is-loading');
+								contentLoading.remove();
+								setAnimate($(itemActive, $element));
+								setResult($(itemActive, $element));
+							}
+						},
+						dataType:'json'
+					});
+				}else{
+					$('.item', itemContent ).removeAttr('style');
+					setAnimate($(itemActive, $element));
+				}
+			});
+			function setResult(content){
+				$('.btn-loadmore', content).removeClass('loading');
+				$('.ico-loading', content).css({display:'none'});
+				itemDisplay = $('.item', content).length;
+				$('.btn-loadmore', content).parent().attr('data-start', itemDisplay);
+				total = $('.btn-loadmore', content).parent().attr('data-all');
+				loadnum = $('.btn-loadmore', content).parent().attr('data-loadnum');
+				if(itemDisplay < total){
+					$('.load-number', content).attr('data-total', (total - itemDisplay));
+     				if((total - itemDisplay)< loadnum ){
+     					$('.load-number',  content).attr('data-more', (total - itemDisplay));
+     				}
+				}
+				if(itemDisplay == total){
+					$('.load-number', content).css({display: 'none'});
+					$('.btn-loadmore', content).addClass('loaded');
+					$('.btn-loadmore .loadmore', content).attr('data-label',label_allready);
+					$('.btn-loadmore', content).removeClass('loading');
+				}
+			}
+			btn_loadmore.on('click.loadmore', function(){
+				var $this = $(this);
+				itemActive = '.'+$this.parent().attr('data-href');
+				$(".pdt-list",$(itemActive, $element)).removeClass("play");$(".pdt-list .item",$(itemActive, $element)).removeAttr('style');
+				$('.item',$(itemActive, $element)).addClass('animated').removeClass('item-animate');
+				if ($this.hasClass('loaded') || $this.hasClass('loading')){
+					return false;
+				}else{
+					$this.addClass('loading');
+					$('.ico-loading',  $this).css({display:'inline-block'});
+					numberstart = $this.parent().attr('data-start');
+					catid = $this.parent().attr('data-catid');
+					pdt_type = $this.parent().attr('data-type');
+					orderby = $this.parent().attr('data-orderby');
+					$.ajax({
+						type: 'POST',
+						url: ajax_url,
+						data:{
+							numberstart: numberstart,
+							catid: catid,
+							orderby: orderby,
+							catids: catids,
+							pdt_type: pdt_type
+						},
+						success: function(result){
+							if(result.listProducts !=''){
+								animateFrom = $('.item',$(itemActive, $element)).size();
+								$(result.listProducts).insertAfter($('.item',$(itemActive, $element)).nextAll().last());
+								$('.ico-loading',  $this).css({display:'none'});
+								setAnimate($(itemActive, $element));
+								setResult($(itemActive, $element));
+							}
+						},
+						dataType:'json'
+					});
+				}
+				return false;
+			});
+	})('#sns_producttabs<?php echo $uq; ?>');
+});
+//]]>
+</script>

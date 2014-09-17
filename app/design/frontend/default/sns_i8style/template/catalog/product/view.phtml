@@ -1,0 +1,229 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php
+
+$_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+
+
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="product-view sns-product-detail">
+    <div class="product-essential clearfix">
+	    <div class="row row-img">
+	        <div class="product-img-box col-md-5">
+	            <?php echo $this->getChildHtml('media') ?>
+	        </div>
+	        <div id="product_shop" class="product-shop col-md-7">
+	            <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+	                <?php echo $this->getBlockHtml('formkey') ?>
+	                <div class="no-display">
+	                    <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+	                    <input type="hidden" name="related_product" id="related-products-field" value="" />
+	                </div>
+	                <div class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></div>
+					<?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+	                <?php echo $this->getChildHtml('product_type_data') ?>
+	                <?php echo $this->getChildHtml('alert_urls') ?>
+	                <?php echo $this->getTierPriceHtml() ?>
+	                <?php echo $this->getChildHtml('extrahint') ?>
+
+	                <?php if ($_product->getShortDescription()):?>
+	                    <div class="short-description">
+	                        <!--<h2><?php echo $this->__('Quick Overview') ?></h2>-->
+	                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+	                    </div>
+	                <?php endif;?>
+
+	                <?php if (!$this->hasOptions()):?>
+	                	<div class="add-to-box">
+		                    <?php if($_product->isSaleable()): ?>
+		                        <?php echo $this->getChildHtml('addtocart') ?>
+		                    <?php endif; ?>
+		                    <?php echo $this->getChildHtml('addto') ?>
+			                <?php if ($this->canEmailToFriend()): ?>
+			                    <a class="email-friend" href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" data-toggle="tooltip" data-original-title="<?php echo $this->__('Email to a Friend') ?>"><?php echo $this->__('Email to a Friend') ?></a>
+			                <?php endif; ?>
+		                    <?php echo $this->getChildHtml('extra_buttons') ?>
+		                </div>
+	                <?php elseif (!$_product->isSaleable()): ?>
+	                	<div class="add-to-box">
+	                    	<?php echo $this->getChildHtml('addto') ?>
+			                <?php if ($this->canEmailToFriend()): ?>
+			                    <a class="email-friend" href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" data-toggle="tooltip" data-original-title="<?php echo $this->__('Email to a Friend') ?>"><?php echo $this->__('Email to a Friend') ?></a>
+			                <?php endif; ?>
+	                    <div class="add-to-box">
+	                <?php endif; ?>
+
+	                <?php echo $this->getChildHtml('other');?>
+
+	                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+	                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+	                <?php endif;?>
+	                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+	                    <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+	                <?php endif;?>
+	                	
+	                <?php if( Mage::helper('i8style/data')->getField('productpage_useAddThis')=='1' ){ ?>
+		                <!-- AddThis Button BEGIN -->
+						<div class="addthis_sharing_toolbox"></div>
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e8f59ab369ce1e0"></script>
+		                <!-- AddThis Button END -->
+	                <?php } ?>
+	            </form>
+	        </div>
+		</div>
+					
+		<?php if(empty($_SERVER['HTTP_X_REQUESTED_WITH']) || strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') : ?>
+
+		<div class="row">
+			<?php if($this->getChildHtml('right_inner')) : ?>
+			<div class="col-md-9">
+			<?php else : ?>
+			<div class="col-md-12">
+			<?php endif; ?>
+			
+			<?php if($this->getChildGroup('detailed_info', 'getChildHtml')) : ?>
+		        <div class="product-tab">
+		            <div id="sns_tab_products" class="product-collateral clearfix">
+						<ul class="nav-tabs">
+							<?php $active = ' active'; ?>
+							<?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+								<li class="<?php echo $active;?>">
+									<a data-toggle="tab" href="#sns_tab_<?php echo "{$alias}"; ?>">
+										<?php 
+											if ($title = $this->getChildData($alias, 'title')):
+												echo $this->escapeHtml($title);
+											else : 
+												echo ucfirst("{$alias}");
+											endif;
+										?>
+									</a>
+								</li>
+								<?php $active = ''; ?>
+							<?php endforeach;?>
+						</ul>
+						<div class="tab-content">
+							<?php $active = ' active in'; ?>
+							<?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+								<div id="sns_tab_<?php echo "{$alias}"; ?>" class="tab-pane<?php echo $active;?> fade">
+									<div class="collateral-box">
+										<?php echo $html ?>
+									</div>
+								</div>
+								<?php $active = ''; ?>
+							<?php endforeach;?>
+						</div>
+		            </div>
+		        </div>
+		        <script type="text/javascript">
+		        //<![CDATA[
+		        	jQuery(document).ready(function($){
+		        		$('#sns_tab_products .nav-tabs').tabdrop();
+			       	});
+		        //]]>
+		        </script>
+			<?php endif;?>
+						
+		        
+				<?php echo $this->getChildHtml('product_additional_data') ?>
+		        <?php if ($this->getChildHtml('related_products')): ?>
+		        <div class="related-products">
+		            <?php echo $this->getChildHtml('related_products') ?>
+		        </div>
+		        <?php endif; ?>
+		        <?php if ($this->getChildHtml('upsell_products')): ?>
+		        <div class="upsell-products">
+		            <?php echo $this->getChildHtml('upsell_products') ?>
+		        </div>
+		        <?php endif; ?>
+	       	</div>
+        </div>
+        <?php endif; //end check ajax ?>
+        <script type="text/javascript">
+        //<![CDATA[
+            var productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="sns-pdt-nav block_head_center">
+	<h3 class="pdt-nav">
+		<?php foreach($list as $item){
+		if( $item->count > 0 ){
+		?>
+		<span class="item-nav<?php echo (isset($item->active) && $item->active==1)?' tab-nav-actived tab-loaded':''; ?>" 
+			data-type="<?php echo $options->list_products_by; ?>"
+			data-catid="<?php echo ($options->list_products_by == 'order')?"":$item->id ?>"
+			data-orderby="<?php echo $item->orderid; ?>" data-href="pdt_<?php echo ($item->id == "*")?'all':$item->id; ?>">
+			<span class="title-navi"><?php echo $item->title; ?>
+			</span>
+		</span>
+		<?php }}?>
+	</h3>
+</div>

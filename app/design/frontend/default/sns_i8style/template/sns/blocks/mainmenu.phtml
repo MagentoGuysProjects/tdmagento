@@ -1,0 +1,107 @@
+<?php
+$themehelper = Mage::helper('i8style/data');
+
+$_menu = $this->getMenuHtml(false);
+$_momenu = $this->getMenuHtml(true);
+
+?>
+<div id="sns_custommenu" class="visible-md visible-lg">
+	<ul class="mainnav">
+		<?php echo $_menu; ?>
+	</ul>
+</div>
+<?php if($themehelper->getField('menu_resMenu') == 'collapse') : ?>
+<div id="sns_mommenu" class="menu-collapse hidden-md hidden-lg">
+	<span class="btn btn-navbar leftsidebar">
+		<i class="fa fa-align-left"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn btn-navbar menusidebar collapsed" data-toggle="collapse" data-target="#menu_collapse">
+		<i class="fa fa-bars"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn btn-navbar rightsidebar">
+		<i class="fa fa-align-left"></i>
+	    <span class="overlay"></span>
+	</span>
+	<ul id="menu_collapse" class="mainnav collapse">
+		<?php echo $_momenu; ?>
+	</ul>
+</div>
+<?php else : ?>
+<div id="sns_mommenu" class="menu-offcanvas hidden-md hidden-lg">
+	<span class="btn btn-navbar leftsidebar">
+		<i class="fa fa-align-left"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn btn-navbar offcanvas">
+		<i class="fa fa-bars"></i>
+	    <span class="overlay"></span>
+	</span>
+	<span class="btn btn-navbar rightsidebar">
+		<i class="fa fa-align-right"></i>
+	    <span class="overlay"></span>
+	</span>
+	<ul id="menu_offcanvas" class="mainnav offcanvas">
+		<?php echo $_momenu; ?>
+	</ul>
+</div>
+<?php endif; ?>
+
+<script>
+	jQuery(document).ready(function($){
+		<?php if($themehelper->getField('menu_resMenu') == 'collapse') : ?>
+			$('#menu_collapse').SnsAccordion({
+				btn_open: '<i class="fa fa-plus"></i>',
+				btn_close: '<i class="fa fa-minus"></i>'
+			});
+			$('#sns_mommenu .btn.menusidebar').on('click', function(){
+				if($(this).hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$(this).removeClass('active');
+				} else {
+					$(this).addClass('active');
+					$(this).find('.overlay').fadeIn(250);
+				}
+			});
+		<?php else : ?>
+			$('#menu_offcanvas').SnsAccordion({
+				accordion: false,
+				expand: false,
+				btn_open: '<i class="fa fa-plus"></i>',
+				btn_close: '<i class="fa fa-minus"></i>'
+			});
+			$('#sns_mommenu .btn.offcanvas').on('click', function(){
+				if($('#menu_offcanvas').hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$('#menu_offcanvas').removeClass('active');
+				} else {
+					$('#menu_offcanvas').addClass('active');
+					$(this).find('.overlay').fadeIn(250);
+				}
+			});
+		<?php endif; ?>
+		if($('#sns_right').length) {
+			$('#sns_mommenu .btn.rightsidebar').css('display', 'inline-block').on('click', function(){
+				if($('#sns_right').hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$('#sns_right').removeClass('active');
+				} else {
+					$('#sns_right').addClass('active');
+					$(this).find('.overlay').fadeIn(250);
+				}
+			});
+		}
+		if($('#sns_left').length) {
+			$('#sns_mommenu .btn.leftsidebar').css('display', 'inline-block').on('click', function(){
+				if($('#sns_left').hasClass('active')){
+					$(this).find('.overlay').fadeOut(250);
+					$('#sns_left').removeClass('active');
+				} else {
+					$('#sns_left').addClass('active');
+					$(this).find('.overlay').fadeIn();
+				}
+			});
+		}
+	});
+</script>

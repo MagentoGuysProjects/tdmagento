@@ -1,0 +1,77 @@
+<?php $posts = $this->getPosts(); ?>
+<?php
+	if($posts) :
+	$blockId ='sns_latestblog_'.rand().time();
+?>
+<div class="block-latestblog" id="<?php echo $blockId; ?>">
+	<div class="block_head_left">
+		<h3><?php echo $this->__('Latest News');?></h3>
+		<div class="navslider">
+			<a class="prev" href="#"><i class="icon-arrow-left"></i></a>
+			<a class="next" href="#"><i class="icon-arrow-right"></i></a>
+		</div>
+	</div>
+	<div class="block-content">
+	    <div class="list-blog">
+	    <?php $j=0; foreach ($posts as $post): ?>
+	        <?php
+		        $j++;
+		        if($j>6) break;
+			?>
+	        <div class="item-post<?php echo ($i==3)?' last':'';?> clearfix">
+	            <!-- <div class="date">
+	                <?php
+	                $_ct= new Zend_Date($post->getCreatedTime()); ?>
+	                <span class="d-day"><?php echo $_ct->toString('d');  ?></span>
+	                <span class="d-month"><?php echo $_ct->toString('MMM'); ?></span>
+	            </div> -->
+	            <?php
+	            $str = preg_replace ( "/\<img[^\>]*>/", '', $post->getPostContent());
+	            ?>
+	            <div class="post-title">
+	                <a href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a>
+	            </div>
+	            <div class="post-content">
+	                <?php echo Mage::helper('core/string')->truncate($str, 150); ?>
+	                <br />
+	                <a href="<?php echo $post->getAddress(); ?>" class="readmore"><?php echo $this->__('Read more'); ?></a>
+	            </div>
+	        </div>
+	    <?php endforeach; ?>
+	    </div>
+	</div>
+	<script>
+		jQuery(document).ready(function($) {
+			$(window).load(function(){
+				$('#<?php echo $blockId; ?> .list-blog').owlCarousel({
+					items: 3,
+					itemsCustom: [
+						[0, 2],
+						[768, 3]
+					],
+					pagination: false,
+					itemsScaleUp : true,
+					slideSpeed : 800,
+					autoPlay: true,
+					addClassActive: true,
+					afterAction: function (e) {
+					    if(this.$owlItems.length > this.options.items){
+					        $('#<?php echo $blockId; ?> .navslider').show();
+					    }else{
+					        $('#<?php echo $blockId; ?> .navslider').hide();
+					    }
+					}
+				});
+				$('#<?php echo $blockId; ?> .navslider .prev').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .list-blog').trigger('owl.prev');
+				});
+				$('#<?php echo $blockId; ?> .navslider .next').on('click', function(e){
+					e.preventDefault();
+					$('#<?php echo $blockId; ?> .list-blog').trigger('owl.next');
+				});
+			});
+		});
+	</script>
+</div>
+<?php endif; ?>

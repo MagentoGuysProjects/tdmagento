@@ -1,0 +1,20 @@
+.tp-caption{font-family:  inherit !important;}
+.tp-caption.large_text{
+	color: inherit;
+	text-shadow:none;
+	text-transform: uppercase;
+}
+.tp-caption.modern_small_text_dark{
+	font-size: 100%; line-height: 18px; color: inherit;
+}
+.tp-caption .button{
+	display: inline-block; background: #2d3538; padding: 0 40px; /*.transition(all 0.2s ease-out); */
+	border-color: #2d3538; color: #FFF; font-size: 100%;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	-o-border-radius:0px;
+	line-height: 48px !important; height: 48px;
+	text-shadow:none !important;
+	font-family: inherit;
+}

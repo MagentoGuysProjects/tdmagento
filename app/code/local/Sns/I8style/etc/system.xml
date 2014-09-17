@@ -1,0 +1,770 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<sns translate="label" module="i8style">
+            <label>SNSTheme.com</label>
+            <sort_order>207</sort_order>
+        </sns>
+	  </tabs>
+	  <sections>
+		<sns_i8style_cfg  translate="label" module="i8style">
+			<label>SNS I8style - config</label>
+			<tab>sns</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>150</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<version translate="label">
+					<label>Theme's version</label>
+					<frontend_type>text</frontend_type>
+					<frontend_model>Sns_I8style_Block_Adminhtml_Version</frontend_model>
+					<sort_order>0</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+				</version>
+			    <magneto_cfg translate="label">
+				    <label>Magento Quick Settings</label>
+				    <frontend_type>text</frontend_type>
+				    <expanded>0</expanded>
+				    <sort_order>100</sort_order>
+				    <show_in_default>1</show_in_default>
+				    <show_in_website>1</show_in_website>
+				    <show_in_store>1</show_in_store>
+			        <fields>
+ 						<logo_src translate="label">
+							<label>Logo Image Src</label>
+							<config_path>design/header/logo_src</config_path>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Logo of this theme: images/logo.png</comment>
+						</logo_src>
+ 						<cms_home_page translate="label">
+							<label>Default CMS Home Page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_cms_page</source_model>
+							<config_path>web/default/cms_home_page</config_path>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Home Page of this theme: I8style Home Page</comment>
+						</cms_home_page>
+					</fields>
+				</magneto_cfg>
+
+			    <general translate="label">
+				    <label>General settings</label>
+				    <frontend_type>text</frontend_type>
+				    <expanded>0</expanded>
+				    <sort_order>200</sort_order>
+				    <show_in_default>1</show_in_default>
+				    <show_in_website>1</show_in_website>
+				    <show_in_store>1</show_in_store>
+			        <fields>
+						<body_heading translate="label">
+							<label>Body</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</body_heading>
+						<fontFamily translate="label">
+							<label>Body font-family</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listBodyFont</source_model>
+							<sort_order>51</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Input body font-family ( Ex: Arial )</comment>
+						</fontFamily>
+						<fontSize translate="label">
+							<label>Body font-size</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>52</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Input body font size text ( Ex: 14px )</comment>
+						</fontSize>
+						<layoutType translate="label">
+							<label>Layout Type</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listLayout</source_model>
+							<sort_order>49</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</layoutType>
+						<bodyBgColor translate="label">
+							<label>Body background color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Apply for boxed layout</comment>
+						</bodyBgColor>
+						<bodyBgImage translate="label">
+							<label>Body background image</label>
+							<frontend_type>select</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_pattern</frontend_model>
+							<source_model>i8style/system_config_source_listPattern</source_model>
+							<sort_order>51</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Apply for boxed layout</comment>
+						</bodyBgImage>
+						<googlefont_heading translate="label">
+							<label>Google Font</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>130</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</googlefont_heading>
+						<googleFont translate="label">
+							<label>Select google font</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listGoogleFont</source_model>
+							<sort_order>140</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Input google font name</comment>
+						</googleFont>
+						<googleFontTargets translate="label">
+							<label>Google font targets</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>145</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Tags will be applied with Google font with separate "," ( Ex: "h1, .classname" )</comment>
+						</googleFontTargets>
+						<product_heading translate="label">
+							<label>For Product</label>
+							<frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+							<sort_order>160</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</product_heading>
+						<useTagNew translate="label">
+							<label>Use Tag New</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>170</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Use Tag New for product</comment>
+						</useTagNew>
+						<useTagSale translate="label">
+							<label>Use Tag Sale</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>180</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Use Tag Sale for product</comment>
+						</useTagSale>
+				   </fields>
+				</general>
+
+			    <header translate="label">
+				    <label>Header</label>
+				    <frontend_type>text</frontend_type>
+				    <expanded>0</expanded>
+				    <sort_order>300</sort_order>
+				    <show_in_default>1</show_in_default>
+				    <show_in_website>1</show_in_website>
+				    <show_in_store>1</show_in_store>
+			        <fields>
+						<bg_color translate="label">
+							<label>Background color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</bg_color>
+	 					<bg_img translate="label">
+							<label>Background image</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_image</frontend_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</bg_img>
+					</fields>
+				</header>
+				
+				<menu translate="label">
+			    	<label>Menu</label>
+			  		<sort_order>400</sort_order>
+			  		<show_in_default>1</show_in_default>
+			  		<show_in_website>1</show_in_website>
+			  		<show_in_store>1</show_in_store>
+			  		<fields>
+						<customItems translate="label">
+                            <label>Custom menu items</label>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<frontend_model>i8style/adminhtml_system_config_form_field_addCustomMenu</frontend_model>	
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customItems>
+						<resMenu translate="label">
+							<label>Responsive menu</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listResMenu</source_model>
+							<sort_order>120</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Responsive menu for mobile(maybe for Tablet portrait)</comment>
+						</resMenu>
+						<keepMenu translate="label">
+							<label>Use sticky menu</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>125</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Seleect Yes top keep menu on top when you scroll</comment>
+						</keepMenu>
+					</fields>
+				</menu>
+				
+			    <social translate="label">
+				    <label>Social</label>
+				    <frontend_type>text</frontend_type>
+				    <expanded>0</expanded>
+				    <sort_order>500</sort_order>
+				    <show_in_default>1</show_in_default>
+				    <show_in_website>1</show_in_website>
+				    <show_in_store>1</show_in_store>
+			        <fields>
+						<status translate="label">
+							<label>Status</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status>
+						<items translate="label">
+                            <label>Items</label>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<frontend_model>i8style/adminhtml_system_config_form_field_addSocial</frontend_model>	
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[See more icon <a target="_blank" href="http://fortawesome.github.io/Font-Awesome/icons/">here</a>]]></comment>
+                        </items>
+					</fields>
+				</social>
+
+           		<bannerslide translate="label">
+	            	<expanded>0</expanded>
+	            	<label>Banner slider in right column</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>600</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+	            	<fields>
+	                   	<status translate="label">
+							<label>Status</label>
+							<sort_order>0</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status>
+						<banners translate="label">
+                            <label>Banners</label>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<frontend_model>i8style/adminhtml_system_config_form_field_addBanner</frontend_model>	
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </banners>
+						<post_text translate="label">
+						    <label>Post-text</label>
+						    <frontend_type>editor</frontend_type>
+						    <frontend_model>i8style/adminhtml_system_config_editor</frontend_model>
+						    <sort_order>50</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>1</show_in_store>
+						</post_text>
+	            	</fields>
+	            </bannerslide>
+
+				<listingpage translate="label">
+			    	<label>Listing page</label>
+			  		<frontend_type>text</frontend_type>
+			  		<sort_order>700</sort_order>
+			  		<show_in_default>1</show_in_default>
+			  		<show_in_website>1</show_in_website>
+			  		<show_in_store>1</show_in_store>
+	       			<fields>
+	       				<displayAddtocart translate="label">
+							<label>Display button Add to cart</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Applies to: Listing Grid, Listing List, Relates Product, Upsell Product, Crosssell Product</comment>
+						</displayAddtocart>
+						<displayWishlist translate="label">
+							<label>Display button Add to wishlist</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Applies to: Listing Grid, Listing List, Relates Product, Upsell Product, Crosssell Product</comment>
+						</displayWishlist>
+						<displayCompare translate="label">
+							<label>Display button Add to compare</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Applies to: Listing Grid, Listing List, Relates Product, Upsell Product, Crosssell Product</comment>
+						</displayCompare>
+	       			</fields>
+		       	</listingpage>
+				<productpage translate="label">
+			    	<label>Product page</label>
+			  		<frontend_type>text</frontend_type>
+			  		<sort_order>800</sort_order>
+			  		<show_in_default>1</show_in_default>
+			  		<show_in_website>1</show_in_website>
+			  		<show_in_store>1</show_in_store>
+	       			<fields>
+						<useAddThis translate="label">
+							<label>Use sharing button of Addthis</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment><![CDATA[You can see about addthis <a target="_blank" href="http://www.addthis.com/">here</a>]]></comment>
+						</useAddThis>
+						<staticblockstatus translate="label">
+							<label>Static Block Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>147</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblockstatus>
+						<staticblockid translate="label">
+							<label>Static Block Name</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listStaticBlock</source_model>
+							<sort_order>148</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblockid>
+	       			</fields>
+		       	</productpage>
+           		<testimonial translate="label">
+	            	<expanded>0</expanded>
+	            	<label>Testimonial</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>900</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+	            	<fields>
+	                   	<enabled translate="label">
+							<label>Enabled</label>
+							<sort_order>5</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<items translate="label">
+                            <label>Testimonial</label>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<frontend_model>i8style/adminhtml_system_config_form_field_additem</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </items>
+	            	</fields>
+	            </testimonial>
+           		<ourpartners translate="label">
+	            	<expanded>0</expanded>
+	            	<label>Our Partners</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+	            	<fields>
+	                   	<enabled translate="label">
+							<label>Enabled</label>
+							<sort_order>5</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enabled>
+						<title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<partners translate="label">
+                            <label>Partners</label>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+							<frontend_model>i8style/adminhtml_system_config_form_field_addpartner</frontend_model>	
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </partners>
+	            	</fields>
+	            </ourpartners>
+           		<storelocation translate="label">
+	            	<expanded>0</expanded>
+	            	<label>Contact Page</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+	            	<fields>
+						<status translate="label">
+							<label>Google map</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+                        	<source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status>
+						<store_name translate="label">
+		            		<label>Store name</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>20</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</store_name>
+						<store_info translate="label">
+		            		<label>Store info</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>30</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</store_info>
+						<store_address translate="label">
+		            		<label>Store address</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>40</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</store_address>
+						<store_phone translate="label">
+		            		<label>Store phone</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>50</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</store_phone>
+						<store_email translate="label">
+		            		<label>Store email</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>60</sort_order>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</store_email>
+						<map_zoom translate="label">
+		            		<label>Map Zoom</label>
+		            		<frontend_type>text</frontend_type>
+		            		<sort_order>70</sort_order>
+							<validate>validate-greater-than-zero</validate>
+		            		<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</map_zoom>
+	            	</fields>
+	            </storelocation>
+	            
+			    <footer translate="label">
+				    <label>Footer</label>
+				    <frontend_type>text</frontend_type>
+				    <expanded>0</expanded>
+				    <sort_order>1300</sort_order>
+				    <show_in_default>1</show_in_default>
+				    <show_in_website>1</show_in_website>
+				    <show_in_store>1</show_in_store>
+			        <fields>
+						<bg_color translate="label">
+							<label>Background color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</bg_color>
+	 					<bg_img translate="label">
+							<label>Background image</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_image</frontend_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</bg_img>
+						<staticblock_col1 translate="label">
+							<label>Static Block for Column 1</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listStaticBlock</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblock_col1>
+						<staticblock_col2 translate="label">
+							<label>Static Block for Column 2</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listStaticBlock</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblock_col2>
+						<staticblock_col3 translate="label">
+							<label>Static Block for Column 3</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listStaticBlock</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblock_col3>
+						<staticblock_col4 translate="label">
+							<label>Static Block for Column 4</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listStaticBlock</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblock_col4>
+						<staticblock_col5 translate="label">
+							<label>Static Block for Column 5</label>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_listStaticBlock</source_model>
+							<sort_order>70</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</staticblock_col5>
+					</fields>
+				</footer>
+				
+           		<advance translate="label">
+	            	<expanded>0</expanded>
+	            	<label>Advance setting</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9998</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+	            	<fields>
+	                   	<lessEnabled translate="label">
+							<label>Less</label>
+							<sort_order>5</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>i8style/system_config_source_lessStatus</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</lessEnabled>
+						<themeColor translate="label">
+							<label>Theme color</label>
+							<frontend_type>text</frontend_type>
+							<frontend_model>i8style/adminhtml_system_config_form_field_color</frontend_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</themeColor>
+						<showCpanel translate="label">
+							<label>Show Cpanel</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Show/Hide cPanel on the frontend</comment>
+						</showCpanel>
+
+						<scrollToTop translate="label">
+							<label>Show button scroll to top</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Show/Hide button scroll to top</comment>
+						</scrollToTop>
+						<showTooltip translate="label">
+							<label>Show Tooltip</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<comment>Show/Hide Tooltip on button,link, ... (Ex: for buttons: add to cart, add to compare, ...)</comment>
+						</showTooltip>
+	            	</fields>
+	            </advance>
+                <install translate="label">
+                    <label>Theme Installation</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <heading_import_blocks translate="label">
+                            <label>Import Static Blocks</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_import_blocks>
+                        
+                        <import_blocks translate="label">
+                            <label>Static Blocks</label>
+                            <comment>
+                                <![CDATA[Click this button to create all static blocks provided with i8style theme.]]>
+                            </comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>i8style/adminhtml_button_import_cms</frontend_model>
+                            <process>blocks</process>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </import_blocks>
+                        <overwrite_blocks translate="label">
+                            <label>Overwrite Existing Blocks</label>
+                            <comment>If the identifiers of the static blocks are already exist, you can set to "Yes" then save the configuration, then click the "Import Static Blocks" button.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </overwrite_blocks>
+                        
+                        <heading_import_pages translate="label">
+                            <label>Import CMS Pages</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </heading_import_pages>
+                        
+                        <import_pages translate="label">
+                            <label>CMS Pages</label>
+                            <comment>
+                                <![CDATA[Click this button to create all CMS pages provided with i8style theme.]]>
+                            </comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>i8style/adminhtml_button_import_cms</frontend_model>
+                            <process>pages</process>
+                            <sort_order>210</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </import_pages>
+                        <overwrite_pages translate="label">
+                            <label>Overwrite Existing Pages</label>
+                            <comment>If the identifiers of the cms pages are already exist, you can set to "Yes" then save the configuration, then click the "Import CMS Pages" button.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>220</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </overwrite_pages>
+                        <!-- 
+                         <import_config translate="label">
+                            <label>Export Cms pages, Cms static blocks</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>i8style/adminhtml_button_import_config</frontend_model>
+                            <process>config</process>
+                            <sort_order>999</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </import_config>
+                         -->
+                    </fields>
+                </install>
+			</groups>
+		</sns_i8style_cfg>
+	</sections>
+</config>

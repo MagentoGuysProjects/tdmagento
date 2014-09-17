@@ -1,0 +1,65 @@
+<style>
+	#sns_testlist {
+		position: fixed;
+		z-index: 10000;
+		width: 300px;
+		top: 0;
+		height: 100%;
+		right: -300px;
+		border-left: 1px solid #ccc;
+		background: #fff;
+		transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		-webkit-transition: all 0.3s ease;
+	}
+	#sns_testlist:hover {
+		right: 0;
+	}
+	#sns_testlist_btn {
+		position: absolute;
+		top: 10%;
+		right: 100%;
+		border: 1px solid #ccc;
+		border-width: 1px 0 1px 1px;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		background: #fff;
+	}
+	#sns_testlist .inner {
+		overflow: auto;
+	}
+</style>
+<div id="sns_testlist">
+	<div id="sns_testlist_btn"><i class="fa fa-list-ul"></i></div>
+	<div class="inner">
+		<h3><strong>Default Page</strong></h3>
+		<ol>
+			<li><a href="<?php echo $this->getUrl('contacts'); ?>">Contacts</a></li>
+			<li><a href="<?php echo $this->getUrl('about-magento-demo-store'); ?>">about-magento-demo-store</a></li>
+			<li><a href="<?php echo $this->getUrl('customer-service'); ?>">customer-service</a></li>
+			<li><a href="<?php echo $this->getUrl('privacy-policy-cookie-restriction-mode'); ?>">privacy-policy-cookie-restriction-mode</a></li>
+			<li><a href="<?php echo $this->getUrl('catalog/seo_sitemap/category/'); ?>">catalog/seo_sitemap/category/</a></li>
+			<li><a href="<?php echo $this->getUrl('catalogsearch/result/'); ?>?q=a">search result</a></li>
+			<li><a href="<?php echo $this->getUrl('catalogsearch/term/popular/'); ?>">catalogsearch/term/popular/</a></li>
+			<li><a href="<?php echo $this->getUrl('catalogsearch/advanced/'); ?>">catalogsearch/advanced/</a></li>
+			<li><a href="<?php echo $this->getUrl('sales/guest/form/'); ?>">sales/guest/form/</a></li>
+			<li><a href="<?php echo $this->getUrl('checkout/onepage/'); ?>">checkout/onepage/</a></li>
+			<li><a href="<?php echo $this->getUrl('checkout/multishipping/addresses/'); ?>">multishipping/addresses/</a></li>
+			<li><a href="<?php echo $this->getUrl('customer/account/'); ?>">customer/account/</a></li>
+		</ol>
+	
+		<hr />
+			
+		<h3><strong>Check list</strong></h3>
+		<div class="well">
+			<strong>6 product types</strong>
+			<ol>
+				<li>Detail page</li>
+				<li>Add ajax</li>
+				<li>Quick view</li>
+			</ol>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<script type="text/javascript">
+//<![CDATA[
+	if (typeof SNS_QV == 'undefined') SNS_QV = {};
+	SNS_QV.SETTING = {
+		<?php
+		if(strpos(Mage::getStoreConfig('quickview/general/popup_width'), '%')){ ?>
+			POP_WIDTH : '<?php echo Mage::getStoreConfig('quickview/general/popup_width');?>',
+		<?php
+		}else{ ?>
+			POP_WIDTH : <?php echo str_replace("px", "", Mage::getStoreConfig('quickview/general/popup_width'));?>,
+		<?php
+		}
+		if(strpos(Mage::getStoreConfig('quickview/general/popup_height'), '%')){ ?>
+			POP_HEIGHT : '<?php echo Mage::getStoreConfig('quickview/general/popup_height');?>',
+		<?php
+		}else{ ?>
+			POP_HEIGHT : <?php echo str_replace("px", "", Mage::getStoreConfig('quickview/general/popup_height'));?>,
+		<?php
+		} ?>
+		BASE_URL : '<?php echo str_replace("index.php/","",$this->getUrl()) ?>',
+		SELECTOR : '<?php echo Mage::getStoreConfig('quickview/general/selector_qv');?>',
+		TEXT:'<?php echo $this->__("Quick View"); ?>'
+	};
+//]]
+</script>
