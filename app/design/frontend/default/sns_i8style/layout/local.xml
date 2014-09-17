@@ -18,7 +18,7 @@
         	<action method="addItem"><type>js_css</type><name>sns/jqtransform/css/jqtransform.css</name></action>
 			
             <action method="addItem"><type>skin_css</type><name helper="i8style/data/getThemeCSS"/><params/></action>
-            
+            <action method="addItem"><type>js_css</type><name>sns/tdstyle.css</name></action>
             <!-- End Theme css -->
             
             <!-- Theme js -->
