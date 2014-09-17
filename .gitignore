@@ -17,6 +17,6 @@
 /php.ini.sample
 /pkginfo/
 /RELEASE_NOTES.txt
-/var/
+/var*
 var/cache*
 var/session*
