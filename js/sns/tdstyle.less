@@ -8,7 +8,6 @@
 }
 
 .item-des {
-	/*background-color: #FFF;*/
 	text-align: left;
 	font-size: .9em;
 }
@@ -21,7 +20,8 @@
 	background-color: rgb(255, 255, 212);
 	padding: 2px 4px;
 	margin-bottom: 20px;
-	/*display: inline;*/
+	display: inline;
+	font-size: 10px;
 }
 
 .item-title {
@@ -32,6 +32,9 @@
 		font-size: 1.2em;
 	}
 }
+
+
+
 
 .products-grid .item .item-inner {
 	.btn-cart {
@@ -45,20 +48,18 @@
 	}
 }
 
-
 .banner:hover:before {
 background: rgba(255,255,255,0.2) !important;
 }
 
-#sns_wrapper {
-	background-image: url(skin/frontend/default/sns_i8style/images/blueprint-grid.png) !important;
+/*#sns_wrapper {
 	background-repeat: repeat;
-}
+}*/
 
 #sns_menu {
 	background-image: none; 
-	background-color: white;
-	background-image: url(/skin/frontend/default/sns_i8style/images/blueprint-grid.png) !important;
+	background-color: @td-blue;
+	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
 }
 
 #sns_header_top {
@@ -72,3 +73,77 @@ background: rgba(255,255,255,0.2) !important;
 .block_border {
 background-color: white;
 }
+
+/*CHANGES THE LOOK OF THE GRADIENT GRID/LIST VIEW BUTTONS*/
+.toolbar .view-mode strong {
+background-color: @td-blue;
+background-image: none !important;
+}
+
+/*MENU CUSTOMISATION*/
+#sns_custommenu {
+	ul {
+		&.mainnav {
+			li {
+				&.level0 {
+					a {
+						color: lighten(@td-blue, 50%) !important;
+					}
+					&.active {
+						a {
+						color: white !important;
+						}
+					}
+					&:hover {
+						a {
+							color: white !important;
+							border: 1px solid white !important;
+						}
+					}
+					div.wrap_submenu ul.level0 > li a {
+						color: red !important;
+					}
+				}
+				&.level1 {
+					&.active {
+						a {
+							color: @td-blue !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*#sns_custommenu ul.mainnav li.level0 > div.wrap_submenu ul.level0 > li a {
+display: block;
+padding: 3px 10px;
+color: magenta !important;
+}*/
+
+
+
+/*SEARCH BOX CUSTOMISATION*/
+.block_topsearch {
+		.form-search {
+			input {
+			border: 1px solid #FFF !important;
+			color: white;
+			&:focus {
+				background-color: darken(@td-blue, 20%) !important;
+			}
+		}
+		button {
+			color: #FFF !important;
+		}
+	}
+}
+
+
+
+
+
+
+
+

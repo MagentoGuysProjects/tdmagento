@@ -173,6 +173,7 @@
         	?>
             <div class="<?php echo $itemClass; ?>">
 				<div class="item-inner clearfix">
+                    <span class="product-sku"><?php echo $this->htmlEscape($_product->getSku()) ?></span>
                 	<div class="item-img<?php echo $class; ?><?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?> clearfix">
 			            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image<?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?>">
 			                <span class="image-main">
