@@ -205,6 +205,9 @@
                                     ?>
                                 </a>
                             </div>
+                            <div class="item-des">
+                                <?php echo $_product->getShortDescription() ?>
+                            </div>
                             <div class="item-content clearfix">
                                 <div class="item-price">
                                     <?php echo $this->getPriceHtml($_product, false, rand().time()) ?>
