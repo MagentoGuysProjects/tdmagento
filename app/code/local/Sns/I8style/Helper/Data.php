@@ -48,17 +48,19 @@ class Sns_I8style_Helper_Data extends Mage_Core_Helper_Abstract {
 	public function getImgSize($size) {
 		$size = strtoupper($size);
 		
-		$imgRate = 0.8;
+		$imgRate = 1.5;
 		$imgS_w = 60; // small img
 		$imgM_w = 90; // detail thumb img
-		$imgL_w = 200; // grid product img
+		$imgL_w = 250; // grid product img
+		$imgL_h = 185; // grid product img
 		$imgXL_w = 400; // detail big img
 		$imgXXL_w = 600;
 		
 		if($size == 'S') return array($imgS_w, $imgS_w / $imgRate);
 		if($size == 'M') return array($imgM_w, $imgM_w / $imgRate);
+		// if($size == 'L') return array($imgL_w, $imgL_h);
 		if($size == 'L') return array($imgL_w, $imgL_w / $imgRate);
-		if($size == 'XL') return array($imgXL_w, $imgXL_w / $imgRate);
+		if($size == 'XL') return array($imgXL_w, $imgXL_w);
 		if($size == 'XXL') return array($imgXXL_w, $imgXXL_w / $imgRate);
 		return;
 		//	$imgSize = Mage::helper('i8style/data')->getImgSize(S);

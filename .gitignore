@@ -21,3 +21,4 @@
 /var*
 var/cache*
 var/session*
+*.lock

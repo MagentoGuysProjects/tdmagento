@@ -9,30 +9,111 @@
 .productcode a {
   color: #F00;
 }
-.item-content {
-  padding-left: 4px;
+.item-wrap {
+  /*background-color: #f1f1f1;*/
+
+  min-height: 128px;
+}
+/*.item-price {
+text-align: left; 
+float: left;
+}*/
+/*.item-content {
+	padding-left: 4px;
+	position: absolute;
+	bottom: 42px;
+	width: 100%;	
+}*/
+.td-label {
+  background-color: red;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin: 0px 4px;
+}
+.td-label.yellow {
+  background-color: #ffb400;
+}
+.td-label.blue {
+  background-color: #0495d7;
+  color: white;
+}
+.toolbar .pager .pages > ol li.current {
+  background-color: #0495d7 !important;
+  background-image: none !important;
+  filter: none !important;
+}
+.badges .ico-product.ico-sale {
+  background-color: #0495d7 !important;
+}
+.price-box .special-price .price {
+  color: #ec1c24 !important;
+  font-weight: 800;
 }
 .product-sku {
-  background-color: #ffffd4;
+  /*background-color: rgb(255, 255, 212);*/
+
+  background-color: #f1f1f1;
   padding: 2px 4px;
   margin-bottom: 20px;
-  display: inline;
+  /*display: inline;*/
+
   font-size: 10px;
+  /*float: right;*/
+
+  border-radius: 2px;
+  margin-top: 4px;
+}
+.products-list .link-wishlist:after,
+.products-list .link-compare:after,
+.products-list .btn-cart:after {
+  background-color: #ec1c24 !important;
+  background-image: none !important;
+  filter: none;
+  color: #fff;
+}
+.td-logo-mini {
+  /*background-color: red;*/
+
+  color: white;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  /*background-color: @td-blue;*/
+
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/trade-depot-logo-mini.png) !important;
+  background-repeat: no-repeat;
+  /*-webkit-background-size: 50%;*/
+
+  /*background-size: 50%;*/
+
+  background-size: 33px 30px;
 }
 .item-des {
-  text-align: left;
+  text-align: center;
   font-size: 1em;
   padding: 0px 4px;
   letter-spacing: -0.01em;
+  line-height: 1.4em;
+  font-size: .8em;
+  color: #0372a5;
 }
 .item-title {
-  text-align: left;
-  padding-left: 4px;
-  padding: 0px 8px;
+  /*text-align: center;*/
+
+  /*padding-left: 4px;*/
+
+  /*padding: 0px 8px;*/
+
+  font-size: 1em;
+  font-weight: 800;
+  letter-spacing: -0.06em;
 }
 .item-title a {
-  color: #0495d7;
-  font-size: 1.2em;
+  color: #025073;
 }
 .products-grid .item .item-inner .btn-cart {
   background: #ffb400 !important;
@@ -47,7 +128,6 @@
   background: rgba(255, 255, 255, 0.2) !important;
 }
 #sns_menu {
-  background-image: none;
   background-color: #0495d7;
   background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
   height: 128px;
