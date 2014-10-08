@@ -38,10 +38,12 @@
     <ol>
     <?php foreach ($_filters as $_filter): ?>
 		<?php
-
-		    $attributeModel=$_filter->filter->_data["attribute_model"];
-		    if(!is_null($attributeModel) && $attributeModel->getAttributeCode() == 'color') {
-		    	$attributeCode = $attributeModel->getAttributeCode();
+			$attributeCode = '';
+		    $attributeModel = $_filter->getFilter()->getAttributeModel();
+		    if($attributeModel) {
+		        $attributeCode = $attributeModel->getAttributeCode();
+		    }
+		    if($attributeCode == 'color') {
 	    		$color = Mage::helper('i8style')->getAttributeAdminLabel($attributeCode, $_filter);
 	    		$color = str_replace(' ', '', $color);
 				if(preg_match('/^#[a-f0-9]{6}$/i', $color)) {

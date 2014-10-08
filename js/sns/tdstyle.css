@@ -14,16 +14,6 @@
 
   min-height: 128px;
 }
-/*.item-price {
-text-align: left; 
-float: left;
-}*/
-/*.item-content {
-	padding-left: 4px;
-	position: absolute;
-	bottom: 42px;
-	width: 100%;	
-}*/
 .td-label {
   background-color: red;
   color: white;
@@ -47,20 +37,32 @@ float: left;
   background-color: #0495d7 !important;
 }
 .price-box .special-price .price {
-  color: #ec1c24 !important;
+  color: white !important;
   font-weight: 800;
+  background-color: #ec1c24 !important;
+  padding: 4px 8px;
+  border-radius: 14px;
+}
+.price-box .regular-price .price {
+  color: white !important;
+  font-weight: 800;
+  background-color: #ec1c24 !important;
+  padding: 4px 8px;
+  border-radius: 14px;
+}
+.price-box .old-price .price {
+  /*color: white !important;*/
+
+  font-weight: 800;
+  background-color: none !important;
+  padding: 4px 8px;
+  border-radius: 14px;
 }
 .product-sku {
-  /*background-color: rgb(255, 255, 212);*/
-
   background-color: #f1f1f1;
   padding: 2px 4px;
   margin-bottom: 20px;
-  /*display: inline;*/
-
   font-size: 10px;
-  /*float: right;*/
-
   border-radius: 2px;
   margin-top: 4px;
 }
@@ -82,14 +84,8 @@ float: left;
   top: 2px;
   right: 2px;
   z-index: 1;
-  /*background-color: @td-blue;*/
-
   background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/trade-depot-logo-mini.png) !important;
   background-repeat: no-repeat;
-  /*-webkit-background-size: 50%;*/
-
-  /*background-size: 50%;*/
-
   background-size: 33px 30px;
 }
 .item-des {
@@ -102,12 +98,6 @@ float: left;
   color: #0372a5;
 }
 .item-title {
-  /*text-align: center;*/
-
-  /*padding-left: 4px;*/
-
-  /*padding: 0px 8px;*/
-
   font-size: 1em;
   font-weight: 800;
   letter-spacing: -0.06em;

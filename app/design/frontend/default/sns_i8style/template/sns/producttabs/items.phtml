@@ -42,7 +42,8 @@ if( !empty($child_items) ) {
         ?>
         <div class="item item-animate<?php echo $class_first; ?>">
           <div class="item-inner clearfix">
-             <div class="item-img<?php echo $class; ?><?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?> clearfix">
+            <div class="td-logo-mini"></div>
+            <div class="item-img<?php echo $class; ?><?php echo (count(Mage::getModel('catalog/product')->load($_product->getId())->getMediaGalleryImages()) > 0)?' have-additional':'';?> clearfix">
                 <a class="img-main" href="<?php echo $item->link ?>" title="<?php echo $item->title?>">
                     <img src="<?php echo $item->image; ?>" alt="<?php echo $item->title ?>"/>
                 </a>
@@ -62,15 +63,15 @@ if( !empty($child_items) ) {
             <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
             <div class="info-inner">
                 <?php if( $options->item_title_display == 1 ){?>
+                <div class="item-price">
+                    <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+                </div>
                 <div class="item-title">
                     <a href="<?php echo $item->link ?>" onclick="javascript: return true"  title="<?php echo $item->title?>" >
                       <?php echo $item->title; ?>
                   </a>
               </div>
-              <!-- USED ON HOME PAGE TABS -->
-              <div class="product-depscription">
-                <?php echo $_product->getShortDescription() ?>
-              </div>
+              <!-- USED ON HOME PAGE TABS -->            
               <?php }?>
               <div class="item-content">
                 <?php if( $options->item_desc_display == 1 ){?>
@@ -79,9 +80,6 @@ if( !empty($child_items) ) {
                 </div>
                 <?php }
                 if( $options->item_price_disp == 1 ){ ?>
-                <div class="item-price">
-                    <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
-                </div>
                 <?php }?>
                 <?php
                 if( $options->item_review_disp == 1 ){ ?>
