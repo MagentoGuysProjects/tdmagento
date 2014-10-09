@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Fontis Direct Payment Solutions Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Fontis
+ * @package    Fontis_Dps
+ * @author     Chris Norton
+ * @copyright  Copyright (c) 2008 Fontis Pty. Ltd. (http://www.fontis.com.au)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Fontis_Dps>
+            <version>2.2</version>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Fontis_Dps>
+    </modules>
+    <global>
+    	<models>
+    		<dps>
+	    		<class>Fontis_Dps_Model</class>
+	    	</dps>
+    	</models>
+    	<helpers>
+    		<dps>
+    			<class>Fontis_Dps_Helper</class>
+    		</dps>
+    	</helpers>
+    	<blocks>
+    		<dps>
+    			<class>Fontis_Dps_Block</class>
+    		</dps>
+    	</blocks>
+        <resources>
+            <dps_setup>
+                <setup>
+                    <module>Fontis_Dps</module>
+                </setup>
+                <connection>
+                    <use>directory_setup</use>
+                </connection>
+            </dps_setup>
+            <dps_write>
+                <connection>
+                    <use>local_write</use>
+                </connection>
+            </dps_write>
+            <dps_read>
+                <connection>
+                    <use>local_read</use>
+                </connection>
+            </dps_read>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <dps>
+                <use>standard</use>
+                <args>
+                    <module>Fontis_Dps</module>
+                    <frontName>dps</frontName>
+                </args>
+            </dps>
+        </routers>
+    </frontend>
+	<default>
+        <payment>
+            <pxpost>
+            	<active>0</active>
+            	<model>dps/pxpost</model>
+            	<username>TestUsername</username>
+            	<password>TestPassword</password>
+            	<title>DPS</title>
+            	<customer_group_access>0</customer_group_access>
+				<customer_group>0</customer_group>
+            	<allowspecific>0</allowspecific>
+            	<debug>0</debug>
+            	<cctypes>VI,MC</cctypes>
+            	<payment_action>authorize_capture</payment_action>
+            </pxpost>
+            <pxpay>
+                <active>0</active>
+                <model>dps/pxpay</model>
+                <cgi_url>https://sec2.paymentexpress.com/pxpay/pxaccess.aspx</cgi_url>
+                <username>TestUsername</username>
+                <password>TestPassword</password>
+                <title>DPS</title>
+                <customer_group_access>0</customer_group_access>
+                <customer_group>0</customer_group>
+                <allowspecific>0</allowspecific>
+                <debug>0</debug>
+            	<cctypes>VI,MC</cctypes>
+            </pxpay>
+        </payment>
+    </default>
+</config>
