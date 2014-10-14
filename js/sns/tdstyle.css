@@ -216,7 +216,10 @@
 #sns_custommenu .wrap_dropdown.fullwidth {
   top: 128px !important;
 }
-.item-inner {
+.extra {
+  color: #0495d7 !important;
+}
+.products-grid .item-inner {
   height: 280px !important;
   border: 1px solid #E5E5E5 !important;
   padding: 6px;
