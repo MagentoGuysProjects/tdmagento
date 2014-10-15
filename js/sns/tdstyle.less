@@ -1,15 +1,37 @@
 @import url(variables.less);
 
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
 .productcode {
-  float:right; background-color: #CC; color: #FFF; padding:0px 2px; text-transform: uppercase; font-size:10px;
+  float:right; background-color: #CCC; color: #FFF; padding:0px 2px; text-transform: uppercase; font-size:10px;
   a {
   	color: #F00;
   }
 }
 
 .item-wrap {
-	/*background-color: #f1f1f1;*/
 	min-height: 128px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+	font-family: @td-headline;
+	color: @td-blue;
+	text-shadow: 1px 2px 0px #ffffff;
+}
+
+h1 {
+	color: @td-grey;
+}
+
+.sns_mainmidle h3 {
+	color: #B3B3B3 !important;
 }
 
 .td-label {
@@ -100,14 +122,15 @@ color: #fff;
 	letter-spacing: -0.01em;
 	line-height: 1.4em;
 	font-size: .8em;
-	color: darken(@td-blue, 10%);
+	color: @td-grey;
 }
 .item-title {
 	font-size: 1em;
 	font-weight: 800;
-	letter-spacing: -0.06em;
+		letter-spacing: -0.06em;
+		font-family: @td-headline;
 	a {
-		color: darken(@td-blue, 20%);
+		color: @td-blue-dark;
 	}
 }
 
@@ -127,6 +150,12 @@ color: #fff;
 background: rgba(255,255,255,0.2) !important;
 }
 
+.wrap_dropdown {
+	&.fullwidth {
+	top: 128px !important;
+	}
+}
+
 #sns_menu {
 	background-color: @td-blue;
 	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
@@ -134,12 +163,18 @@ background: rgba(255,255,255,0.2) !important;
 	&.keep-menu {
 		height: 58px;
 		background-color: @td-blue !important;
+		.wrap_dropdown {
+			&.fullwidth {
+			top: 58px !important;
+			}
+		}
 	}
 }
 
 #sns_header_top {
 	background-color: darken(@td-blue, 20%) !important;
 }
+
 
 #sns_wraper_footer {
 	background-size: auto !important;
@@ -253,6 +288,73 @@ background-image: none !important;
 	background-color: @td-red;
 }
 
+/*@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+
+    #sns_content{background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/tiny_grid@2X.png) !important;
+}
+}*/
+
+#sns_wrapper {
+	background-color: transparent !important;
+}
+
+
+/*#sns_breadcrumbs {
+	background-image: url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) !important;
+}*/
+
+/*#sns_content {
+	background-color: #FFF;
+	background-image: url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) !important;	
+	margin: 0px; 
+}*/
+
+body {
+	background: #fff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+	margin: 0px; 
+}
+
+#sns_twitter .tweet {
+background: #FFF;
+}
+.homepage #sns_wraper_header {
+ margin-bottom: 0px; 
+}
+
+.jqTransformSelectWrapper {
+    background-color: #FFF !important;
+}
+
+.toolbar a {
+    background-color: #FFF !important;
+}
+
+.block {
+	background-color: #FFF;
+}
+
+.products-list > li.item {
+	background-color: white;
+}
+
+.block_head_center h3 {
+	background: #fff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+
+.block_head_center .navslider a {
+	background: #fff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+
+.block_head_left h3 {
+	background: #fff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+	/*background-color: #fff !important;*/
+}
+
+.block_head_left .navslider {
+	background: #fff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+
 /*MAKE LESS PADDING SO THE NARROW BY SLIDER FITS ON ONE LINE*/
 #sns_content .block.block-layered-nav dl#narrow-by-list dd {
 margin: 0;
@@ -267,13 +369,7 @@ padding: 5px 14px 14px !important;
 	margin-bottom: 64px !important;
 }
 
-#sns_custommenu {
-	.wrap_dropdown {
-		&.fullwidth {
-		top: 128px !important;
-		}
-	}
-}
+
 
 
 .extra {

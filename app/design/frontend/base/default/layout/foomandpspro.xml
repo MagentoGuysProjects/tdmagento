@@ -1,0 +1,75 @@
+<layout version="0.1.0">
+
+    <default>
+        <reference name="footer_links">
+            <action method="addLink" translate="label title" module="foomandpspro" ifconfig="payment/magebasedpspxpay/add_payment_link">
+                <label>Pay Us</label><url>foomandpspro/payment/start</url><title>Pay your invoice online</title><prepare>true</prepare>
+            </action>
+        </reference>
+    </default>
+
+    <foomandpspro_payment_start translate="label">
+        <label>Payment</label>
+        <reference name="content">
+            <block type="core/template" name="simplePxpay" template="fooman/dpspro/simplePxpayForm.phtml"/>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+            <action method="setHeaderTitle" translate="title" module="foomandpspro">
+                <title>Make a Payment</title>
+            </action>
+        </reference>
+    </foomandpspro_payment_start>
+
+    <foomandpspro_payment_success translate="label">
+        <label>Payment Receipt</label>
+        <reference name="content">
+            <block type="core/template" name="simplePxpayResult" template="fooman/dpspro/simplePxpayResult.phtml"/>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+            <action method="setHeaderTitle" translate="title" module="foomandpspro">
+                <title>Payment Receipt</title>
+            </action>
+        </reference>
+    </foomandpspro_payment_success>
+
+    <foomandpspro_payment_fail translate="label">
+        <label>Payment Error</label>
+        <reference name="content">
+            <block type="core/template" name="simplePxpayResult" template="fooman/dpspro/simplePxpayResult.phtml"/>
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+            <action method="setHeaderTitle" translate="title" module="foomandpspro">
+                <title>Payment Error</title>
+            </action>
+        </reference>
+    </foomandpspro_payment_fail>
+    
+    <checkout_onepage_paymentmethod>
+        <reference name="root">
+            <block type="core/text_list" name="additional" as="additional">
+                <block type="foomandpspro/pxpostrebill_ccSave" name="fooman_ccsave" as="fooman_ccsave"
+                       template="fooman/dpspro/onePageCheckout.phtml"/>
+            </block>    
+        </reference>
+    </checkout_onepage_paymentmethod>
+
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addJs"><script>fooman/dpspro/fusion.js</script></action>
+        </reference>
+    </checkout_onepage_index>
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.before">
+            <block type="core/template" name="pxfusion_iframe" as="pxfusion_iframe" template="fooman/dpspro/pxfusion/iframe.phtml" />
+        </reference>
+    </checkout_onepage_review>
+</layout>

@@ -1,0 +1,14 @@
+../../../../../app/code/community/Fooman/DpsPro/                                     /app/code/community/Fooman/DpsPro/
+../../../../../app/design/adminhtml/default/default/template/fooman/dpspro/          /app/design/adminhtml/default/default/template/fooman/dpspro/
+../../../../../app/design/frontend/base/default/layout/foomandpspro.xml              /app/design/frontend/base/default/layout/foomandpspro.xml
+../../../../../app/design/frontend/base/default/template/fooman/dpspro/              /app/design/frontend/base/default/template/fooman/dpspro/
+../../../../../app/etc/modules/Fooman_DpsPro.xml                                     /app/etc/modules/Fooman_DpsPro.xml
+../../../../../app/locale/en_US/Fooman_DpsPro.csv                                    /app/locale/en_US/Fooman_DpsPro.csv
+../../../../../app/locale/en_US/template/email/fooman/dpspro/customer.html           /app/locale/en_US/template/email/fooman/dpspro/customer.html
+../../../../../app/locale/en_US/template/email/fooman/dpspro/customer_approved.html  /app/locale/en_US/template/email/fooman/dpspro/customer_approved.html
+../../../../../app/locale/en_US/template/email/fooman/dpspro/customer_denied.html    /app/locale/en_US/template/email/fooman/dpspro/customer_denied.html
+../../../../../app/locale/en_US/template/email/fooman/dpspro/fraud.html              /app/locale/en_US/template/email/fooman/dpspro/fraud.html
+../../../../../app/locale/en_US/template/email/fooman/dpspro/payment.html            /app/locale/en_US/template/email/fooman/dpspro/payment.html
+../../../../../app/locale/en_US/template/email/fooman/dpspro/store_owner.html        /app/locale/en_US/template/email/fooman/dpspro/store_owner.html
+../../../../../js/fooman/dpspro/                                                     /js/fooman/dpspro/
+../../../../../lib/Maxmind/                                                          /lib/Maxmind/

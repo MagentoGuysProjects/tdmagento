@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Fooman_DpsPro>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <MageBase_DpsPaymentExpress/>
+            </depends>
+        </Fooman_DpsPro>
+    </modules>
+</config>

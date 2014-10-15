@@ -1,0 +1,7 @@
+<?php echo $this->getMethod()->getTitle() ?>
+ {{pdf_row_separator}}
+<?php echo Mage::helper('magebasedps')->__('Card Type') ?>: <?php echo $this->getAdditionalData('CardName') ?>
+{{pdf_row_separator}}
+<?php echo Mage::helper('magebasedps')->__('Name on Card') ?>: <?php echo $this->getAdditionalData('CardHolderName') ?>
+{{pdf_row_separator}}
+

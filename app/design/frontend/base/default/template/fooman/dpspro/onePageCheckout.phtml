@@ -1,0 +1,22 @@
+<?php
+$codes = $this->getActiveMethodCodes();
+?>
+<?php foreach ($codes as $code):?>
+    <script>
+        //<![CDATA[
+        var content = '<li class="control">' +
+            '<input class="checkbox" type="checkbox"' +
+                    'id="<?php echo $code ?>_cc_save"' +
+                    'name="payment[cc_save]"' +
+                    'title="<?php echo $this->__('Save my payment details for next time') ?>"' +
+                    'value="1" />' +
+            '<label for="<?php echo $code ?>_cc_save"><?php echo $this->__('Save my payment details for next time') ?></label>'+
+            '</li>';
+        if ($('payment_form_<?php echo $code ?>') != undefined
+            && $('<?php echo $code ?>_cc_save') == undefined) {
+            Element.insert($('payment_form_<?php echo $code ?>'), content);
+        }
+        //]]>
+    </script>
+<?php endforeach;?>
+

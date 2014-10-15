@@ -1,0 +1,33 @@
+<div class="page-title">
+    <h1><?php echo Mage::helper('foomandpspro')->__('Make a Payment') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<form action="<?php echo $this->getFormAction(); ?>" id="form-validate" method="post">
+    <div class="fieldset">
+        <ul class="form-list" id="foomandpspro-payment">
+            <li class="fields">
+                <div class="field">
+                    <label for="reference" class="required"><em>*</em><?php echo Mage::helper('foomandpspro')->__('Reference') ?></label>
+                    <div class="input-box">
+                        <input name="reference" id="name" title="<?php echo Mage::helper('foomandpspro')->__('Reference') ?>" value="<?php echo $this->getReference() ?>" class="input-text required-entry" type="text" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="amount" class="required"><em>*</em><?php echo Mage::helper('foomandpspro')->__('Amount') ?></label>
+                    <div class="input-box">
+                        <input class="required-entry input-text validate-not-negative-number" name="amount" id="email" title="<?php echo Mage::helper('foomandpspro')->__('Amount') ?>" value="<?php echo $this->getAmount() ?>" type="text" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+         <script type="text/javascript">decorateList('foomandpspro-payment')</script>
+    </div>
+    <div class="buttons-set">
+        <button type="submit" title="<?php echo $this->__('Continue') ?>" class="button"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>

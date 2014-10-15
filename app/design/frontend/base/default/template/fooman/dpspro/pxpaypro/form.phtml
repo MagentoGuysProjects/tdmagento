@@ -1,0 +1,27 @@
+<?php $_code = $this->getMethodCode() ?>
+<?php $_logos = $this->getLogosToDisplay();?>
+<ul class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
+    <li class="dps">
+        <div class="dps-text"><?php echo Mage::helper('magebasedps')->__('After clicking Place Order in the next step you will be redirected to the DPS Payment Express website.') ?></div>
+        <div class="dps-logos">
+        <img src="<?php echo $this->getSkinUrl('images/magebase/dps/dpspxlogo.png'); ?>" alt="" />
+        <?php if (count($_logos) > 0): ?>
+            <?php foreach($_logos as $_logo): ?>
+                <?php if ($_logo) : ?>
+                    <img src="<?php echo $this->getSkinUrl('images/magebase/dps/'.$_logo); ?>" alt="" />
+                <?php endif; ?>
+            <?php endforeach ?>
+        <?php endif;?>
+        </div>
+    </li>
+    <?php if($this->displayAddCcSave()) :?>
+        <li class="control">
+            <input class="checkbox" type="checkbox"
+                   id="<?php echo $_code ?>_cc_save"
+                   name="payment[cc_save]"
+                   title="<?php echo $this->__('Save my payment details for next time') ?>"
+                   value="1" />
+            <label for="<?php echo $_code ?>_cc_save"><?php echo $this->__('Save my payment details for next time') ?></label>
+        </li>
+    <?php endif;?>
+</ul>

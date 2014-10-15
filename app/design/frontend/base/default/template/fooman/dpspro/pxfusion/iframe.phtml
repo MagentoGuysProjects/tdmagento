@@ -1,0 +1,101 @@
+<!-- IFRAME for request to DPS -->
+<iframe id="iframePxFusion" allowtransparency="true" frameborder="0"  name="iframePxFusion" style="display:none;" src="<?php echo $this->getJsUrl() ?>blank.html" height="100" width="300" scrolling="no"></iframe>
+<script>
+window.foomanSuccessUrl = '';
+Review.prototype.nextStep  = Review.prototype.nextStep.wrap(function(originalNexStep, transport){
+    window.foomanSuccessUrl = this.successUrl;
+    if(payment.currentMethod != 'foomandpsprofusion') {
+        return originalNexStep(transport);
+    }
+    checkout.setLoadWaiting('review');
+    if (transport && transport.responseText) {
+        try{
+            response = eval('(' + transport.responseText + ')');
+        }
+        catch (e) {
+            response = {};
+        }
+        if (response.success) {
+
+            var iframe = $('iframePxFusion');
+            var doc = null;
+
+            if(iframe.contentDocument) {
+                doc = iframe.contentDocument;
+            } else if(iframe.contentWindow) {
+                doc = iframe.contentWindow.document;
+            } else if(iframe.document) {
+                doc = iframe.document;
+            }
+
+            doc.body.innerHTML = "";
+
+            pxFusionForm = doc.createElement('form');
+            pxFusionForm.id = 'pxfusion_form';
+            pxFusionForm.method = 'post';
+            pxFusionForm.action = '<?php echo Fooman_DpsPro_Model_Method_PxFusion::URL_FORM_SUBMIT;?>';
+            submit = doc.createElement('submit');
+            pxFusionForm.appendChild(submit);
+
+            var cardholder = doc.createElement('input');
+            cardholder.id = 'CardHolderName';
+            cardholder.name = 'CardHolderName';
+            cardholder.value = $('foomandpsprofusion_cc_owner').getValue();
+            pxFusionForm.appendChild(cardholder);
+
+            var ccNumber = doc.createElement('input');
+            ccNumber.id = 'CardNumber';
+            ccNumber.name = 'CardNumber';
+            ccNumber.value = $('foomandpsprofusion_cc_number').getValue();
+            pxFusionForm.appendChild(ccNumber);
+
+            var expirationMonth = doc.createElement('input');
+            expirationMonth.id = 'ExpiryMonth';
+            expirationMonth.name = 'ExpiryMonth';
+            expirationMonth.value = $('foomandpsprofusion_expiration').getValue();
+            if($('foomandpsprofusion_expiration').getValue().length == 1) {
+                expirationMonth.value = '0' + $('foomandpsprofusion_expiration').getValue();
+            }
+            pxFusionForm.appendChild(expirationMonth);
+
+            var expirationYear = doc.createElement('input');
+            expirationYear.id = 'ExpiryYear';
+            expirationYear.name = 'ExpiryYear';
+            expirationYear.value = $('foomandpsprofusion_expiration_yr').getValue().replace('20', '');
+            pxFusionForm.appendChild(expirationYear);
+
+            var cvc2 = doc.createElement('input');
+            cvc2.id = 'Cvc2';
+            cvc2.name = 'Cvc2';
+            cvc2.value = $('foomandpsprofusion_cc_cid').getValue();
+            pxFusionForm.appendChild(cvc2);
+
+            var sessionId = doc.createElement('input');
+            sessionId.id = 'SessionId';
+            sessionId.name = 'SessionId';
+            sessionId.value = response.redirect;
+            pxFusionForm.appendChild(sessionId);
+
+            var dpsAction = doc.createElement('input');
+            dpsAction.id = 'Action';
+            dpsAction.name = 'Action';
+            dpsAction.value = 'Add';
+            pxFusionForm.appendChild(dpsAction);
+
+            var dpsObject = doc.createElement('input');
+            dpsObject.id = 'Object';
+            dpsObject.name = 'Object';
+            dpsObject.value = 'DpsPxPay';
+            pxFusionForm.appendChild(dpsObject);
+
+            doc.body.appendChild(pxFusionForm);
+            pxFusionForm.submit();
+
+            this.isSuccess = true;
+            //window.location = this.successUrl;
+        }
+    }
+
+    return;
+});
+</script>

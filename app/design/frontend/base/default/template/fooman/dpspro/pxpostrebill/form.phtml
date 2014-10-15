@@ -1,0 +1,15 @@
+<?php $_code = $this->getMethodCode() ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li>
+        <label for="<?php echo $_code ?>_billing_agreement"><?php echo $this->__('Payment Details') ?></label>
+        <div class="input-box">
+            <select id="billing_agreement" name="payment[<?php echo $_code ?>_billing_agreement]">
+                <option value=""><?php echo $this->__('--Please Select--') ?></option>
+                <?php foreach ($this->getBillingAgreements() as $billingAgreement): ?>
+                    <option value="<?php echo $billingAgreement->getAgreementId(
+                    ) ?>"><?php echo $billingAgreement->getAgreementLabel() ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+    </li>
+</ul>

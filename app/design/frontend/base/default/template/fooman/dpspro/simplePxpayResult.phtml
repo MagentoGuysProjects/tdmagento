@@ -1,0 +1,32 @@
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php if($this->getSuccess()) :?>
+    <div class="page-title">
+        <h1><?php echo Mage::helper('magebasedps')->__('Payment Received') ?></h1>
+    </div>
+    <table style="width:50%" class="data-table" cellspacing="0" id="magebase-payment-receipt">
+        <tr>
+            <td class="label"><?php echo Mage::helper('magebasedps')->__('Reference') ?></td>
+            <td class="data"><?php echo $this->getReference() ?></td>
+        </tr>
+        <tr>
+            <td class="label"><?php echo Mage::helper('magebasedps')->__('Amount') ?></td>
+            <td class="data"><?php echo $this->getAmount() ?></td>
+        </tr>
+        <tr>
+            <td class="label"><?php echo Mage::helper('magebasedps')->__('Card Type') ?></td>
+            <td class="data"><?php echo $this->getCardName() ?></td>
+        </tr>
+        <tr>
+            <td class="label"><?php echo Mage::helper('magebasedps')->__('Card Holder') ?></td>
+            <td class="data"><?php echo $this->getCardHolderName() ?></td>
+        </tr>
+    </table>
+    <script type="text/javascript">decorateTable('magebase-payment-receipt')</script>
+<?php else :?>
+    <div class="page-title">
+        <h1><?php echo Mage::helper('magebasedps')->__('Payment Error') ?></h1>
+    </div>
+    <p>
+        <?php echo Mage::helper('magebasedps')->__('There has been an error processing your payment. Please try later or contact us for help.')?>
+    </p>
+<?php endif;?>

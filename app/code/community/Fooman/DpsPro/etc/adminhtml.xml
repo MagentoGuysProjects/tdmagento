@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <dpspayment translate="title" module="foomandpspro">
+                    <title>DPS Manual Payments</title>
+                    <sort_order>55</sort_order>
+                    <action>adminhtml/dpspayment</action>
+                </dpspayment>
+            </children>
+        </sales>
+    </menu>
+</config>

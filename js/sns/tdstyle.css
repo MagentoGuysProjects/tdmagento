@@ -1,6 +1,12 @@
-/*@td-stencil: 'Allerta Stencil', sans-serif;*/.productcode {
+/*@td-stencil: 'Allerta Stencil', sans-serif;*/.float-left {
+  float: left;
+}
+.float-right {
   float: right;
-  background-color: #CC;
+}
+.productcode {
+  float: right;
+  background-color: #CCC;
   color: #FFF;
   padding: 0px 2px;
   text-transform: uppercase;
@@ -10,9 +16,24 @@
   color: #F00;
 }
 .item-wrap {
-  /*background-color: #f1f1f1;*/
-
   min-height: 128px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  font-family: Nunito, sans-serif;
+  color: #0495d7;
+  text-shadow: 1px 2px 0px #ffffff;
+}
+h1 {
+  color: #666666;
+}
+.sns_mainmidle h3 {
+  color: #B3B3B3 !important;
 }
 .td-label {
   background-color: red;
@@ -95,15 +116,16 @@
   letter-spacing: -0.01em;
   line-height: 1.4em;
   font-size: .8em;
-  color: #0372a5;
+  color: #666666;
 }
 .item-title {
   font-size: 1em;
   font-weight: 800;
   letter-spacing: -0.06em;
+  font-family: Nunito, sans-serif;
 }
 .item-title a {
-  color: #025073;
+  color: #0484be;
 }
 .products-grid .item .item-inner .btn-cart {
   background: #ffb400 !important;
@@ -117,6 +139,9 @@
 .banner:hover:before {
   background: rgba(255, 255, 255, 0.2) !important;
 }
+.wrap_dropdown.fullwidth {
+  top: 128px !important;
+}
 #sns_menu {
   background-color: #0495d7;
   background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
@@ -125,6 +150,9 @@
 #sns_menu.keep-menu {
   height: 58px;
   background-color: #0495d7 !important;
+}
+#sns_menu.keep-menu .wrap_dropdown.fullwidth {
+  top: 58px !important;
 }
 #sns_header_top {
   background-color: #025073 !important;
@@ -201,6 +229,59 @@
 .sns-revolutionslider {
   background-color: #ec1c24;
 }
+/*@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+
+    #sns_content{background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/tiny_grid@2X.png) !important;
+}
+}*/
+#sns_wrapper {
+  background-color: transparent !important;
+}
+/*#sns_breadcrumbs {
+	background-image: url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) !important;
+}*/
+/*#sns_content {
+	background-color: #FFF;
+	background-image: url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) !important;	
+	margin: 0px; 
+}*/
+body {
+  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  margin: 0px;
+}
+#sns_twitter .tweet {
+  background: #FFF;
+}
+.homepage #sns_wraper_header {
+  margin-bottom: 0px;
+}
+.jqTransformSelectWrapper {
+  background-color: #FFF !important;
+}
+.toolbar a {
+  background-color: #FFF !important;
+}
+.block {
+  background-color: #FFF;
+}
+.products-list > li.item {
+  background-color: white;
+}
+.block_head_center h3 {
+  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+.block_head_center .navslider a {
+  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+.block_head_left h3 {
+  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  /*background-color: #fff !important;*/
+
+}
+.block_head_left .navslider {
+  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
 /*MAKE LESS PADDING SO THE NARROW BY SLIDER FITS ON ONE LINE*/
 #sns_content .block.block-layered-nav dl#narrow-by-list dd {
   margin: 0;
@@ -212,9 +293,6 @@
 /*MAKE THE PRODUCT GRID VIEW ITEMS HAVE SOME SPACE AFTER THEM.*/
 .sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
   margin-bottom: 64px !important;
-}
-#sns_custommenu .wrap_dropdown.fullwidth {
-  top: 128px !important;
 }
 .extra {
   color: #0495d7 !important;

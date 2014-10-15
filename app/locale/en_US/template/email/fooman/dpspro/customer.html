@@ -1,0 +1,48 @@
+<!--@subject Re: Fooman Order # {{var ordernumber}}@-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"skin url=\"images/logo_email.gif\" _area='frontend'":"Email Logo Image",
+"ordernumber":"Order Number",
+"name":"Customer name",
+"var store.getFrontendName()":"Store Name"}
+@-->
+
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+    <table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <!-- [ header starts here] -->
+                <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top">
+                        <td valign="top"><a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var store.getFrontendName()}}"  style="margin-bottom:10px;" border="0"/></a></td>
+                    </tr>
+                    <!-- [ middle starts here] -->
+                    <tr>
+                        <td valign="top">
+                            <h1 style="font-size:22px; font-weight:normal; line-height:22px; margin:0 0 11px 0;">Dear {{htmlescape var=$name}},</h1>
+                            <p style="font-size:12px; line-height:16px; margin:0 0 8px 0;">Your recent order #{{var ordernumber}} has been identified as potentially suspicious by our fraud detection software.</p>
+                            <p style="font-size:12px; line-height:16px; margin:0 0 8px 0;">This is an automatic process and can happen for a number of reasons:</p>
+                            <ul style="font-size:12px; line-height:16px; margin:0 0 16px 0; padding:0;">
+                                <li style="list-style:none inside; padding:0 0 0 10px;">&ndash; Billing address and order location do not match</li>
+                                <li style="list-style:none inside; padding:0 0 0 10px;">&ndash; Your location is concealed by an anonymising proxy</li>
+                                <li style="list-style:none inside; padding:0 0 0 10px;">&ndash; Recent fraudulent activity from your IP address</li>
+                            </ul>
+                            <p style="font-size:12px; line-height:16px; margin:0 0 8px 0;">We will review your order and will contact you as soon as we can with an update on your order.</p>
+                            <p style="font-size:12px; line-height:16px; margin:0 0 8px 0;">The funds have been authorised on your credit card but will only be charged if the order is approved by us.</p>
+                            <p style="font-size:12px; line-height:16px; margin:0;">If you have any questions or concerns, please feel free to contact us at <a href="mailto:{{config path='trans_email/ident_support/email'}}" style="color:#1E7EC8;">{{config path='trans_email/ident_support/email'}}</a> or by phone at {{config path='general/store_information/phone'}}.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#EAEAEA" align="center" style="background:#EAEAEA; text-align:center;"><center><p style="font-size:12px; margin:0;"><strong>{{var store.getFrontendName()}}</strong></p></center></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
