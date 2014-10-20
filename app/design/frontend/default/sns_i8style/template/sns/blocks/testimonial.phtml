@@ -18,10 +18,10 @@
 if($collect_testimonials) :
 	$blockId ='sns_testimonial_'.rand().time();
 ?>
+<div class="block_head_center">
+	<h3><?php echo $themeCfg->getField('testimonial_title'); ?></h3>
+</div>
 <div class="block_border sns_testimonial" id="<?php echo $blockId; ?>">
-	<div class="block_head">
-		<h3><?php echo $themeCfg->getField('testimonial_title'); ?></h3>
-	</div>
 	<div class="block_content testimonials_slider">
 		<div class="navslider">
 			<a class="prev" href="#"><i class="icon-arrow-left"></i></a>

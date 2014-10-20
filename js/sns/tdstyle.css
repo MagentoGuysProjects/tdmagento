@@ -5,12 +5,16 @@
   float: right;
 }
 .productcode {
-  float: right;
   background-color: #CCC;
   color: #FFF;
   padding: 0px 2px;
   text-transform: uppercase;
   font-size: 10px;
+  position: absolute;
+  top: 0px;
+  padding: 0px 6px 2px 6px;
+  left: 0px;
+  border-radius: 2px;
 }
 .productcode a {
   color: #F00;
@@ -18,6 +22,30 @@
 .item-wrap {
   min-height: 128px;
 }
+#sns_tab_products {
+  background-color: white;
+}
+.btn-cart {
+  background-color: #ffb400 !important;
+  color: white !important;
+  /* color: transparent; */
+
+}
+.link-wishlist {
+  background-color: #ec1c24 !important;
+  color: white !important;
+}
+.link-compare {
+  background-color: #0495d7 !important;
+  color: white !important;
+}
+.email-friend {
+  background-color: #666666 !important;
+}
+/*button {
+    background-color: white !important;
+}
+*/
 h1,
 h2,
 h3,
@@ -31,6 +59,10 @@ h6 {
 }
 h1 {
   color: #666666;
+}
+h3 {
+  color: #999999 !important;
+  font-family: Nunito, sans-serif !important;
 }
 .sns_mainmidle h3 {
   color: #B3B3B3 !important;
@@ -64,21 +96,59 @@ h1 {
   padding: 4px 8px;
   border-radius: 14px;
 }
-.price-box .regular-price .price {
-  color: white !important;
-  font-weight: 800;
+.price-box .price {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 4px 8px;
   background-color: #ec1c24 !important;
-  padding: 4px 8px;
-  border-radius: 14px;
+  color: white !important;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 14px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 14px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 14px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 14px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 14px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
-.price-box .old-price .price {
-  /*color: white !important;*/
+.price-box .price#old-price {
+  background-color: #ec1c24 !important;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 14px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 14px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 14px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 14px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 14px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.price-box .price #old-price .price {
+  background-color: transparent !important;
+  color: #666666;
+}
+/*.price-box .regular-price .price {
 
-  font-weight: 800;
-  background-color: none !important;
-  padding: 4px 8px;
-  border-radius: 14px;
+
 }
+
+.price-box .old-price .price {
+
+}*/
 .product-sku {
   background-color: #f1f1f1;
   padding: 2px 4px;
@@ -120,12 +190,16 @@ h1 {
 }
 .item-title {
   font-size: 1em;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: -0.06em;
   font-family: Nunito, sans-serif;
+  line-height: 120%;
 }
 .item-title a {
   color: #0484be;
+}
+.item-price {
+  margin: 8px;
 }
 .products-grid .item .item-inner .btn-cart {
   background: #ffb400 !important;
@@ -180,6 +254,9 @@ h1 {
   background-image: none !important;
 }
 /*MENU CUSTOMISATION*/
+#sns_custommenu ul.mainnav li {
+  font-family: Nunito, sans-serif;
+}
 #sns_custommenu ul.mainnav li.level0 a {
   color: #dcf3fe !important;
 }
@@ -238,16 +315,21 @@ h1 {
 #sns_wrapper {
   background-color: transparent !important;
 }
+.cart {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #CCC;
+}
 /*#sns_breadcrumbs {
-	background-image: url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) !important;
+	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) !important;
 }*/
 /*#sns_content {
 	background-color: #FFF;
-	background-image: url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) !important;	
+	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) !important;	
 	margin: 0px; 
 }*/
 body {
-  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
   margin: 0px;
 }
 #sns_twitter .tweet {
@@ -265,22 +347,25 @@ body {
 .block {
   background-color: #FFF;
 }
+.block.mini-cart {
+  background: transparent !important;
+}
 .products-list > li.item {
   background-color: white;
 }
 .block_head_center h3 {
-  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
 }
 .block_head_center .navslider a {
-  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
 }
 .block_head_left h3 {
-  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
   /*background-color: #fff !important;*/
 
 }
 .block_head_left .navslider {
-  background: #ffffff url(http://trade-depot:8888/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
 }
 /*MAKE LESS PADDING SO THE NARROW BY SLIDER FITS ON ONE LINE*/
 #sns_content .block.block-layered-nav dl#narrow-by-list dd {
@@ -300,7 +385,7 @@ body {
 .products-grid .item-inner {
   height: 280px !important;
   border: 1px solid #E5E5E5 !important;
-  padding: 6px;
+  padding: 0px 10px;
   background-color: white !important;
 }
 .sns-revolutionslider {
