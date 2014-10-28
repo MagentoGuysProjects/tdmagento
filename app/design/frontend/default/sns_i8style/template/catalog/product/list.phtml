@@ -1,4 +1,6 @@
 <?php
+# MC PRODUCTS REGULAR PAGE GRID ITEMS
+
 /**
  * Magento
  *
@@ -200,11 +202,6 @@
 	                        <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
                             
                             <div class="item-wrap">
-                                <div class="clearfix">
-                                    <div class="item-price">
-                                        <?php echo $this->getPriceHtml($_product, false, rand().time()) ?>
-                                    </div>
-                                </div>
                                 <div class="item-title">
                                     <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
                                         <?php
@@ -215,9 +212,6 @@
                                 <div class="item-des">
                                     <?php echo $_product->getShortDescription() ?>
                                 </div>
-                                <span class="product-sku">
-                                    <?php echo $this->htmlEscape($_product->getSku()) ?>
-                                </span>
                             </div>
 
 
@@ -257,7 +251,16 @@
                             }?>
                         </div>
                     </div>
-				</div>
+<!--                     <div class="gst-price">
+
+                    </div> -->
+                    <div class="item-price">
+                        <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+                    </div>
+                    <div class="productcode" style="">
+                        <?php echo $_product->getSku(); ?>
+                    </div>                               
+                </div>
             </div>
         <?php endforeach ?>
         </div>

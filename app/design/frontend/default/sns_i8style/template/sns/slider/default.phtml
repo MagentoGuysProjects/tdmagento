@@ -1,3 +1,5 @@
+
+
 <?php
 /*------------------------------------------------------------------------
  # SNS Slider - Version 2.0
@@ -6,6 +8,10 @@
  * Author: SNS Theme
  * Websites: http://www.snstheme.com
 -------------------------------------------------------------------------*/
+
+# MC HOME PAGE  BESTSALE / PROMOTIONAL 
+
+
 $themeConfig =   Mage::helper('i8style/data')->get();
 $_productCollection = $this->getLoadedProductCollection();
 $_helper = $this->helper('catalog/output');
@@ -76,10 +82,8 @@ $uniqued = rand().time();
 					                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
 				                        <?php if( $this->product_title_disp == 1 ){?>				                        
 			                            <?php }
-			                            if( $this->product_price_disp ){ ?>
-			                            <div class="item-price">
-			                                <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
-			                            </div>
+			                            { ?>
+
 				                        <div class="item-title">
 				                            <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
 				                            <?php
@@ -131,6 +135,12 @@ $uniqued = rand().time();
 			                            }?>
 				                    </div>
 				                </div>
+								<div class="item-price">
+								    <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+								</div>
+								<div class="productcode" style="">
+								    <?php echo $_product->getSku(); ?>
+								</div>								
 				            </div>
 				        </div>
 				    <?php }?>

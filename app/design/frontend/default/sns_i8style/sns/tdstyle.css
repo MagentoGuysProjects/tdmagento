@@ -1,0 +1,461 @@
+/*@td-stencil: 'Allerta Stencil', sans-serif;*/.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.productcode {
+  background-color: #CCC;
+  color: #FFF;
+  padding: 0px 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+  position: absolute;
+  bottom: 0px;
+  padding: 0px 6px 2px 6px;
+  right: 0px;
+  border-radius: 2px;
+}
+.productcode a {
+  color: #F00;
+}
+#sns_tab_products {
+  background-color: white;
+}
+.btn-cart {
+  background-color: #ffb400 !important;
+  color: white !important;
+  /* color: transparent; */
+
+}
+.link-wishlist {
+  background-color: #ec1c24 !important;
+  color: white !important;
+}
+.link-compare {
+  background-color: #0495d7 !important;
+  color: white !important;
+}
+.email-friend {
+  background-color: #666666 !important;
+}
+/*button {
+    background-color: white !important;
+}
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  font-family: Nunito, sans-serif;
+  color: #0495d7;
+  text-shadow: 1px 2px 0px #ffffff;
+}
+h1 {
+  color: #666666;
+}
+h3 {
+  color: #999999 !important;
+  font-family: Nunito, sans-serif !important;
+}
+.sns_mainmidle h3 {
+  color: #B3B3B3 !important;
+}
+.td-label {
+  background-color: red;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin: 0px 4px;
+}
+.td-label.yellow {
+  background-color: #ffb400;
+}
+.td-label.blue {
+  background-color: #0495d7;
+  color: white;
+}
+.toolbar .pager .pages > ol li.current {
+  background-color: #0495d7 !important;
+  background-image: none !important;
+  filter: none !important;
+}
+.badges .ico-product.ico-sale {
+  background-color: #0495d7 !important;
+}
+.item-price {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  margin: 0px !important;
+}
+.item-price .price-box {
+  background-color: #ffb400 !important;
+  border: 1px solid #e6a200;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 16px;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 16px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  height: 25px;
+}
+.item-price .price-box .price-excluding-tax {
+  font-weight: bold;
+}
+.item-price .price-box .price-excluding-tax .price {
+  font-size: .8em;
+  color: #664800 !important;
+  font-weight: 800;
+  float: left;
+  margin-left: 8px;
+}
+.item-price .price-box .price-excluding-tax .label {
+  font-size: .8em;
+  color: #664800 !important;
+  font-weight: 800;
+  margin: 0px 4px 0px 0px;
+}
+.item-price .price-box .price-including-tax {
+  background-color: #ec1c24 !important;
+  border: 1px solid #c51017;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 16px;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 16px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 4px 12px 4px 8px;
+  position: absolute;
+  top: 28px;
+  left: 0px;
+}
+.item-price .price-box .price-including-tax .price {
+  color: white !important;
+  font-weight: 800;
+}
+.item-price .price-box .price-including-tax .label {
+  display: none;
+}
+.item-price .price-box .old-price {
+  position: absolute  !important;
+  top: 32px;
+  left: 88px;
+  background-color: #f1f1f1 !important;
+  padding: 2px 4px 2px 36px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-style: italic;
+  font-weight: bold;
+}
+.item-price .price-box .old-price .price {
+  font-weight: bold;
+  color: #666666;
+}
+.item-price .price-box .old-price .price-label {
+  display: block;
+  position: absolute;
+  left: 4px;
+  font-size: .8em;
+  color: #666666, 10% !important;
+}
+.item-price .price-label {
+  display: block;
+}
+.cart {
+  background-color: #FFF;
+}
+.products-grid .item .item-inner .item-img {
+  padding-top: 30px;
+}
+.item-wrap {
+  min-height: 72px;
+}
+.products-grid .item .item-inner:hover .item-info {
+  bottom: 22px !important;
+}
+.products-grid .item .item-inner .item-info {
+  bottom: -36px !important;
+}
+.products-list .link-wishlist:after,
+.products-list .link-compare:after,
+.products-list .btn-cart:after {
+  background-color: #ec1c24 !important;
+  background-image: none !important;
+  filter: none;
+  color: #fff;
+}
+.td-logo-mini {
+  /*background-color: red;*/
+
+  color: white;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/trade-depot-logo-mini.png) !important;
+  background-repeat: no-repeat;
+  background-size: 33px 30px;
+}
+.item-des {
+  text-align: center;
+  font-size: 1em;
+  padding: 0px 4px;
+  letter-spacing: -0.01em;
+  line-height: 1.4em;
+  font-size: .8em;
+  color: #666666;
+}
+.item-title {
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  font-family: Nunito, sans-serif;
+  line-height: 120%;
+}
+.item-title a {
+  color: #0484be;
+}
+.item-price {
+  margin: 8px;
+}
+.products-grid .item .item-inner .btn-cart {
+  background: #ffb400 !important;
+}
+.products-grid .item .item-inner .link-compare {
+  background: #0495d7 !important;
+}
+.products-grid .item .item-inner .link-wishlist {
+  background: #ec1c24 !important;
+}
+.banner:hover:before {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+.wrap_dropdown.fullwidth {
+  top: 128px !important;
+}
+#sns_menu {
+  background-color: #0495d7;
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
+  height: 128px;
+}
+#sns_menu.keep-menu {
+  height: 58px;
+  background-color: #0495d7 !important;
+}
+#sns_menu.keep-menu .wrap_dropdown.fullwidth {
+  top: 58px !important;
+}
+#sns_header_top {
+  background-color: #025073 !important;
+}
+#sns_wraper_footer {
+  background-size: auto !important;
+  background-color: #0495d7;
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
+}
+#sns_wraper_footer a {
+  color: #78d3fc !important;
+}
+#sns_wraper_footer .sns-social ul li .fa {
+  color: #78d3fc !important;
+}
+.item-inner {
+  background-color: white;
+}
+.block_border {
+  background-color: white;
+}
+/*CHANGES THE LOOK OF THE GRADIENT GRID/LIST VIEW BUTTONS*/
+.toolbar .view-mode strong {
+  background-color: #0495d7;
+  background-image: none !important;
+}
+/*MENU CUSTOMISATION*/
+#sns_custommenu ul.mainnav li {
+  font-family: Nunito, sans-serif;
+}
+#sns_custommenu ul.mainnav li.level0 a {
+  color: #dcf3fe !important;
+}
+#sns_custommenu ul.mainnav li.level0.active a {
+  color: white !important;
+  font-weight: normal !important;
+}
+#sns_custommenu ul.mainnav li.level0:hover a {
+  color: white !important;
+  border: 1px solid white !important;
+}
+#sns_custommenu ul.mainnav li.level0 .wrap_dropdown a {
+  color: #0372a5 !important;
+}
+#sns_custommenu ul.mainnav li.level0 .wrap_dropdown a:hover {
+  color: #025073 !important;
+}
+#sns_custommenu ul.mainnav li.level0 div.wrap_submenu ul.level0 > li a {
+  color: red !important;
+}
+#sns_custommenu ul.mainnav li.level1.active a {
+  color: #0495d7 !important;
+}
+#sns_custommenu ul.mainnav li .wrap_dropdown ul.mainnav li.level0:hover a {
+  color: #0495d7 !important;
+}
+#sns_custommenu ul.mainnav li .wrap_dropdown ul.mainnav li.level0:hover a:hover {
+  color: #025073 !important;
+}
+/*#sns_menu.keep-menu {
+	background-color: darken(@td-blue, 20%) !important;
+	}*/
+.go.gfont {
+  padding: 4px 6px !important;
+}
+/*SEARCH BOX CUSTOMISATION*/
+.block_topsearch .form-search input {
+  border: 1px solid #FFF !important;
+  color: white;
+}
+.block_topsearch .form-search input:focus {
+  background-color: #025073 !important;
+}
+.block_topsearch .form-search button {
+  color: #FFF !important;
+}
+.sns-revolutionslider {
+  background-color: #ec1c24;
+}
+/*@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+
+    #sns_content{background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/tiny_grid@2X.png) !important;
+}
+}*/
+#sns_wrapper {
+  background-color: transparent !important;
+}
+.cart {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #CCC;
+}
+/*#sns_breadcrumbs {
+	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) !important;
+	}*/
+/*#sns_content {
+	background-color: #FFF;
+	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) !important;	
+	margin: 0px; 
+	}*/
+body {
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  margin: 0px;
+}
+#sns_twitter .tweet {
+  background: #FFF;
+}
+.homepage #sns_wraper_header {
+  margin-bottom: 0px;
+}
+.jqTransformSelectWrapper {
+  background-color: #FFF !important;
+}
+.toolbar a {
+  background-color: #FFF !important;
+}
+.block {
+  background-color: #FFF;
+}
+.block.mini-cart {
+  background: transparent !important;
+}
+.products-list > li.item {
+  background-color: white;
+}
+.block_head_center h3 {
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+.block_head_center .navslider a {
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+.block_head_left h3 {
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+  /*background-color: #fff !important;*/
+
+}
+.block_head_left .navslider {
+  background: #ffffff url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/church.png) repeat !important;
+}
+/*MAKE LESS PADDING SO THE NARROW BY SLIDER FITS ON ONE LINE*/
+#sns_content .block.block-layered-nav dl#narrow-by-list dd {
+  margin: 0;
+  padding: 5px 14px 14px !important;
+}
+#sns_content .block.block-layered-nav dl#narrow-by-list dd .price .text-box input[type="text"] {
+  width: 46px !important;
+}
+/*MAKE THE PRODUCT GRID VIEW ITEMS HAVE SOME SPACE AFTER THEM.*/
+.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+  margin-bottom: 64px !important;
+}
+.extra {
+  color: #0495d7 !important;
+}
+.products-grid .item-inner {
+  height: 280px !important;
+  border: 1px solid #E5E5E5 !important;
+  padding: 0px 10px;
+  background-color: white !important;
+}
+.sns-revolutionslider {
+  background-color: #ec1c24;
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/td-logo-tile-bw.png) !important;
+  background-repeat: repeat;
+}
+.grass-bg {
+  background-color: #669900;
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/grass.jpg) !important;
+  background-repeat: repeat;
+}
+.dark-bg {
+  background-color: #011620;
+  background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/dark.jpg) !important;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+@media (min-width: 900px) {
+  .mainnav li a {
+    font-size: 1em !important;
+  }
+}
+@media (min-width: 1200px) {
+  .mainnav li a {
+    font-size: 1.3em !important;
+  }
+}

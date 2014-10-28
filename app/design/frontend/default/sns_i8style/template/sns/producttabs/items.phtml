@@ -1,4 +1,5 @@
 <?php
+# MC HOME PAGE  PRODUCT TABS
 $options  = $this->getConfigObject();
 $maxtitle = $options->item_title_max_characs;
 $post     = Mage::app()->getRequest()->getPost();
@@ -63,9 +64,6 @@ if( !empty($child_items) ) {
             <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
             <div class="info-inner">
                 <?php if( $options->item_title_display == 1 ){?>
-                <div class="item-price">
-                    <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
-                </div>
                 <div class="item-title">
                     <a href="<?php echo $item->link ?>" onclick="javascript: return true"  title="<?php echo $item->title?>" >
                       <?php echo $item->title; ?>
@@ -110,9 +108,12 @@ if( !empty($child_items) ) {
         </div>
     </div>
 </div>
-    <div class="productcode" style="">
-<?php echo $_product->getSku(); ?>
-    </div>
+<div class="item-price">
+    <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+</div>
+<div class="productcode" style="">
+    <?php echo $_product->getSku(); ?>
+</div>
 </div>
 </div>
 <?php }

@@ -75,11 +75,8 @@ $uniqued = rand().time();
 					                    </div>
 					                    <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
 				                        <?php if( $this->product_title_disp == 1 ){?>
-			                            <?php }
-			                            if( $this->product_price_disp ){ ?>
-			                            <div class="item-price">
-			                                <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
-			                            </div>
+			                            <?php }{ ?>
+
 				                        <div class="item-title">
 				                            <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
 				                            <?php
@@ -144,6 +141,9 @@ $uniqued = rand().time();
 			                            }?>
 				                    </div>
 				                </div>
+		                        <div class="item-price">
+		                            <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
+		                        </div>				            
 				            </div>
 				        </div>
 				    <?php }?>

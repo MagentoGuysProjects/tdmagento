@@ -30,6 +30,7 @@
             <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-buttons.js</script></action>
             <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-media.js</script></action>
             <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-thumbs.js</script></action>
+            <action method="addJs"><script>sns/trade-depot-scripts.js</script></action>
 			
 			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.accordion_snyderplace.js</name></action> -->
 			<action method="addItem"><type>skin_js</type><name>js/jquery.sticky-kit.min.js</name></action>
