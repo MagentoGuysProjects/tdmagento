@@ -204,9 +204,8 @@
                             <div class="item-wrap">
                                 <div class="item-title">
                                     <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
-                                        <?php
-                                            echo Mage::helper('core/string')->truncate($_helper->productAttribute($_product, $_product->getName(), 'name'), 22);
-                                        ?>
+
+                                        <?php echo $_product->getName(); ?>
                                     </a>
                                 </div>
                                 <div class="item-des">

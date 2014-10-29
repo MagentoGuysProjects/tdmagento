@@ -210,6 +210,52 @@ h3 {
   filter: none;
   color: #fff;
 }
+.sns-slider .container-slider .owl-item > .item {
+  padding: 1px 6px !important;
+}
+/*.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+margin-bottom: 10px !important;
+}
+*/
+.sns-producttabs .pdt-list .item {
+  margin-left: 1% !important;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+  margin-bottom: 8px !important;
+}
+/*@media (min-width: 900px) {
+	.sns-producttabs .normal-5 .item {
+	width: 19% !important;
+	}
+}
+*/
+@media (max-width: 1199px) and (min-width: 980px) {
+  .sns-producttabs .tabletlandscape-4 .item {
+    width: 19%;
+  }
+}
+@media (min-width: 1200px) {
+  .sns-producttabs .normal-5 .item {
+    width: 18.94872% !important;
+  }
+}
+.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+  margin-bottom: 12px !important;
+}
+.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+  margin-bottom: 12px !important;
+}
+.sns-producttabs .pdt-list .item {
+  margin-left: 1.2%;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .td-logo-mini {
   /*background-color: red;*/
 
@@ -239,6 +285,8 @@ h3 {
   letter-spacing: -0.06em;
   font-family: Nunito, sans-serif;
   line-height: 120%;
+  padding: 0px 4px;
+  margin-bottom: 4px;
 }
 .item-title a {
   color: #0484be;
@@ -440,12 +488,11 @@ body {
 #sns_content .block.block-layered-nav dl#narrow-by-list dd .price .text-box input[type="text"] {
   width: 46px !important;
 }
-/*MAKE THE PRODUCT GRID VIEW ITEMS HAVE SOME SPACE AFTER THEM.*/
-.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
-  margin-bottom: 64px !important;
-}
 .extra {
   color: #0495d7 !important;
+}
+.products-grid .item {
+  margin-top: 10px !important;
 }
 .products-grid .item-inner {
   height: 280px !important;
@@ -478,4 +525,13 @@ body {
   .mainnav li a {
     font-size: 1.3em !important;
   }
+}
+.products-grid .item {
+  margin-top: 10px;
+}
+.products-grid .item.col-lg-3 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
 }

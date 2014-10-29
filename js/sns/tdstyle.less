@@ -202,6 +202,70 @@ h3 {
 }
 
 
+
+.sns-slider .container-slider .owl-item > .item {
+padding: 1px 6px !important;
+}
+
+/*.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+margin-bottom: 10px !important;
+}
+*/
+
+
+
+.sns-producttabs 
+	.pdt-list .item {
+		margin-left: 1% !important;
+		float: left;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+		margin-bottom: 8px !important;	
+	}
+
+
+
+/*@media (min-width: 900px) {
+	.sns-producttabs .normal-5 .item {
+	width: 19% !important;
+	}
+}
+*/
+
+@media (max-width: 1199px) and (min-width: 980px) {
+	.sns-producttabs .tabletlandscape-4 .item {
+	width: 19%;
+	}
+}
+
+
+@media (min-width: 1200px) {
+	.sns-producttabs .normal-5 .item {
+	width: 18.94872% !important;
+	}
+}
+
+
+
+.sns-producttabs {
+	.sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+		margin-bottom: 12px !important;
+	}
+	.sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
+		margin-bottom: 12px !important;
+	}
+	.pdt-list .item {
+		margin-left: 1.2%;
+		float: left;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
 .td-logo-mini {
 	/*background-color: red;*/
 	color: white;
@@ -231,6 +295,8 @@ h3 {
 	letter-spacing: -0.06em;
 	font-family: @td-headline;
 	line-height: 120%;
+	padding: 0px 4px;
+	margin-bottom: 4px;
 	a {
 		color: @td-blue-dark;
 	}
@@ -503,18 +569,13 @@ display: inline;
 		}
 	}
 
-	/*MAKE THE PRODUCT GRID VIEW ITEMS HAVE SOME SPACE AFTER THEM.*/
-	.sns-producttabs .sns-pdt-container .sns-pdt-content .pdt-content .products-grid .item {
-		margin-bottom: 64px !important;
-	}
-
-
 	.extra {
 		color: @td-blue !important;
 	}
-
-
 	.products-grid {
+		.item {
+			margin-top: 10px !important;
+		}
 		.item-inner {
 			height: 280px !important;
 			border: 1px solid #E5E5E5 !important;
@@ -556,4 +617,13 @@ display: inline;
 		}
 	}
 
+.products-grid .item {
+	margin-top: 10px;
+	&.col-lg-3 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 4px;
+	padding-right: 4px;
+	}
+}
 
