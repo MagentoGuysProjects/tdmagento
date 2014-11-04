@@ -80,8 +80,9 @@ if ($imgWidth <= 0 || $imgHeight <= 0){
                     <?php endif; ?>
                     <?php if ($this->product_description_disp): ?>
                     <!-- Description -->
-                    <div class="item-description">
-                        <?php
+<!--                     <div class="item-description">
+                                                <?php
+                        /*
                             $product_description_src = in_array($this->product_description_src, array('short_description', 'description')) ? $this->product_description_src : 'short_description';
                             $product_description = $_helper->productAttribute($_product, $_product->$product_description_src, $product_description_src);
                             if ( $this->product_description_strip_tags ){
@@ -92,8 +93,9 @@ if ($imgWidth <= 0 || $imgHeight <= 0){
                                 $product_description = Mage::helper('core/string')->truncate($product_description, (int)$this->product_description_max_length);
                             }
                             echo $product_description;
+                            */
                         ?>
-                    </div>
+                    </div> -->
                     <?php endif; ?>
             	</div>
             </div>

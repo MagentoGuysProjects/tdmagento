@@ -26,32 +26,77 @@
 	}
 }
 
+.sns-productlist {
+	.price-excluding-tax {
+		display: none;
+	}
+	.price-including-tax {
+		.label {
+			display: none;
+		}
+	}
+}
 
+.cart-cell {
+	.price-excluding-tax {
+		display: none;
+	}
+	.price-including-tax {
+		.label {
+			display: none;
+		}
+	}
+}
+
+
+
+.btn-checkout {
+	background-color: @td-yellow !important;
+	color: white !important;
+}
 
 #sns_tab_products {
 	background-color: white;
 }
 
+item {
+	.btn-cart  {   
+		background-color: @td-yellow !important;
+		color: white !important;
+	}
 
-.btn-cart  {   
-	background-color: @td-yellow !important;
-	color: white !important;
-	/* color: transparent; */
+	.link-wishlist {
+		background-color: @td-red !important;
+		color: white !important;
+	}
+
+	.link-compare {
+		background-color: @td-blue !important;
+		color: white !important;    
+	}
 }
 
-.link-wishlist {
-	background-color: @td-red !important;
-	color: white !important;
+
+.products-list .btn-cart:after, .products-list .btn-cart:before {
+background-color: @td-red;
+color: white !important;
 }
 
-.link-compare {
-	background-color: @td-blue !important;
-	color: white !important;    
+
+.products-list .link-wishlist:after, .products-list .link-wishlist:before {
+background-color: @td-yellow;
+color: white !important;
+}
+
+.products-list .link-compare:after, .products-list .link-compare:before {
+background-color: @td-blue;
+color: white !important;
 }
 
 .email-friend {
 	background-color: @td-grey !important;
 }
+
 
 /*button {
     background-color: white !important;
@@ -173,6 +218,84 @@ h3 {
 		display: block;
 	}
 }
+
+/*CONDENSE THESE STYLE ABOVE AND BELOW. THEY SHARE COMMON ATTRIBUTES*/
+
+#products-list {
+	.brand-logo {
+	position: absolute;
+	top: 14px;
+	right: 16px;
+	width: 40px;
+	height: 15px;
+	/*background-color: #CCC;*/
+	}
+	.price-box {
+		.price-excluding-tax {
+			background-color: saturate(@td-yellow, 20%) !important;
+			border: 1px solid darken(@td-yellow, 5%);
+			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 16px, @topleft: 4px);
+			height: 25px;
+			position: absolute;
+			top: 42px;
+			right: 4px;
+			.price {
+				font-size: .8em;
+				color: darken(@td-yellow, 30%)  !important;
+				font-weight: 800;
+				float: left;
+				margin-left: 8px;
+			}
+			.label {
+				font-size: .8em;
+				color: darken(@td-yellow, 30%)  !important;
+				font-weight: 800;
+				margin: 0px 4px 0px 0px;
+			}			
+		}
+		.price-including-tax {
+			background-color: @td-red !important;
+			border: 1px solid darken(@td-red, 10%);
+			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 16px, @topleft: 4px);
+			padding: 4px 12px 4px 8px;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			.price {
+				color: white !important;
+				font-weight: 800;
+			}
+			.label {
+				display: none;
+			}
+		}
+		.old-price {
+			position: absolute  !important;
+			top: 32px;
+			left: 88px;
+			background-color: #f1f1f1 !important;
+			padding: 2px 4px 2px 36px;
+			.border-radius(4px);
+			font-style: italic;
+			font-weight: bold;			
+			.price {
+				font-weight: bold;
+				color: @td-grey;
+			}
+			.price-label {
+				display: block;
+				position: absolute;
+				left: 4px;
+				font-size: .8em;
+				color: @td-grey, 10% !important;
+			}
+		}
+	}
+	.price-label {
+		display: block;
+	}
+}
+
 
 .cart {
 	background-color: #FFF;
@@ -298,9 +421,115 @@ margin-bottom: 10px !important;
 	padding: 0px 4px;
 	margin-bottom: 4px;
 	a {
-		color: @td-blue-dark;
+		color: @td-blue-dark !important;
 	}
 }
+
+
+#sns_content .sns-productlist .block-content .item .item-inner .item-title {
+	color: @td-blue-dark !important;
+	font-size: 110%;
+}
+
+.product-shop {
+	.brand-logo {
+	    position: relative; 
+	    height: 4px;
+	}	
+}
+
+.item {
+	.brand-logo {
+	    position: absolute; 
+	    top: -15px; 
+	    right: 0px;
+		width: 40px;
+		height: 15px;	
+	}
+}
+
+.dashboard {
+	background-color: white;
+	padding: 12px;
+}
+.my-account {
+	background-color: white;
+	padding: 12px;
+}
+#checkoutSteps li {
+margin-bottom: 1px;
+background-color: white;
+}
+
+.content {
+background-color: white;
+}
+
+.brand-novo {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/novo.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+.brand-kzoao {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/kzoao.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+
+.brand-vogue-furniture {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-furniture.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+.brand-vogue-appliances {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-appliances.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+.brand-vogue-bathroom {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-bathroom.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+.brand-panelrok {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/panelrok.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+.brand-bravat {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/bravat.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
+.brand-keter {
+	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/keter.png) !important;
+	background-repeat: no-repeat;
+	background-size: 40px 15px;
+	width: 40px;
+	height: 15px;	
+}
+
 
 .item-price {
 	margin: 8px;

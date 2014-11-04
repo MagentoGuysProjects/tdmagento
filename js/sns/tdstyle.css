@@ -19,21 +19,50 @@
 .productcode a {
   color: #F00;
 }
+.sns-productlist .price-excluding-tax {
+  display: none;
+}
+.sns-productlist .price-including-tax .label {
+  display: none;
+}
+.cart-cell .price-excluding-tax {
+  display: none;
+}
+.cart-cell .price-including-tax .label {
+  display: none;
+}
+.btn-checkout {
+  background-color: #ffb400 !important;
+  color: white !important;
+}
 #sns_tab_products {
   background-color: white;
 }
-.btn-cart {
+item .btn-cart {
   background-color: #ffb400 !important;
   color: white !important;
-  /* color: transparent; */
-
 }
-.link-wishlist {
+item .link-wishlist {
   background-color: #ec1c24 !important;
   color: white !important;
 }
-.link-compare {
+item .link-compare {
   background-color: #0495d7 !important;
+  color: white !important;
+}
+.products-list .btn-cart:after,
+.products-list .btn-cart:before {
+  background-color: #ec1c24;
+  color: white !important;
+}
+.products-list .link-wishlist:after,
+.products-list .link-wishlist:before {
+  background-color: #ffb400;
+  color: white !important;
+}
+.products-list .link-compare:after,
+.products-list .link-compare:before {
+  background-color: #0495d7;
   color: white !important;
 }
 .email-friend {
@@ -187,6 +216,111 @@ h3 {
 .item-price .price-label {
   display: block;
 }
+/*CONDENSE THESE STYLE ABOVE AND BELOW. THEY SHARE COMMON ATTRIBUTES*/
+#products-list .brand-logo {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 40px;
+  height: 15px;
+  /*background-color: #CCC;*/
+
+}
+#products-list .price-box .price-excluding-tax {
+  background-color: #ffb400 !important;
+  border: 1px solid #e6a200;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 16px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 16px;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  height: 25px;
+  position: absolute;
+  top: 42px;
+  right: 4px;
+}
+#products-list .price-box .price-excluding-tax .price {
+  font-size: .8em;
+  color: #664800 !important;
+  font-weight: 800;
+  float: left;
+  margin-left: 8px;
+}
+#products-list .price-box .price-excluding-tax .label {
+  font-size: .8em;
+  color: #664800 !important;
+  font-weight: 800;
+  margin: 0px 4px 0px 0px;
+}
+#products-list .price-box .price-including-tax {
+  background-color: #ec1c24 !important;
+  border: 1px solid #c51017;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 16px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 16px;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 4px 12px 4px 8px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+#products-list .price-box .price-including-tax .price {
+  color: white !important;
+  font-weight: 800;
+}
+#products-list .price-box .price-including-tax .label {
+  display: none;
+}
+#products-list .price-box .old-price {
+  position: absolute  !important;
+  top: 32px;
+  left: 88px;
+  background-color: #f1f1f1 !important;
+  padding: 2px 4px 2px 36px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-style: italic;
+  font-weight: bold;
+}
+#products-list .price-box .old-price .price {
+  font-weight: bold;
+  color: #666666;
+}
+#products-list .price-box .old-price .price-label {
+  display: block;
+  position: absolute;
+  left: 4px;
+  font-size: .8em;
+  color: #666666, 10% !important;
+}
+#products-list .price-label {
+  display: block;
+}
 .cart {
   background-color: #FFF;
 }
@@ -289,7 +423,93 @@ margin-bottom: 10px !important;
   margin-bottom: 4px;
 }
 .item-title a {
-  color: #0484be;
+  color: #0484be !important;
+}
+#sns_content .sns-productlist .block-content .item .item-inner .item-title {
+  color: #0484be !important;
+  font-size: 110%;
+}
+.product-shop .brand-logo {
+  position: relative;
+  height: 4px;
+}
+.item .brand-logo {
+  position: absolute;
+  top: -15px;
+  right: 0px;
+  width: 40px;
+  height: 15px;
+}
+.dashboard {
+  background-color: white;
+  padding: 12px;
+}
+.my-account {
+  background-color: white;
+  padding: 12px;
+}
+#checkoutSteps li {
+  margin-bottom: 1px;
+  background-color: white;
+}
+.content {
+  background-color: white;
+}
+.brand-novo {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/novo.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-kzoao {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/kzoao.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-vogue-furniture {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-furniture.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-vogue-appliances {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-appliances.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-vogue-bathroom {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-bathroom.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-panelrok {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/panelrok.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-bravat {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/bravat.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
+}
+.brand-keter {
+  background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/keter.png) !important;
+  background-repeat: no-repeat;
+  background-size: 40px 15px;
+  width: 40px;
+  height: 15px;
 }
 .item-price {
   margin: 8px;
