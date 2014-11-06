@@ -53,6 +53,7 @@
 .btn-checkout {
 	background-color: @td-yellow !important;
 	color: white !important;
+	border: 0px !important;
 }
 
 #sns_tab_products {
@@ -152,41 +153,43 @@ h3 {
 
 .item-price {
 	position: absolute;
-	top: 4px;
+	top: 40px;
 	left: 4px;	
 	margin: 0px !important;	
+	font-size: 100% !important;
 	.price-box {
-		background-color: saturate(@td-yellow, 20%) !important;
-		border: 1px solid darken(@td-yellow, 5%);
+		/*background-color: lighten(@td-grey, 40%) !important;*/
+		.trans-bg(#CCC,0.7);
+		/*border: 1px solid darken(@td-yellow, 5%);*/
 		.border-radiuses (@topright: 4px, @bottomright: 16px, @bottomleft: 4px, @topleft: 4px);
 		height: 25px;
 		.price-excluding-tax {
-			font-weight: bold;
 			.price {
-				font-size: .8em;
-				color: darken(@td-yellow, 30%)  !important;
-				font-weight: 800;
+				font-weight: bold;
+				font-size: .65em;
+				color: darken(@td-grey, 30%)  !important;
 				float: left;
 				margin-left: 8px;
 			}
 			.label {
-				font-size: .8em;
-				color: darken(@td-yellow, 30%)  !important;
-				font-weight: 800;
+				font-weight: bold;
+				font-size: .65em;
+				color: darken(@td-grey, 30%)  !important;
 				margin: 0px 4px 0px 0px;
 			}			
 		}
 		.price-including-tax {
 			background-color: @td-red !important;
-			border: 1px solid darken(@td-red, 10%);
+			/*border: 1px solid darken(@td-red, 10%);*/
 			.border-radiuses (@topright: 4px, @bottomright: 16px, @bottomleft: 4px, @topleft: 4px);
 			padding: 4px 12px 4px 8px;
 			position: absolute;
-			top: 28px;
+			top: -36px;
 			left: 0px;
 			.price {
 				color: white !important;
 				font-weight: 800;
+				font-size: 1.6em;
 			}
 			.label {
 				display: none;
@@ -194,9 +197,9 @@ h3 {
 		}
 		.old-price {
 			position: absolute  !important;
-			top: 32px;
-			left: 88px;
-			background-color: #f1f1f1 !important;
+			top: -32px;
+			left: 102px;
+			.trans-bg(@td-yellow,0.7);
 			padding: 2px 4px 2px 36px;
 			.border-radius(4px);
 			font-style: italic;
@@ -232,30 +235,28 @@ h3 {
 	}
 	.price-box {
 		.price-excluding-tax {
-			background-color: saturate(@td-yellow, 20%) !important;
-			border: 1px solid darken(@td-yellow, 5%);
+			background-color: lighten(@td-grey, 40%) !important;
+			/*border: 1px solid darken(@td-yellow, 5%);*/
 			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 16px, @topleft: 4px);
 			height: 25px;
 			position: absolute;
 			top: 42px;
 			right: 4px;
 			.price {
-				font-size: .8em;
-				color: darken(@td-yellow, 30%)  !important;
-				font-weight: 800;
+				font-size: .65em;
+				color: darken(@td-grey, 30%)  !important;
 				float: left;
 				margin-left: 8px;
 			}
 			.label {
-				font-size: .8em;
-				color: darken(@td-yellow, 30%)  !important;
-				font-weight: 800;
+				font-size: .65em;
+				color: darken(@td-grey, 30%)  !important;
 				margin: 0px 4px 0px 0px;
 			}			
 		}
 		.price-including-tax {
 			background-color: @td-red !important;
-			border: 1px solid darken(@td-red, 10%);
+			/*border: 1px solid darken(@td-red, 10%);*/
 			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 16px, @topleft: 4px);
 			padding: 4px 12px 4px 8px;
 			position: absolute;
@@ -271,9 +272,9 @@ h3 {
 		}
 		.old-price {
 			position: absolute  !important;
-			top: 32px;
-			left: 88px;
-			background-color: #f1f1f1 !important;
+			top: 6px;
+			left: 8px;
+			.trans-bg(@td-yellow,0.7);
 			padding: 2px 4px 2px 36px;
 			.border-radius(4px);
 			font-style: italic;
@@ -283,11 +284,15 @@ h3 {
 				color: @td-grey;
 			}
 			.price-label {
-				display: block;
 				position: absolute;
 				left: 4px;
 				font-size: .8em;
 				color: @td-grey, 10% !important;
+			}
+		}
+		.special-price {
+			.price-label {
+					display: none;
 			}
 		}
 	}
@@ -295,6 +300,8 @@ h3 {
 		display: block;
 	}
 }
+
+
 
 
 .cart {
@@ -397,34 +404,40 @@ margin-bottom: 10px !important;
 	position: absolute;
 	top:2px;
 	right: 2px;
-	z-index: 1;
+	/*z-index: 0;*/
 	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/trade-depot-logo-mini.png) !important;
 	background-repeat: no-repeat;
 	background-size: 33px 30px;
 }
 
-.item-des {
-	text-align: center;
-	font-size: 1em;
-	padding: 0px 4px;
-	letter-spacing: -0.01em;
-	line-height: 1.4em;
-	font-size: .8em;
-	color: @td-grey;
+.item-info {
+	text-align: left !important;
+	padding: 0px 8px !important;
 }
+
 .item-title {
 	font-size: 1em;
+	/*padding: 0px 8px;*/
 	font-weight: 400;
 	letter-spacing: -0.06em;
 	font-family: @td-headline;
 	line-height: 120%;
-	padding: 0px 4px;
+	/*padding: 0px 4px;*/
 	margin-bottom: 4px;
 	a {
 		color: @td-blue-dark !important;
 	}
 }
 
+.item-des {
+	/*text-align: center;*/
+	font-size: 1em;
+	/*padding: 0px 8px;*/
+	letter-spacing: -0.01em;
+	line-height: 1.4em;
+	font-size: .8em;
+	color: @td-grey;
+}
 
 #sns_content .sns-productlist .block-content .item .item-inner .item-title {
 	color: @td-blue-dark !important;
@@ -438,11 +451,15 @@ margin-bottom: 10px !important;
 	}	
 }
 
+.hide-me {
+	display: none;
+}
+
 .item {
 	.brand-logo {
 	    position: absolute; 
-	    top: -15px; 
-	    right: 0px;
+	    top: 4px; 
+	    right: 4px;
 		width: 40px;
 		height: 15px;	
 	}
@@ -480,7 +497,6 @@ background-color: white;
 	width: 40px;
 	height: 15px;	
 }
-
 
 .brand-vogue-furniture {
 	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/vogue-furniture.png) !important;
@@ -531,6 +547,48 @@ background-color: white;
 }
 
 
+.block-style {
+	padding: 16px 12px;
+	min-height: 60px;
+	.border-radiuses (@topright: 8px, @bottomright: 8px, @bottomleft: 8px, @topleft: 8px);
+	margin-bottom: 10px;
+	h1, h2, p {
+		text-shadow: none;
+		color: white;
+	}
+	h3 {
+		color: lighten(@td-grey, 50%) !important;
+		text-shadow: none;
+	}
+	label {
+	    color: @td-yellow;
+	}
+	button {
+		color: @td-yellow;
+		/*border: @td-yellow 1px solid !important;*/
+	}
+
+.shipping {
+    border: 1px solid darken(@td-grey, 50%) !important;
+   	.border-radiuses (@topright: 8px, @bottomright: 8px, @bottomleft: 8px, @topleft: 8px);
+    background-color: darken(@td-grey, 30%) !important;
+}
+
+
+
+
+
+}
+.blue-block {
+	background-color: @td-blue !important;
+}
+
+.grey-block {
+	background-color: @td-grey !important;
+}
+
+
+
 .item-price {
 	margin: 8px;
 }
@@ -558,12 +616,12 @@ background-color: white;
 }
 
 #sns_menu {
-	background-color: @td-blue;
+	background-color: darken(@td-red, 8%) !important;
 	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
 	height: 128px;
 	&.keep-menu {
 		height: 58px;
-		background-color: @td-blue !important;
+		background-color: darken(@td-red, 8%) !important;
 		.wrap_dropdown {
 			&.fullwidth {
 				top: 58px !important;
@@ -634,7 +692,7 @@ display: inline;
 				font-family: @td-headline;
 				&.level0 {
 					a {
-						color: lighten(@td-blue, 50%) !important;
+						color: lighten(@td-red, 50%) !important;
 					}
 					&.active {
 						a {

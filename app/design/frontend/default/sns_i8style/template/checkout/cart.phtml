@@ -138,10 +138,36 @@
     </form>
     <div class="cart-collaterals">
         <div class="col2-set">
-            <div class="col-1">
-                 <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            <div class="blue-block block-style"><h2>Ways to order</h2></div>
+            <div class="col-1 grey-block block-style">
+                <h3>Click and Collect</h3>
+                <p>You can save even more on your order by picking up your from our Auckland showroom located in Takanini.</p>
+                <p>Proceed to the checkout to pay for your goods then your order will be waiting at our depot ready for collection. </p>
+                <p><a href="/showroom-opening-hours/" target="_blank">Click here</a> for Showroom / Warehouse hours as well as our address and a map to find us.</p>
             </div>
-            <div class="col-2">
+            <div class="col-2 grey-block block-style">
+                <h3>Nationwide Freight</h3>
+                <p>Get an instant quote for your goods to be delivered to your doorstep.</p>
+                <p>Check you live in one of the ‘Metropolitan' Areas listed on the map below. If your town/city does not appear, please select the ’Rural’ option for your region.</p>
+                <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            </div>
+            <div class="clearfix"></div>
+            <div class="blue-block block-style">
+                    <h2>Metropolitan Areas</h2>
+                    <img src="http://www.trade-depot.co.nz/magento/media/wysiwyg/i8style/metropolitan-areas.png" alt="New Zealand Metropolitan areas for Freight Delivery" class="float-right">
+                    <div class="clearfix"></div>
+                    
+                    <p>A delivery surcharge will apply for towns and other rural areas not listed on the map. </p>
+                    <p>If your town is not listed please select the ‘Rural’ option for your region to calculate the extra distance of delivering your goods to your door. </p>
+                    <p>If you have any questions please contact The Trade Depot Team on 0800 872333  </p>
+
+
+
+            </div>
+            <div class="col-1 hide-me">
+                 
+            </div>
+            <div class="col-2 hide-me">
                 <?php /* Extensions placeholder */ ?>
                 <?php echo $this->getChildHtml('checkout.cart.extra') ?>
                 <?php echo $this->getChildHtml('coupon') ?>
