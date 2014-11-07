@@ -11,10 +11,10 @@
   text-transform: uppercase;
   font-size: 10px;
   position: absolute;
-  bottom: 0px;
-  padding: 0px 6px 2px 6px;
-  right: 0px;
-  border-radius: 2px;
+  bottom: 4px;
+  padding: 1px 6px 1px 6px;
+  right: 4px;
+  border-radius: 8px;
 }
 .productcode a {
   color: #F00;
@@ -118,10 +118,9 @@ h3 {
 }
 .item-price {
   position: absolute;
-  top: 40px;
-  left: 4px;
+  top: 126px;
+  right: 4px;
   margin: 0px !important;
-  font-size: 100% !important;
 }
 .item-price .price-box {
   /*background-color: lighten(@td-grey, 40%) !important;*/
@@ -133,21 +132,21 @@ h3 {
   /*border: 1px solid darken(@td-yellow, 5%);*/
 
   -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 16px;
+  -webkit-border-bottom-right-radius: 4px;
   -webkit-border-bottom-left-radius: 4px;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 16px;
+  -moz-border-radius-bottomright: 4px;
   -moz-border-radius-bottomleft: 4px;
   -moz-border-radius-topleft: 4px;
   border-top-right-radius: 4px;
-  border-bottom-right-radius: 16px;
+  border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  height: 25px;
+  height: 22px;
 }
 .item-price .price-box .price-excluding-tax .price {
   font-weight: bold;
@@ -155,6 +154,7 @@ h3 {
   color: #1a1a1a !important;
   float: left;
   margin-left: 8px;
+  margin-top: 0px;
 }
 .item-price .price-box .price-excluding-tax .label {
   font-weight: bold;
@@ -163,28 +163,34 @@ h3 {
   margin: 0px 4px 0px 0px;
 }
 .item-price .price-box .price-including-tax {
+  font-size: 80% !important;
+  /*background-color: @td-red !important;*/
+
   background-color: #ec1c24 !important;
+  background-color: rgba(236, 28, 36, 0.9) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6ec1c24, endColorstr=#e6ec1c24) !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6ec1c24, endColorstr=#e6ec1c24) !important;
   /*border: 1px solid darken(@td-red, 10%);*/
 
   -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 16px;
+  -webkit-border-bottom-right-radius: 4px;
   -webkit-border-bottom-left-radius: 4px;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 16px;
+  -moz-border-radius-bottomright: 4px;
   -moz-border-radius-bottomleft: 4px;
   -moz-border-radius-topleft: 4px;
   border-top-right-radius: 4px;
-  border-bottom-right-radius: 16px;
+  border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  padding: 4px 12px 4px 8px;
+  padding: 4px 6px 4px 6px;
   position: absolute;
   top: -36px;
-  left: 0px;
+  right: 0px;
 }
 .item-price .price-box .price-including-tax .price {
   color: white !important;
@@ -197,11 +203,11 @@ h3 {
 .item-price .price-box .old-price {
   position: absolute  !important;
   top: -32px;
-  left: 102px;
-  background-color: #ffb400;
-  background-color: rgba(255, 180, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3ffb400, endColorstr=#b3ffb400);
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3ffb400, endColorstr=#b3ffb400);
+  right: 106px;
+  background-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ccffffff, endColorstr=#ccffffff) !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ccffffff, endColorstr=#ccffffff) !important;
   padding: 2px 4px 2px 36px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -215,22 +221,30 @@ h3 {
 .item-price .price-box .old-price .price {
   font-weight: bold;
   color: #666666;
+  font-size: .6em;
 }
 .item-price .price-box .old-price .price-label {
   display: block;
   position: absolute;
   left: 4px;
-  font-size: .8em;
-  color: #666666, 10% !important;
+  font-size: .6em;
+  olor: #666666;
+  top: 4px;
 }
 .item-price .price-label {
   display: block;
 }
 /*CONDENSE THESE STYLE ABOVE AND BELOW. THEY SHARE COMMON ATTRIBUTES*/
+.products-list .link-wishlist:before,
+.products-list .link-compare:before,
+.products-list .btn-cart:before {
+  border: 0px !important;
+  color: white !important;
+}
 #products-list .brand-logo {
   position: absolute;
-  top: 14px;
-  right: 16px;
+  top: 134px;
+  right: 14px;
   width: 40px;
   height: 15px;
   /*background-color: #CCC;*/
@@ -242,15 +256,15 @@ h3 {
 
   -webkit-border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 16px;
+  -webkit-border-bottom-left-radius: 4px;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topright: 4px;
   -moz-border-radius-bottomright: 4px;
-  -moz-border-radius-bottomleft: 16px;
+  -moz-border-radius-bottomleft: 4px;
   -moz-border-radius-topleft: 4px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 16px;
+  border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
@@ -277,15 +291,15 @@ h3 {
 
   -webkit-border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 16px;
+  -webkit-border-bottom-left-radius: 4px;
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topright: 4px;
   -moz-border-radius-bottomright: 4px;
-  -moz-border-radius-bottomleft: 16px;
+  -moz-border-radius-bottomleft: 4px;
   -moz-border-radius-topleft: 4px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 16px;
+  border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
@@ -306,10 +320,7 @@ h3 {
   position: absolute  !important;
   top: 6px;
   left: 8px;
-  background-color: #ffb400;
-  background-color: rgba(255, 180, 0, 0.7);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3ffb400, endColorstr=#b3ffb400);
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b3ffb400, endColorstr=#b3ffb400);
+  background-color: white;
   padding: 2px 4px 2px 36px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -336,11 +347,23 @@ h3 {
 #products-list .price-label {
   display: block;
 }
+.category-products > .toolbar {
+  padding: 8px;
+  background-color: white;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-left: -10px;
+  margin-right: -10px;
+}
 .cart {
   background-color: #FFF;
 }
 .products-grid .item .item-inner .item-img {
-  padding-top: 50px;
+  padding-top: 4px;
 }
 .item-wrap {
   min-height: 72px;
@@ -412,10 +435,9 @@ margin-bottom: 10px !important;
   width: 34px;
   height: 34px;
   position: absolute;
-  top: 2px;
-  right: 2px;
-  /*z-index: 0;*/
-
+  top: 4px;
+  right: 4px;
+  z-index: 1;
   background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/trade-depot-logo-mini.png) !important;
   background-repeat: no-repeat;
   background-size: 33px 30px;
@@ -430,25 +452,26 @@ margin-bottom: 10px !important;
 
   font-weight: 400;
   letter-spacing: -0.06em;
-  font-family: Nunito, sans-serif;
   line-height: 120%;
-  /*padding: 0px 4px;*/
-
-  margin-bottom: 4px;
+  color: #0372a5 !important;
+  font-weight: bold !important;
+  font-family: Nunito, sans-serif !important;
+  margin-bottom: 2px;
 }
 .item-title a {
-  color: #0484be !important;
+  color: #666666 !important;
 }
 .item-des {
   /*text-align: center;*/
 
-  font-size: 1em;
   /*padding: 0px 8px;*/
 
   letter-spacing: -0.01em;
   line-height: 1.4em;
-  font-size: .8em;
-  color: #666666;
+  font-size: .85em;
+  color: #0372a5 !important;
+  font-weight: bold !important;
+  font-family: Nunito, sans-serif !important;
 }
 #sns_content .sns-productlist .block-content .item .item-inner .item-title {
   color: #0484be !important;
@@ -463,10 +486,24 @@ margin-bottom: 10px !important;
 }
 .item .brand-logo {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: -130px;
+  left: 8px;
   width: 40px;
   height: 15px;
+  /*background-color: #CCC;*/
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.badges .ico-product {
+  padding: 5px 6px;
+  margin: 0px;
+  position: absolute;
+  top: -20px;
 }
 .dashboard {
   background-color: white;
@@ -483,6 +520,9 @@ margin-bottom: 10px !important;
 .content {
   background-color: white;
 }
+/*.wrap {
+	background-color: #f1f1f1;
+}*/
 .brand-novo {
   background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/novo.png) !important;
   background-repeat: no-repeat;
@@ -626,7 +666,7 @@ margin-bottom: 10px !important;
   height: 128px;
 }
 #sns_menu.keep-menu {
-  height: 58px;
+  height: 116px;
   background-color: #ce1118 !important;
 }
 #sns_menu.keep-menu .wrap_dropdown.fullwidth {
@@ -655,6 +695,19 @@ margin-bottom: 10px !important;
 .sns-social ul li .fa {
   color: #45c3fc !important;
 }
+.search-line {
+  margin-bottom: 6px;
+}
+#sns_menu > .container > .inner .header-right {
+  padding: 20px 0 !important;
+}
+#sns_menu > .container > .inner .header-right #sns_mainnav {
+  float: right !important;
+}
+#sns_menu > .container > .inner .header-right .block_topsearch {
+  float: right !important;
+  margin-right: 10px;
+}
 .social-links {
   float: left;
   width: 194px;
@@ -674,7 +727,7 @@ margin-bottom: 10px !important;
 }
 /*CHANGES THE LOOK OF THE GRADIENT GRID/LIST VIEW BUTTONS*/
 .toolbar .view-mode strong {
-  background-color: #0495d7;
+  background-color: #999999 !important;
   background-image: none !important;
 }
 /*MENU CUSTOMISATION*/
@@ -683,6 +736,9 @@ margin-bottom: 10px !important;
 }
 #sns_custommenu ul.mainnav li.level0 a {
   color: #ffffff !important;
+  /*.trans-bg(darken(@td-red,40%),0.2);*/
+
+  margin-right: 8px;
 }
 #sns_custommenu ul.mainnav li.level0.active a {
   color: white !important;
@@ -693,13 +749,19 @@ margin-bottom: 10px !important;
   border: 1px solid white !important;
 }
 #sns_custommenu ul.mainnav li.level0 .wrap_dropdown a {
+  ackground-color: transparent !important;
   color: #0372a5 !important;
 }
 #sns_custommenu ul.mainnav li.level0 .wrap_dropdown a:hover {
   color: #025073 !important;
 }
-#sns_custommenu ul.mainnav li.level0 div.wrap_submenu ul.level0 > li a {
-  color: red !important;
+#sns_custommenu ul.mainnav li.level0 .wrap_submenu {
+  margin-top: 1px !important;
+  z-index: 1;
+}
+#sns_custommenu ul.mainnav li.level0 .wrap_submenu ul.level0 > li a {
+  background-color: transparent !important;
+  color: #ec1c24 !important;
 }
 #sns_custommenu ul.mainnav li.level1.active a {
   color: #0495d7 !important;
@@ -718,11 +780,19 @@ margin-bottom: 10px !important;
 }
 /*SEARCH BOX CUSTOMISATION*/
 .block_topsearch .form-search input {
+  width: 400px !important;
   border: 1px solid #FFF !important;
   color: white;
+  background-color: #66090c !important;
+  background-color: rgba(102, 9, 12, 0.2) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3366090c, endColorstr=#3366090c) !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3366090c, endColorstr=#3366090c) !important;
 }
 .block_topsearch .form-search input:focus {
-  background-color: #025073 !important;
+  background-color: #66090c !important;
+  background-color: rgba(102, 9, 12, 0.5) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8066090c, endColorstr=#8066090c) !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8066090c, endColorstr=#8066090c) !important;
 }
 .block_topsearch .form-search button {
   color: #FFF !important;
@@ -770,6 +840,7 @@ body {
 }
 .block {
   background-color: #FFF;
+  border: 0px !important;
 }
 .block.mini-cart {
   background: transparent !important;
@@ -806,10 +877,13 @@ body {
   margin-top: 10px !important;
 }
 .products-grid .item-inner {
-  height: 280px !important;
-  border: 1px solid #E5E5E5 !important;
+  height: 288px !important;
+  border: 0px !important;
   padding: 0px 10px;
   background-color: white !important;
+}
+.products-grid .item-inner .info-inner {
+  padding-bottom: 4px !important;
 }
 .sns-revolutionslider {
   background-color: #ec1c24;
@@ -846,3 +920,84 @@ body {
   padding-left: 4px;
   padding-right: 4px;
 }
+/*ADD THESE TO OTHER RULES*/
+/*
+.products-grid .item-inner:nth-child(1st) {
+	border-top: 2px dotted @td-red !important;
+}
+
+.products-grid .item-inner {
+	border-top: 0px dotted @td-blue !important;
+	border-right: 0px dotted @td-blue !important;
+	border-bottom: 2px dotted @td-blue !important;
+	border-left: 2px dotted @td-blue !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+}
+
+.products-grid .item {
+margin-top: 0px !important;
+}
+
+.col-lg-last {
+	border-right: 2px dotted @td-blue !important;
+}
+
+
+.products-grid .item.col-lg-3 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+*/
+.products-grid .item .item-inner .item-info {
+  bottom: 8px !important;
+}
+.products-grid .item .item-inner .item-info .add-to-links {
+  opacity: 0 !important;
+  filter: alpha(opacity=0) !important;
+  -webkit-transition: all 0.35s ease-in-out 0.2s;
+  transition: all 0.35s ease-in-out 0.2s;
+}
+.products-grid .item .item-inner:hover .item-info {
+  bottom: 8px !important;
+}
+.products-grid .item .item-inner:hover .item-info .add-to-links {
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
+  -webkit-transition: all 0.35s ease-in-out 0.2s;
+  transition: all 0.35s ease-in-out 0.2s;
+}
+.products-grid .item .item-inner .item-img-info {
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
+}
+/*
+.products-grid .item .item-inner:hover .item-info {
+bottom: 8px !important;
+}
+*/
+/*.item-inner:hover {
+	.item-info {
+
+		.more-buttons {
+			display: block !important;
+			opacity: 1 !important;
+		}
+		.item-img-info {
+			display: block !important;
+			opacity: 1 !important;
+		}
+	}
+}*/
+/*#sns_mainmidle > div.category-products > div.sns-products-container.clearfix > div > div:nth-child(6) > div > div.item-info > div.item-img-info > div {
+display: block !important;
+opacity: 1 !important;
+}
+
+div.item-info > div.item-img-info > div > button {
+display: block !important;
+opacity: 1 !important;
+}*/
+/*ADD THESE TO OTHER RULES*/

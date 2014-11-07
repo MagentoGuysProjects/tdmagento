@@ -97,6 +97,11 @@ $bclass .= (Mage::app()->getFrontController()->getRequest()->getRouteName() == '
         <div id="sns_content" class="wrap layout-mr">
            <div class="container">
                 <div class="row">
+                    <div id="sns_right" class="col-md-3">
+            			<div class="sns-col-inner">
+                       		<?php echo $this->getChildHtml('right') ?>
+            			</div>
+                    </div>
                     <div id="sns_main" class="col-md-9 col-main">
                         <!-- global messages -->
                         <?php echo $this->getChildHtml('global_messages') ?>
@@ -133,11 +138,6 @@ $bclass .= (Mage::app()->getFrontController()->getRequest()->getRouteName() == '
                         </div>
                         <?php
                         endif; ?>
-                    </div>
-                    <div id="sns_right" class="col-md-3">
-            			<div class="sns-col-inner">
-                       		<?php echo $this->getChildHtml('right') ?>
-            			</div>
                     </div>
                 </div>
             </div>

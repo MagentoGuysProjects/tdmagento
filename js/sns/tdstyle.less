@@ -2,6 +2,16 @@
 @import url(mixins.less);
 
 
+
+
+
+
+
+
+
+
+
+
 .float-left {
 	float: left;
 }
@@ -17,10 +27,10 @@
 	text-transform: uppercase;
 	font-size:10px;
 	position: absolute;
-	bottom: 0px;
-	padding: 0px 6px 2px 6px;
-	right: 0px;
-	border-radius: 2px;
+	bottom: 4px;
+	padding: 1px 6px 1px 6px;
+	right: 4px;
+	border-radius: 8px;
 	a {
 		color: #F00;
 	}
@@ -153,16 +163,16 @@ h3 {
 
 .item-price {
 	position: absolute;
-	top: 40px;
-	left: 4px;	
+	top: 126px;
+	right: 4px;
 	margin: 0px !important;	
-	font-size: 100% !important;
+	
 	.price-box {
 		/*background-color: lighten(@td-grey, 40%) !important;*/
 		.trans-bg(#CCC,0.7);
 		/*border: 1px solid darken(@td-yellow, 5%);*/
-		.border-radiuses (@topright: 4px, @bottomright: 16px, @bottomleft: 4px, @topleft: 4px);
-		height: 25px;
+		.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 4px, @topleft: 4px);
+		height: 22px;
 		.price-excluding-tax {
 			.price {
 				font-weight: bold;
@@ -170,6 +180,7 @@ h3 {
 				color: darken(@td-grey, 30%)  !important;
 				float: left;
 				margin-left: 8px;
+				margin-top: 0px;
 			}
 			.label {
 				font-weight: bold;
@@ -179,13 +190,15 @@ h3 {
 			}			
 		}
 		.price-including-tax {
-			background-color: @td-red !important;
+			font-size: 80% !important;
+			/*background-color: @td-red !important;*/
+			.trans-bg(@td-red,0.9) !important;
 			/*border: 1px solid darken(@td-red, 10%);*/
-			.border-radiuses (@topright: 4px, @bottomright: 16px, @bottomleft: 4px, @topleft: 4px);
-			padding: 4px 12px 4px 8px;
+			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 4px, @topleft: 4px);
+			padding: 4px 6px 4px 6px;
 			position: absolute;
 			top: -36px;
-			left: 0px;
+			right: 0px;
 			.price {
 				color: white !important;
 				font-weight: 800;
@@ -198,8 +211,8 @@ h3 {
 		.old-price {
 			position: absolute  !important;
 			top: -32px;
-			left: 102px;
-			.trans-bg(@td-yellow,0.7);
+			right: 106px;
+			.trans-bg(white,0.8) !important;
 			padding: 2px 4px 2px 36px;
 			.border-radius(4px);
 			font-style: italic;
@@ -207,13 +220,15 @@ h3 {
 			.price {
 				font-weight: bold;
 				color: @td-grey;
+				font-size: .6em;
 			}
 			.price-label {
 				display: block;
 				position: absolute;
 				left: 4px;
-				font-size: .8em;
-				color: @td-grey, 10% !important;
+				font-size: .6em;
+				olor: @td-grey;
+				top: 4px;
 			}
 		}
 	}
@@ -224,11 +239,18 @@ h3 {
 
 /*CONDENSE THESE STYLE ABOVE AND BELOW. THEY SHARE COMMON ATTRIBUTES*/
 
+
+.products-list .link-wishlist:before, .products-list .link-compare:before, .products-list .btn-cart:before {
+border: 0px !important;
+color: white !important;
+}
+
+
 #products-list {
 	.brand-logo {
 	position: absolute;
-	top: 14px;
-	right: 16px;
+	top: 134px;
+	right: 14px;
 	width: 40px;
 	height: 15px;
 	/*background-color: #CCC;*/
@@ -237,7 +259,7 @@ h3 {
 		.price-excluding-tax {
 			background-color: lighten(@td-grey, 40%) !important;
 			/*border: 1px solid darken(@td-yellow, 5%);*/
-			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 16px, @topleft: 4px);
+			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 4px, @topleft: 4px);
 			height: 25px;
 			position: absolute;
 			top: 42px;
@@ -257,7 +279,7 @@ h3 {
 		.price-including-tax {
 			background-color: @td-red !important;
 			/*border: 1px solid darken(@td-red, 10%);*/
-			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 16px, @topleft: 4px);
+			.border-radiuses (@topright: 4px, @bottomright: 4px, @bottomleft: 4px, @topleft: 4px);
 			padding: 4px 12px 4px 8px;
 			position: absolute;
 			top: 4px;
@@ -274,7 +296,7 @@ h3 {
 			position: absolute  !important;
 			top: 6px;
 			left: 8px;
-			.trans-bg(@td-yellow,0.7);
+			background-color: white;
 			padding: 2px 4px 2px 36px;
 			.border-radius(4px);
 			font-style: italic;
@@ -301,6 +323,13 @@ h3 {
 	}
 }
 
+.category-products > .toolbar {
+padding: 8px;
+background-color: white;
+.border-radius (@radius: 8px);
+margin-left: -10px;
+margin-right: -10px;
+}
 
 
 
@@ -309,7 +338,7 @@ h3 {
 }
 
 .products-grid .item .item-inner .item-img {
-	padding-top: 50px;
+	padding-top: 4px;
 }
 
 .item-wrap {
@@ -402,9 +431,9 @@ margin-bottom: 10px !important;
 	width: 34px;
 	height: 34px;
 	position: absolute;
-	top:2px;
-	right: 2px;
-	/*z-index: 0;*/
+	top:4px;
+	right: 4px;
+	z-index: 1;
 	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/trade-depot-logo-mini.png) !important;
 	background-repeat: no-repeat;
 	background-size: 33px 30px;
@@ -420,23 +449,25 @@ margin-bottom: 10px !important;
 	/*padding: 0px 8px;*/
 	font-weight: 400;
 	letter-spacing: -0.06em;
-	font-family: @td-headline;
 	line-height: 120%;
-	/*padding: 0px 4px;*/
-	margin-bottom: 4px;
+	color: darken(@td-blue, 10%) !important;
+	font-weight: bold !important;
+	font-family: @td-headline !important;
+	margin-bottom: 2px;
 	a {
-		color: @td-blue-dark !important;
+		color: darken(@td-grey, 0%) !important;
 	}
 }
 
 .item-des {
 	/*text-align: center;*/
-	font-size: 1em;
 	/*padding: 0px 8px;*/
 	letter-spacing: -0.01em;
 	line-height: 1.4em;
-	font-size: .8em;
-	color: @td-grey;
+	font-size: .85em;
+	color: darken(@td-blue, 10%) !important;
+	font-weight: bold !important;
+	font-family: @td-headline !important;
 }
 
 #sns_content .sns-productlist .block-content .item .item-inner .item-title {
@@ -457,13 +488,24 @@ margin-bottom: 10px !important;
 
 .item {
 	.brand-logo {
-	    position: absolute; 
-	    top: 4px; 
-	    right: 4px;
+		position: absolute;
+		top: -130px;
+		left: 8px;
 		width: 40px;
-		height: 15px;	
+		height: 15px;
+		/*background-color: #CCC;*/
+		.border-radius (@radius: 4px)
+
 	}
 }
+
+.badges .ico-product {
+	padding: 5px 6px;
+	margin: 0px;
+	position: absolute;
+	top: -20px;
+}
+
 
 .dashboard {
 	background-color: white;
@@ -481,6 +523,10 @@ background-color: white;
 .content {
 background-color: white;
 }
+
+/*.wrap {
+	background-color: #f1f1f1;
+}*/
 
 .brand-novo {
 	background-image: url(http://www.trade-depot.co.nz/magento/media/wysiwyg/mini-logos/novo.png) !important;
@@ -620,7 +666,7 @@ background-color: white;
 	background-image: url(http://www.trade-depot.co.nz/magento/skin/frontend/default/sns_i8style/images/blueprint-grid-white.png) !important;
 	height: 128px;
 	&.keep-menu {
-		height: 58px;
+		height: 116px;
 		background-color: darken(@td-red, 8%) !important;
 		.wrap_dropdown {
 			&.fullwidth {
@@ -657,6 +703,24 @@ background-color: white;
 	}
 }
 
+.search-line {
+	margin-bottom: 6px;
+}
+
+
+
+
+#sns_menu > .container > .inner .header-right {
+	padding: 20px 0 !important;
+	#sns_mainnav {
+	float: right !important;
+	}
+	.block_topsearch {
+	float: right !important;
+	margin-right: 10px;
+	}
+}
+
 
 .social-links {
 float: left;
@@ -680,7 +744,7 @@ display: inline;
 
 /*CHANGES THE LOOK OF THE GRADIENT GRID/LIST VIEW BUTTONS*/
 .toolbar .view-mode strong {
-	background-color: @td-blue;
+	background-color: lighten(@td-grey, 20%) !important;
 	background-image: none !important;
 }
 
@@ -693,6 +757,8 @@ display: inline;
 				&.level0 {
 					a {
 						color: lighten(@td-red, 50%) !important;
+						/*.trans-bg(darken(@td-red,40%),0.2);*/
+						margin-right: 8px;
 					}
 					&.active {
 						a {
@@ -708,14 +774,20 @@ display: inline;
 					}
 					.wrap_dropdown {
 						a {
+							ackground-color: transparent !important;
 							color: darken(@td-blue, 10%) !important;
 							&:hover {
 								color: darken(@td-blue, 20%) !important;
 							}
 						}
 					}
-					div.wrap_submenu ul.level0 > li a {
-						color: red !important;
+					.wrap_submenu {
+						margin-top: 1px !important;
+						z-index: 1;
+						ul.level0 > li a {
+							background-color: transparent !important;
+							color: @td-red !important;
+						}
 					}
 				}
 				&.level1 {
@@ -749,14 +821,17 @@ display: inline;
 		}
 	}
 
+
 	/*SEARCH BOX CUSTOMISATION*/
 	.block_topsearch {
 		.form-search {
 			input {
+				width: 400px !important;
 				border: 1px solid #FFF !important;
 				color: white;
+				.trans-bg(darken(@td-red,30%), 0.2) !important;
 				&:focus {
-					background-color: darken(@td-blue, 20%) !important;
+					.trans-bg(darken(@td-red,30%), 0.5) !important;
 				}
 			}
 			button {
@@ -821,6 +896,7 @@ display: inline;
 
 	.block {
 		background-color: #FFF;
+		border: 0px !important;
 		&.mini-cart {
 			background: transparent !important;
 		} 
@@ -864,12 +940,19 @@ display: inline;
 			margin-top: 10px !important;
 		}
 		.item-inner {
-			height: 280px !important;
-			border: 1px solid #E5E5E5 !important;
+			height: 288px !important;
+			border: 0px !important;
 			padding: 0px 10px;
 			background-color: white !important;
+			.info-inner {
+				padding-bottom: 4px !important;
+			}
 		}
 	}
+
+
+
+
 
 	.sns-revolutionslider {
 		background-color: #ec1c24;
@@ -913,4 +996,105 @@ display: inline;
 	padding-right: 4px;
 	}
 }
+
+
+
+
+
+
+/*ADD THESE TO OTHER RULES*/
+
+
+/*
+.products-grid .item-inner:nth-child(1st) {
+	border-top: 2px dotted @td-red !important;
+}
+
+.products-grid .item-inner {
+	border-top: 0px dotted @td-blue !important;
+	border-right: 0px dotted @td-blue !important;
+	border-bottom: 2px dotted @td-blue !important;
+	border-left: 2px dotted @td-blue !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+}
+
+.products-grid .item {
+margin-top: 0px !important;
+}
+
+.col-lg-last {
+	border-right: 2px dotted @td-blue !important;
+}
+
+
+.products-grid .item.col-lg-3 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+*/
+
+.products-grid .item .item-inner {
+	.item-info {
+		bottom: 8px !important;
+		.add-to-links {
+			opacity: 0 !important;
+			filter: alpha(opacity=0) !important;
+			-webkit-transition: all 0.35s ease-in-out 0.2s;
+			transition: all 0.35s ease-in-out 0.2s;	
+		}
+	}
+	&:hover  {
+		.item-info {
+			bottom: 8px !important;
+			.add-to-links {
+				opacity: 1 !important;
+				filter: alpha(opacity=100) !important;
+				-webkit-transition: all 0.35s ease-in-out 0.2s;
+				transition: all 0.35s ease-in-out 0.2s;
+			}			
+		}
+	}
+	.item-img-info {
+		opacity: 1 !important;
+		filter: alpha(opacity=100) !important;
+	}
+}
+
+
+
+
+/*
+.products-grid .item .item-inner:hover .item-info {
+bottom: 8px !important;
+}
+*/
+
+
+/*.item-inner:hover {
+	.item-info {
+
+		.more-buttons {
+			display: block !important;
+			opacity: 1 !important;
+		}
+		.item-img-info {
+			display: block !important;
+			opacity: 1 !important;
+		}
+	}
+}*/
+
+/*#sns_mainmidle > div.category-products > div.sns-products-container.clearfix > div > div:nth-child(6) > div > div.item-info > div.item-img-info > div {
+display: block !important;
+opacity: 1 !important;
+}
+
+div.item-info > div.item-img-info > div > button {
+display: block !important;
+opacity: 1 !important;
+}*/
+/*ADD THESE TO OTHER RULES*/
 
