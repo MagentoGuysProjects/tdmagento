@@ -143,7 +143,10 @@ $uniqued = rand().time();
 				                </div>
 		                        <div class="item-price">
 		                            <?php echo $this->getPriceHtml($_product, false, $uniqued) ?>
-		                        </div>				            
+		                        </div>
+			                    <div class="productcode" style="">
+			                        <?php echo $_product->getSku(); ?>
+			                    </div>   		            
 				            </div>
 				        </div>
 				    <?php }?>
