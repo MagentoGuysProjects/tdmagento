@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Jtech_Changeattributeset>
+			<version>0.1.1</version>
+		</Jtech_Changeattributeset>
+	</modules>
+	<global>
+		<helpers>
+			<jtech_changeattributeset>
+					<class>Jtech_Changeattributeset_Helper</class>
+			</jtech_changeattributeset>
+		</helpers>
+        <models>
+            <jtech_changeattributeset>
+                <class>Jtech_Changeattributeset_Model</class>
+            </jtech_changeattributeset>
+		</models>
+	</global>
+    <adminhtml>        
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <jtech_changeattributeset>
+                        <type>singleton</type>
+                        <class>jtech_changeattributeset/observer</class>
+                        <method>addMassactionToProductGrid</method>
+                    </jtech_changeattributeset>
+                </observers>
+            </adminhtml_block_html_before>
+		</events>  
+        <acl>
+            <resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <changeattributeset>
+                                            <title>Change Attribute Set</title>
+                                        </changeattributeset>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>      
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Jtech_Changeattributeset before="Mage_Adminhtml">Jtech_Changeattributeset_Adminhtml</Jtech_Changeattributeset>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>		
+</config>

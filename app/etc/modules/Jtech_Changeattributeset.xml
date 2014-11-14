@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Jtech_Changeattributeset>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Jtech_Changeattributeset>
+	</modules>
+</config>
